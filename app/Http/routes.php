@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/debug/phantomjs', 'Debug\PhantomJSController@indexAction');
+
+Route::get('/chat/', 'Chat\ChatController@indexAction');
