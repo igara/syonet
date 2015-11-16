@@ -12,7 +12,13 @@ elixir.config.sourcemaps = false;
  */
 
 elixir(function (mix) {
-    mix.sass('bootstrap/bootstrap.scss', 'public/css/bootstrap');
+    var bootstrapPath = 'node_modules/bootstrap-sass/assets';
+    var jQueryPath = 'node_modules/jquery/dist/jquery.js';
+    mix.sass('bootstrap/bootstrap.scss', 'public/css/bootstrap')
+            .copy(bootstrapPath + '/fonts', 'public/fonts/')
+            .copy(bootstrapPath + '/javascripts/bootstrap.min.js', 'public/js/bootstrap')
+            .copy(jQueryPath, 'public/js/jQuery');
+    
     mix.sass('chat/chat.scss', 'public/css/chat');
 });
 
