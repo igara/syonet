@@ -13,7 +13,7 @@ elixir.config.sourcemaps = false;
 
 elixir(function (mix) {
     var bootstrapPath = 'node_modules/bootstrap-sass/assets';
-    var jQueryPath = 'node_modules/jquery/dist/jquery.js';
+    var jQueryPath = 'node_modules/jquery/dist/jquery.min.js';
     mix.sass('bootstrap/bootstrap.scss', 'public/css/bootstrap')
             .copy(bootstrapPath + '/fonts', 'public/fonts/')
             .copy(bootstrapPath + '/javascripts/bootstrap.min.js', 'public/js/bootstrap')
