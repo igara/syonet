@@ -3,8 +3,8 @@
 <head>
     <link href="../css/bootstrap/bootstrap.css" rel="stylesheet" type="text/css">
     <link href="../css/chat/chat.css" rel="stylesheet" type="text/css">
-    <script type="text/javascript" src="../js/jquery/dist/jquery.js"></script>
-    <script type="text/javascript" src="../js/bootstrap/bootstrap.js"></script>
+    <script type="text/javascript" src="../js/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap/bootstrap.min.js"></script>
 </head>
 <body>
 @include('chat.common.header')
