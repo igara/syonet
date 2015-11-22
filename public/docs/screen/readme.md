@@ -9,3 +9,15 @@
 * URL
  * 本番：https://syonet.no-ip.biz/
  * 共有c9：https://slack-rack-php-igara.c9users.io/
+
+
+## docs_list
+* URL
+ * 本番：https://syonet.no-ip.biz/docs/list/
+ * 共有c9：https://slack-rack-php-igara.c9users.io/docs/list/
+* 画面設計
+ * 本番：https://syonet.no-ip.biz/docs/list/screen/docs_list/design.html
+ * 共有c9：https://slack-rack-php-igara.c9users.io/docs/list/screen/docs_list/design.html
+* 処理設計
+ * 本番：https://syonet.no-ip.biz/docs/list/screen/docs_list/flowchart.html
+ * 共有c9：https://slack-rack-php-igara.c9users.io/docs/list/screen/docs_list/flowchart.html
