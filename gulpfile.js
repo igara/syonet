@@ -12,16 +12,24 @@ elixir.config.sourcemaps = false;
  */
 
 elixir(function (mix) {
+
+    // bootstrapとjQueryをpublic配下に設置する
     var bootstrapPath = 'node_modules/bootstrap-sass/assets';
     var jQueryPath = 'node_modules/jquery/dist/jquery.min.js';
-    mix.sass('bootstrap/bootstrap.scss', 'public/css/bootstrap')
-            .copy(bootstrapPath + '/fonts', 'public/fonts/')
-            .copy(bootstrapPath + '/javascripts/bootstrap.min.js', 'public/js/bootstrap')
-            .copy(jQueryPath, 'public/js/jQuery');
-    
-    mix.sass('chat/chat.scss', 'public/css/chat');
-});
+    mix.sass('bootstrap/bootstrap.scss', 'public/css/bootstrap');
+    mix.copy(bootstrapPath + '/fonts', 'public/fonts/');
+    mix.copy(bootstrapPath + '/javascripts/bootstrap.min.js', 'public/js/bootstrap');
+    mix.copy(jQueryPath, 'public/js/jQuery');
 
-elixir(function (mix) {
+    // sassからcssに変換させる。
+    mix.sass('chat/chat.scss', 'public/css/chat');
+
+    // resource下のtest.jsをes6からes5に変換させる。
     mix.babel('test.js');
+
+    // mermaidをpublic下に設置する。
+    var mermaidJSPath = 'node_modules/mermaid/dist';
+    mix.copy(mermaidJSPath + '/mermaid.js', 'public/js/mermaid');
+    mix.copy(mermaidJSPath + '/mermaid.css', 'public/css/mermaid');
+
 });
