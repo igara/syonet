@@ -1,35 +1,60 @@
-var elixir = require('laravel-elixir');
-elixir.config.sourcemaps = false;
-/*
- |--------------------------------------------------------------------------
- | Elixir Asset Management
- |--------------------------------------------------------------------------
- |
- | Elixir provides a clean, fluent API for defining some basic Gulp tasks
- | for your Laravel application. By default, we are compiling the Sass
- | file for our application, as well as publishing vendor resources.
- |
- */
+var gulp = require('gulp');
 
-elixir(function (mix) {
+gulp.task('default', function() {
 
-    // bootstrapとjQueryをpublic配下に設置する
-    var bootstrapPath = 'node_modules/bootstrap-sass/assets';
-    var jQueryPath = 'node_modules/jquery/dist/jquery.min.js';
-    mix.sass('bootstrap/bootstrap.scss', 'public/css/bootstrap');
-    mix.copy(bootstrapPath + '/fonts', 'public/fonts/');
-    mix.copy(bootstrapPath + '/javascripts/bootstrap.min.js', 'public/js/bootstrap');
-    mix.copy(jQueryPath, 'public/js/jQuery');
-
-    // sassからcssに変換させる。
-    mix.sass('chat/chat.scss', 'public/css/chat');
-
-    // resource下のtest.jsをes6からes5に変換させる。
-    mix.babel('test.js');
+    // onsenUIをpublic下に設置する。
+    var onsenUIPath = 'node_modules/onsenui';
+    gulp.src(onsenUIPath + '/css/**')
+        .pipe(gulp.dest('public/css/lib/onsenui'));
+    gulp.src(onsenUIPath + '/js/**')
+        .pipe(gulp.dest('public/js/lib/onsenui'));
 
     // mermaidをpublic下に設置する。
     var mermaidJSPath = 'node_modules/mermaid/dist';
-    mix.copy(mermaidJSPath + '/mermaid.js', 'public/js/mermaid');
-    mix.copy(mermaidJSPath + '/mermaid.css', 'public/css/mermaid');
+    gulp.src(mermaidJSPath + '/mermaid.js')
+        .pipe(gulp.dest('public/js/lib/mermaid'));
+    gulp.src(mermaidJSPath + '/mermaid.css')
+        .pipe(gulp.dest('public/css/lib/mermaid'));
 
-});
+    // Angular2をpublic下に設置する。
+    var angularPath = 'node_modules/angular2';
+    gulp.src(angularPath + '/*.js')
+        .pipe(gulp.dest('public/js/lib/angular2'));
+    gulp.src(angularPath + '/bundles/**/*.js')
+        .pipe(gulp.dest('public/js/lib/angular2/bundles'));
+    gulp.src(angularPath + '/src/**/*.js')
+        .pipe(gulp.dest('public/js/lib/angular2/src'));
+
+    // SystemJSをpublic下に設置する。
+    var systemJSPath = 'node_modules/systemjs';
+    gulp.src(systemJSPath + '/dist/system.js')
+        .pipe(gulp.dest('public/js/lib/systemjs/'));
+
+} );
+
+gulp.task('tsbuild', function() {
+    var typescript = require('gulp-typescript');
+    var config = {
+        ts : {
+            src: [
+                // プロジェクトのresources/assets/ts以下すべてのディレクトリの.tsファイルを対象とする
+                './resources/assets/ts/**/*.ts',
+                // node_modulesは対象外
+                '!./node_modules/**'
+            ],
+            dst: './public/js/',
+            options: {
+                target: 'ES5',
+                module: 'commonjs',
+                experimentalDecorators: true
+            }
+        }
+    };
+
+    // トランスパイルの実行
+    gulp.src(config.ts.src)
+               .pipe(typescript(config.ts.options))
+               .js
+               .pipe(gulp.dest(config.ts.dst));
+
+} );

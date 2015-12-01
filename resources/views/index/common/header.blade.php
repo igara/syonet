@@ -1,21 +1,27 @@
-<nav class="header navbar-fixed-top navbar-default">
-    <div class="container">
-        <div class="navbar-header">
-            <a class="navbar-brand">SyoNet</a>
-        </div>
-        <ul class="nav navbar-nav">
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li role="separator" class="divider"></li>
-                    <li><a href="#">Separated link</a></li>
-                    <li role="separator" class="divider"></li>
-                    <li><a href="#">One more separated link</a></li>
-                </ul>
-            </li>
-        </ul>
-    </div>
-</nav>
+<ons-template id="home.html">
+  <ons-toolbar>
+    <div class="center">SyoNet</div>
+  </ons-toolbar>
+Home
+</ons-template>
+
+<ons-template id="comments.html">
+  <ons-toolbar>
+    <div class="center">SyoNet</div>
+  </ons-toolbar>
+Comments
+</ons-template>
+
+<ons-template id="tags.html">
+  <ons-toolbar>
+    <div class="center">SyoNet</div>
+  </ons-toolbar>
+tags
+</ons-template>
+
+<ons-template id="settings.html">
+  <ons-toolbar>
+    <div class="center">SyoNet</div>
+  </ons-toolbar>
+settings
+</ons-template>

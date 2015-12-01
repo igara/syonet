@@ -2,14 +2,13 @@
   "private": true,
   "devDependencies": {
     "angular2": "^2.0.0-alpha.46",
-    "bootstrap-sass": "^3.3.5",
     "gulp": "^3.8.8",
     "gulp-typescript": "^2.9.2",
-    "jquery": "^2.1.4",
-    "laravel-elixir": "^3.4.2",
     "mermaid": "^0.5.5",
     "mocha": "^2.3.3",
+    "onsenui": "^2.0.0-beta",
     "phantomjs": "^1.9.18",
-    "serviceworker": "^0.1.7"
+    "serviceworker": "^0.1.7",
+    "systemjs": "^0.19.6"
   }
 }
