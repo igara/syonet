@@ -16,6 +16,13 @@ gulp.task('default', function() {
     gulp.src(mermaidJSPath + '/mermaid.css')
         .pipe(gulp.dest('public/css/lib/mermaid'));
 
+    // AngularJSをpublic下に設置する。
+    var angularJSPath = 'node_modules/angular';
+    gulp.src(angularJSPath + '/angular.min.js')
+        .pipe(gulp.dest('public/js/lib/angular'));
+    gulp.src(angularJSPath + '/angular-csp.css')
+        .pipe(gulp.dest('public/css/lib/angular'));
+
     // Angular2をpublic下に設置する。
     var angularPath = 'node_modules/angular2';
     gulp.src(angularPath + '/*.js')

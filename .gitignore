@@ -393,3 +393,8 @@ public/js/lib/onsenui/onsenui.js
 public/js/lib/onsenui/onsenui.min.js
 public/js/lib/systemjs/system.js
 resources/assets/ts/docs/screen/docs_list/test.ts
+public/css/lib/angular/angular-csp.css
+public/js/docs/screen/docs_list/test.js
+public/js/lib/angular/angular.min.js
+public/js/lib/onsenui/onsenui_all.js
+public/js/lib/onsenui/onsenui_all.min.js
