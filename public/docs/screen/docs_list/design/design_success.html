@@ -8,26 +8,17 @@
         <script type="text/javascript" src="../../../../js/lib/angular2/bundles/angular2.js"></script>
         <script type="text/javascript" src="../../../../js/lib/angular/angular.min.js"></script>
         <script type="text/javascript" src="../../../../js/lib/onsenui/onsenui.min.js"></script>
+        <script>
+            ons.bootstrap();
+        </script>
     </head>
     <body>
 
-<ons-sliding-menu var="menu" menu-page="menu.html" main-page="header.html" side="left" type="push" max-slide-distance="200px">
-</ons-sliding-menu>
-    <common_header></common_header>
-    <script>
-        ons.compile(content);
-        System.import('../../../../js/docs/screen/common/header_template.js');
-    </script>
-
-<!--    <common_menu></common_menu>
-    <script>
-        System.import('../../../../js/docs/screen/common/menu_template.js');
-    </script>
-    
-    <common_footer></common_footer>
-    <script>
-        System.import('../../../../js/docs/screen/common/footer_template.js');
-    </script>-->
+    <ons-sliding-menu var="menu"
+        menu-page="../../common/design/design_menu.html"
+        main-page="../../common/design/design_tabbar.html"
+        side="left" type="push" max-slide-distance="200px">
+    </ons-sliding-menu>
 
 </body>
 </html>
