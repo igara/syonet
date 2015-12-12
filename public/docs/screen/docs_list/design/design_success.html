@@ -11,10 +11,12 @@
     </head>
     <body>
 
+<ons-sliding-menu var="menu" menu-page="menu.html" main-page="header.html" side="left" type="push" max-slide-distance="200px">
+</ons-sliding-menu>
     <common_header></common_header>
     <script>
+        ons.compile(content);
         System.import('../../../../js/docs/screen/common/header_template.js');
-        ons.bootstrap();
     </script>
 
 <!--    <common_menu></common_menu>
