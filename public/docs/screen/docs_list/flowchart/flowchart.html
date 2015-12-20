@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>docs_list</title>
+    <link href="../../../../css/lib/mermaid/mermaid.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="../../../../js/lib/mermaid/mermaid.js"></script>
+    <script>
+        var config = {
+            startOnLoad:true,
+            flowchart:{
+                    useMaxWidth:false,
+                    htmlLabels:true
+            }
+        };
+        mermaid.initialize(config);
+    </script>
+</head>
+<body>
+
+<div class="mermaid">
+    graph TD
+        style start fill:#f9f
+        style stop fill:#f9f
+
+        style isRouting fill:#0f9
+        style isController fill:#0f9
+        style isAction fill:#0f9
+        style isFile fill:#0f9
+        style isFile fill:#0f9
+        style isFormat fill:#0f9
+
+        style errorCode fill:#ff0
+        style displaySuccess fill:#09f
+
+        start[処理開始]-->readUrl[URLを読み込む<br/>https://***/docs/list/]
+        readUrl-->isRouting{Route.phpに<br/>URLのマップがされているか}
+        isRouting-->useRouting[Route.phpを使用する]
+        useRouting-->isController{DocsListControllerが<br/>存在するか}
+        isController-->useController[DocsListControllerを<br/>使用する]
+        useController-->isAction{screenActionが<br/>存在するか}
+        isAction-->useAction[screenActionを<br/>使用する]
+        useAction-->api[画面一覧APIに接続する]
+        api-->isFile{下記ファイルは存在するか <br/> public/docs/screen/readme.md}
+        
+        isFile-->readFile[ファイルの読み込みを行う]
+        readFile-->isFormat{フォーマットが正しいか<br/>## 画面名<br/>* 項目名<br/> * URLなど}
+        isFormat-->jsonStatus(status: Success<br/>list:<br/>  name: screen_name<br/>  screen_url: url<br/>  design_url: url<br/>  flowchart_url: url)
+        displaySuccess[画面毎のドキュメントを表示する]
+        displaySuccess-->stop[処理終了]
+
+        isRouting-->errorCode[404ページを表示する]
+        isController-->errorCode
+        isAction-->errorCode
+        errorCode-->stop
+
+        isFile-->jsonStatusNotFile(status: NotFile<br/>)
+        jsonStatusNotFile-->displayNotFile[画面にファイルが<br/>存在しないことを表示する]
+        displayNotFile-->stop
+        isFormat-->jsonStatusNotFormat(status: NotFormat<br/>)
+        jsonStatusNotFormat-->displayNotFormat[画面にファイルのフォーマットが<br/>正しくないことを表示する]
+        displayNotFormat-->stop
+
+</div>
+</body>
+</html>

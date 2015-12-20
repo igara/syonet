@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link href="../css/bootstrap/bootstrap.css" rel="stylesheet" type="text/css">
-    <link href="../css/chat/chat.css" rel="stylesheet" type="text/css">
-    <script type="text/javascript" src="../js/jQuery/jquery.min.js"></script>
-    <script type="text/javascript" src="../js/bootstrap/bootstrap.min.js"></script>
+    <link href="../css/lib/onsenui/onsenui.css" rel="stylesheet" type="text/css">
+    <link href="../css/lib/onsenui/onsen-css-components-dark-theme.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="../js/lib/systemjs/system.js"></script>
+    <script type="text/javascript" src="../js/lib/angular/angular.min.js"></script>
+    <script type="text/javascript" src="../js/lib/onsenui/onsenui.min.js"></script>
+    <script>
+        ons.bootstrap();
+    </script>
 </head>
 <body>
-@include('index.common.header')
-
-<div class="jumbotron">
-    <h1>Hello, world!</h1>
-</div>
-
-@include('index.common.footer')
+@include('welcome.common.header')
+@include('welcome.common.menu')
+@include('welcome.common.footer')
 </body>
 </html>
