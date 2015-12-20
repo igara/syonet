@@ -22,6 +22,11 @@ gulp.task('default', function() {
         .pipe(gulp.dest('public/js/lib/angular'));
     gulp.src(angularJSPath + '/angular-csp.css')
         .pipe(gulp.dest('public/css/lib/angular'));
+        
+    // AngularRouteをpublic下に設置する。
+    var angularRoutePath = 'node_modules/angular-route';
+    gulp.src(angularRoutePath + '/angular-route.min.js')
+        .pipe(gulp.dest('public/js/lib/angular'));
 
     // Angular2をpublic下に設置する。
     var angularPath = 'node_modules/angular2';
@@ -40,28 +45,20 @@ gulp.task('default', function() {
 } );
 
 gulp.task('tsbuild', function() {
-    var typescript = require('gulp-typescript');
-    var config = {
-        ts : {
-            src: [
-                // プロジェクトのresources/assets/ts以下すべてのディレクトリの.tsファイルを対象とする
-                './resources/assets/ts/**/*.ts',
-                // node_modulesは対象外
-                '!./node_modules/**'
-            ],
-            dst: './public/js/',
-            options: {
-                target: 'ES5',
-                module: 'commonjs',
-                experimentalDecorators: true
-            }
-        }
-    };
+    var shell = require('gulp-shell');
+    // tsファイルのビルド
+    gulp.src('').pipe(shell('./node_modules/.bin/tsc'));
 
-    // トランスパイルの実行
-    gulp.src(config.ts.src)
-               .pipe(typescript(config.ts.options))
-               .js
-               .pipe(gulp.dest(config.ts.dst));
+    /* resources/assets/ts/docs/下に存在する、ビルドで作成されたjsファイルを
+       public/js/docs/下にディレクトリ構造ごとコピーする */
+    gulp.src('resources/assets/ts/docs/**/*.js')
+        .pipe(gulp.dest('public/js/docs/')); 
+});
 
-} );
+gulp.task('tsconfig', function() {
+    var tsConfig = require('gulp-tsconfig-update');
+    
+    // ビルド対象のファイルを指定する
+    gulp.src(
+        'resources/assets/ts/**/*.ts').pipe(tsConfig());
+});
