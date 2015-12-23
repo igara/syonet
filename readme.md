@@ -1,5 +1,7 @@
 ## SlackRackWeb_PHP
 
+[![Join the chat at https://gitter.im/igara/slack_rack_php](https://badges.gitter.im/igara/slack_rack_php.svg)](https://gitter.im/igara/slack_rack_php?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 とりあえず作成する。
 
 slack_rackをやろうとし、別のことを進めようとしている
