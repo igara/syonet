@@ -22,25 +22,21 @@ gulp.task('default', function() {
         .pipe(gulp.dest('public/js/lib/angular'));
     gulp.src(angularJSPath + '/angular-csp.css')
         .pipe(gulp.dest('public/css/lib/angular'));
-        
-    // AngularRouteをpublic下に設置する。
-    var angularRoutePath = 'node_modules/angular-route';
-    gulp.src(angularRoutePath + '/angular-route.min.js')
-        .pipe(gulp.dest('public/js/lib/angular'));
 
     // Angular2をpublic下に設置する。
     var angularPath = 'node_modules/angular2';
-    gulp.src(angularPath + '/*.js')
-        .pipe(gulp.dest('public/js/lib/angular2'));
     gulp.src(angularPath + '/bundles/**/*.js')
         .pipe(gulp.dest('public/js/lib/angular2/bundles'));
-    gulp.src(angularPath + '/src/**/*.js')
-        .pipe(gulp.dest('public/js/lib/angular2/src'));
 
     // SystemJSをpublic下に設置する。
     var systemJSPath = 'node_modules/systemjs';
     gulp.src(systemJSPath + '/dist/system.js')
         .pipe(gulp.dest('public/js/lib/systemjs/'));
+        
+    // rxjsをpublic下に設置する。
+    var rxjsPath = 'node_modules/rxjs';
+    gulp.src(rxjsPath + '/bundles/*.js')
+        .pipe(gulp.dest('public/js/lib/rxjs/bundles'));
 
 } );
 

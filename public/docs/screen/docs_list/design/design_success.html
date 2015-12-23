@@ -4,12 +4,25 @@
         <title>docs_list</title>
         <link href="../../../../css/lib/onsenui/onsenui.css" rel="stylesheet" type="text/css">
         <link href="../../../../css/lib/onsenui/onsen-css-components-dark-theme.css" rel="stylesheet" type="text/css">
+        <script type="text/javascript" src="../../../../js/lib/angular2/bundles/angular2-polyfills.min.js"></script>
         <script type="text/javascript" src="../../../../js/lib/systemjs/system.js"></script>
-        <script type="text/javascript" src="../../../../js/lib/angular2/bundles/angular2.js"></script>
+        <script type="text/javascript" src="../../../../js/lib/rxjs/bundles/Rx.js"></script>
+        <script type="text/javascript" src="../../../../js/lib/angular2/bundles/angular2.dev.js"></script>
         <script type="text/javascript" src="../../../../js/lib/angular/angular.min.js"></script>
-        <script type="text/javascript" src="../../../../js/lib/angular/angular-route.min.js"></script>
         <script type="text/javascript" src="../../../../js/lib/onsenui/onsenui.min.js"></script>
         <script type="text/javascript" src="../../../../js/docs/screen/common/controller/home_controller.js"></script>
+        <script>
+            System.config({
+                packages: {        
+                    app: {
+                        format: 'register',
+                        defaultExtension: 'js'
+                    }
+                }
+            });
+            System.import('../../../../js/docs/screen/common/component/comments_component.js')
+            .then(null, console.error.bind(console));
+        </script>
         <script>
             ons.bootstrap();
         </script>
@@ -58,10 +71,7 @@
         <!-- /ヘッダー -->
         <ons-page>
             <p style="text-align: center; color: #999; padding-top: 50px;">
-                <common_menu></common_menu>
-                <script>
-                    System.import('../../../../js/docs/screen/common/home_component.js');
-                </script>
+                <comments_content></comments_content>
             </p>
         </ons-page>
     </ons-template>
