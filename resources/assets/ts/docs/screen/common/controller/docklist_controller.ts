@@ -2,11 +2,12 @@
 var app = angular.module('app', ['onsen']);
 class DockListController {
  
-    constructor(private $scope: DockListScope) {
+    constructor(private $scope: DockListScope, private $location: DockListLocation) {
         $scope.homeContent = 'Home';
         $scope.commentsContent = 'comments';
         $scope.tagsContent = 'tags';
         $scope.settingsContent = 'settings';
+        $scope.hostName = $location.host;
     }
 }
 
@@ -15,5 +16,9 @@ interface DockListScope extends ng.IScope {
     commentsContent: string;
     tagsContent: string;
     settingsContent: string;
+    hostName: any;
+}
+
+interface DockListLocation extends ng.ILocationService {
 }
 app.controller('DockListController', DockListController);
