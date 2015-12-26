@@ -10,6 +10,9 @@
     },
     "jquery/jquery.d.ts": {
       "commit": "5a8fc5ee71701431e4fdbb80c506e3c13f85a9ff"
+    },
+    "onsenui/onsenui.d.ts": {
+      "commit": "1da639a106527e0c4010b354a1efe52a3059a291"
     }
   }
 }

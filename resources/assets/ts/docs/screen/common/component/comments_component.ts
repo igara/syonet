@@ -3,7 +3,7 @@ import {bootstrap}    from 'angular2/platform/browser'
 
 @Component({
     selector: 'comments_content',
-    template: `comments`
+    template: `../../common/design/navigation/comments.html`
 })
 export class CommentsComponent {}
 bootstrap(CommentsComponent);
