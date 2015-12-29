@@ -45,7 +45,7 @@
         isFile-->readFile[ファイルの読み込みを行う]
         readFile-->isFormat{フォーマットが正しいか<br/>## 画面名<br/>* 項目名<br/> * URLなど}
         isFormat-->jsonStatus(status: Success<br/>list:<br/>  name: screen_name<br/>  screen_url: url<br/>  design_url: url<br/>  flowchart_url: url)
-        displaySuccess[画面毎のドキュメントを表示する]
+        jsonStatus-->displaySuccess[画面毎のドキュメントを表示する]
         displaySuccess-->stop[処理終了]
 
         isRouting-->errorCode[404ページを表示する]
