@@ -5,7 +5,7 @@ class DockListController {
     constructor(private $scope: DockListScope, private $location: DockListLocation) {
         $scope.homeContent = 'Home';
         $scope.commentsContent = 'comments';
-        $scope.tagsContent = 'tags';
+        $scope.docsContent = 'docs';
         $scope.settingsContent = 'settings';
         $scope.hostName = $location.host;
     }
@@ -14,7 +14,7 @@ class DockListController {
 interface DockListScope extends ng.IScope {
     homeContent: string;
     commentsContent: string;
-    tagsContent: string;
+    docsContent: string;
     settingsContent: string;
     hostName: any;
 }
