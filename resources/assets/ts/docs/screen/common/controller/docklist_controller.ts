@@ -18,7 +18,12 @@ class DockListController {
         $scope.homeContent = $sce.trustAsHtml('home');
         $scope.commentsContent = $sce.trustAsHtml('comments');
         $scope.docsContent = $sce.trustAsHtml('docs');
-        $scope.settingsContent = $sce.trustAsHtml('settings');
+        $scope.devContent = $sce.trustAsHtml(`
+        <li><a href="https://ide.c9.io/igara/slack_rack_php">Cloud9</a></li>
+        <li><a href="http://syonet.work:8080/ide.html">SyoNet環境上のCloud9</a></li>
+        <li><a href="https://syonet.work:1337/">vorlon</a></li>
+        <li><a href="https://github.com/igara/syonet/">SyoNetのソース</a></li>
+        `);
         $scope.hostName = $location.host;
         $scope.onClickedTab = () => {
             ons.findComponent("ons-tabbar").off('postchange');
@@ -33,7 +38,7 @@ interface DockListScope extends ng.IScope {
     homeContent: string;
     commentsContent: string;
     docsContent: string;
-    settingsContent: string;
+    devContent: string;
     hostName: any;
     onClickedTab: any;
 }
