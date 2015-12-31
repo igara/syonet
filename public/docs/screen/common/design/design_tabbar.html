@@ -1,8 +1,8 @@
 <!-- フッター -->
 <ons-tabbar var="tabbar" ng-controller="DockListController">
-    <ons-tab page="{{hostName}}/docs/screen/common/design/navigation/home.html" label="Home" icon="ion-home" active="true"></ons-tab>
-    <ons-tab page="{{hostName}}/docs/screen/common/design/navigation/comments.html" label="Comments" icon="ion-chatbox-working"></ons-tab>
-    <ons-tab page="{{hostName}}/docs/screen/common/design/navigation/docs.html" label="Docs" icon="ion-clipboard"></ons-tab>
-    <ons-tab page="{{hostName}}/docs/screen/common/design/navigation/settings.html" label="Settings" icon="ion-ios-cog"></ons-tab>
+    <ons-tab page="{{hostName}}/docs/screen/common/design/navigation/home.html" label="Home" icon="ion-home" active="true" ng-click="onClickedTab(tabbar);"></ons-tab>
+    <ons-tab page="{{hostName}}/docs/screen/common/design/navigation/comments.html" label="Comments" icon="ion-chatbox-working" ng-click="onClickedTab(tabbar);"></ons-tab>
+    <ons-tab page="{{hostName}}/docs/screen/common/design/navigation/docs.html" label="Docs" icon="ion-clipboard" ng-click="onClickedTab(tabbar);"></ons-tab>
+    <ons-tab page="{{hostName}}/docs/screen/common/design/navigation/settings.html" label="Settings" icon="ion-ios-cog" ng-click="onClickedTab(tabbar);"></ons-tab>
 </ons-tabbar>
 <!-- /フッター -->

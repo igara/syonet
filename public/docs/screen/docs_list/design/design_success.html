@@ -8,31 +8,15 @@
     <script type="text/javascript" src="../../../../js/lib/onsenui/onsenui.min.js"></script>
     <script type="text/javascript" src="../../../../js/lib/onsenui/angular-onsenui.min.js"></script>
     <script type="text/javascript" src="../../../../js/docs/screen/common/controller/docklist_controller.js"></script>
-    <script type="text/javascript" src="../../../../js/lib/angular2/bundles/angular2-polyfills.min.js"></script>
-    <script type="text/javascript" src="../../../../js/lib/systemjs/system.js"></script>
-    <script type="text/javascript" src="../../../../js/lib/rxjs/bundles/Rx.min.js"></script>
-    <script type="text/javascript" src="../../../../js/lib/angular2/bundles/angular2.dev.js"></script>
-    <script>
-        System.config({
-            packages: {        
-                app: {
-                    format: 'register',
-                    defaultExtension: 'js'
-                }
-            }
-        });
-        System.import('../../../../js/docs/screen/common/component/comments_component.js')
-        .then(null, console.error.bind(console));
-    </script>
 </head>
 <body ng-controller="DockListController">
-    <comments_content></comments_content>
     <ons-sliding-menu var="menu"
         menu-page="{{hostName}}/docs/screen/common/design/design_menu.html"
         main-page="{{hostName}}/docs/screen/common/design/design_tabbar.html"
         side="left" type="push" max-slide-distance="200px">
     </ons-sliding-menu>
-
-
+    
+    <!-- todo:ブラウザバックした際に選択したタブの情報を保存する -->
+    <input style="display: none;" type="text" name="saveTabberIndex" id="saveTabberIndex">
 </body>
 </html>
