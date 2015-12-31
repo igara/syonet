@@ -6,7 +6,7 @@
     <script type="text/javascript" src="../js/lib/angular/angular.min.js"></script>
     <script type="text/javascript" src="../js/lib/onsenui/onsenui.min.js"></script>
     <script type="text/javascript" src="../js/lib/onsenui/angular-onsenui.min.js"></script>
-    <script type="text/javascript" src="http://localhost:8000/js/docs/screen/common/controller/docklist_controller.js"></script>
+    <script type="text/javascript" src="../js/docs/screen/common/controller/docklist_controller.js"></script>
 </head>
 <body>
 

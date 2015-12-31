@@ -8,12 +8,7 @@ Homestead.json
 /.setting
 .settings/
 nbproject/
-public/fonts/bootstrap/
 public/css/lib/
 public/js/
-resources/assets/ts/docs/screen/common/tabbar_template.js
-resources/assets/ts/docs/screen/common/component/comments_component.js
-resources/assets/ts/docs/screen/common/controller/home_controller.js
-public/js/docs/screen/common/controller/docklist_controller.js
-resources/assets/ts/docs/screen/common/controller/docklist_controller.js
+*.js
 typings/
