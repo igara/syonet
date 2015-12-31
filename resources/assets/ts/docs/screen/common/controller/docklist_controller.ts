@@ -19,10 +19,10 @@ class DockListController {
         $scope.commentsContent = $sce.trustAsHtml('comments');
         $scope.docsContent = $sce.trustAsHtml('docs');
         $scope.devContent = $sce.trustAsHtml(`
-        <li><a href="https://ide.c9.io/igara/slack_rack_php">Cloud9</a></li>
-        <li><a href="http://syonet.work:8080/ide.html">SyoNet環境上のCloud9</a></li>
-        <li><a href="https://syonet.work:1337/">vorlon</a></li>
-        <li><a href="https://github.com/igara/syonet/">SyoNetのソース</a></li>
+        <li><a href="https://ide.c9.io/igara/slack_rack_php" target="_blank">Cloud9</a></li>
+        <li><a href="http://syonet.work:8080/ide.html" target="_blank">SyoNet環境上のCloud9</a></li>
+        <li><a href="https://syonet.work:1337/" target="_blank">vorlon</a></li>
+        <li><a href="https://github.com/igara/syonet/" target="_blank">SyoNetのソース</a></li>
         `);
         $scope.hostName = $location.host;
         $scope.onClickedTab = () => {
