@@ -11,7 +11,9 @@ class DockListController {
     /**
      * constructor
      * 
-     * @param $scope 
+     * @param $scope DockListScope extends ng.IScope
+     * @param $location DockListLocation extends ng.ILocationService
+     * @param $sce DockListSceProvider extends ng.ISCEService
      */
     constructor(private $scope: DockListScope, private $location: DockListLocation, private $sce: DockListSceProvider) {
         ons.findComponent
@@ -25,8 +27,12 @@ class DockListController {
         <li><a href="https://github.com/igara/syonet/" target="_blank">SyoNetのソース</a></li>
         `);
         $scope.hostName = $location.host;
+
         $scope.onClickedTab = () => {
+            // タブバーの押下後のイベントリスナーを削除
             ons.findComponent("ons-tabbar").off('postchange');
+
+            // タブバーの押下後のイベントリスナーを追加
             ons.findComponent("ons-tabbar").on('postchange', () => {
                 angular.element(document.getElementById("saveTabberIndex")).val(ons.findComponent("ons-tabbar").getActiveTabIndex());
             });
@@ -34,18 +40,38 @@ class DockListController {
     }
 }
 
+/**
+ * スコープのinterface 
+ */
 interface DockListScope extends ng.IScope {
+    // タブバーのhomeのページ内容
     homeContent: string;
+
+    // タブバーのcommentsのページ内容
     commentsContent: string;
+
+    // タブバーのdocsのページ内容
     docsContent: string;
+
+    // タブバーのdevのページ内容
     devContent: string;
+
+    // ホスト名
     hostName: any;
+
+    // タブ押下時のイベント
     onClickedTab: any;
 }
 
+/**
+ * ローケションのサービスのinterface
+ */
 interface DockListLocation extends ng.ILocationService {
 }
 
+/**
+ * SCEサービスのinterface
+ */
 interface DockListSceProvider extends ng.ISCEService {
 }
 
