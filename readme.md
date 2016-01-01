@@ -1,19 +1,17 @@
 ## SlackRackWeb_PHP
 
+「みんなで1つのサイトを自由に作るぞ」計画<br>
+
 チャットルームを入れてみた<br>
 
-[![Join the chat at https://gitter.im/igara/slack_rack_php](https://badges.gitter.im/igara/slack_rack_php.svg)](https://gitter.im/igara/slack_rack_php?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
-プロジェクト名のslack_rack_phpというのは昔slackの過去のコメントを蓄積したものをJSONで返すAPIを作成し、<br>
-その続きでphpで蓄積したコメントを見るphpのプログラムを作ろうとなったが<br>
-アプリの方で作成したのにまた同じようなことを...となっている。<br>
+[![Join the chat at https://gitter.im/igara/syonet](https://badges.gitter.im/igara/syonet.svg)](https://gitter.im/igara/syonet?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 プロジェクト内容についてwikiに記載してます<br>
-https://github.com/igara/slack_rack_php/wiki
+https://github.com/igara/syonet/wiki
 
 
 こまめにissues更新しています。<br>
-https://github.com/igara/slack_rack_php/issues
+https://github.com/igara/syonet/issues
 
 
 
