@@ -3,13 +3,13 @@ language: php
 before_script:
     - cp -p .env.example .env
     - composer install
-	- php artisan key:generate
-	- npm install
-	- ./node_modules/.bin/tsd install
-	- ./node_module/.bin/gulp tsconfig
+    - php artisan key:generate
+    - npm install
+    - ./node_modules/.bin/tsd install
+    - ./node_module/.bin/gulp tsconfig
     - ./node_module/.bin/gulp tsbuild
 
 php:
-  - 5.4
-  - 5.5
-  - 7.0
+    - 5.4
+    - 5.5
+    - 7.0
