@@ -6,8 +6,8 @@ before_script:
     - php artisan key:generate
     - npm install
     - ./node_modules/.bin/tsd install
-    - ./node_module/.bin/gulp tsconfig
-    - ./node_module/.bin/gulp tsbuild
+    - ./node_modules/.bin/gulp tsconfig
+    - ./node_modules/.bin/gulp tsbuild
 
 php:
     - 5.4
