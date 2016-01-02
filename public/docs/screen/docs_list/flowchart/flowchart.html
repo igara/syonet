@@ -26,8 +26,6 @@
         style isController fill:#0f9
         style isAction fill:#0f9
         style isFile fill:#0f9
-        style isFile fill:#0f9
-        style isFormat fill:#0f9
 
         style errorCode fill:#ff0
         style displaySuccess fill:#09f
@@ -39,13 +37,10 @@
         isController-->useController[DocsListControllerを<br/>使用する]
         useController-->isAction{screenActionが<br/>存在するか}
         isAction-->useAction[screenActionを<br/>使用する]
-        useAction-->api[画面一覧APIに接続する]
-        api-->isFile{下記ファイルは存在するか <br/> public/docs/screen/readme.md}
+        useAction-->isFile{下記ファイルは存在するか <br/> public/docs/screen/readme.md}
         
         isFile-->readFile[ファイルの読み込みを行う]
-        readFile-->isFormat{フォーマットが正しいか<br/>## 画面名<br/>* 項目名<br/> * URLなど}
-        isFormat-->jsonStatus(status: Success<br/>list:<br/>  name: screen_name<br/>  screen_url: url<br/>  design_url: url<br/>  flowchart_url: url)
-        jsonStatus-->displaySuccess[画面毎のドキュメントを表示する]
+        readFile-->displaySuccess[画面毎のドキュメントを表示する]
         displaySuccess-->stop[処理終了]
 
         isRouting-->errorCode[404ページを表示する]
@@ -53,12 +48,8 @@
         isAction-->errorCode
         errorCode-->stop
 
-        isFile-->jsonStatusNotFile(status: NotFile<br/>)
-        jsonStatusNotFile-->displayNotFile[画面にファイルが<br/>存在しないことを表示する]
+        isFile-->displayNotFile[画面にファイルが<br/>存在しないことを表示する]
         displayNotFile-->stop
-        isFormat-->jsonStatusNotFormat(status: NotFormat<br/>)
-        jsonStatusNotFormat-->displayNotFormat[画面にファイルのフォーマットが<br/>正しくないことを表示する]
-        displayNotFormat-->stop
 
 </div>
 </body>
