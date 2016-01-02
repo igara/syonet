@@ -39,7 +39,7 @@
         isAction-->useAction[screenActionを<br/>使用する]
         useAction-->isFile{下記ファイルは存在するか <br/> public/docs/screen/readme.md}
         
-        isFile-->readFile[ファイルの読み込みを行う]
+        isFile-->readFile[ファイルの読み込みを非同期で行う]
         readFile-->displaySuccess[画面毎のドキュメントを表示する]
         displaySuccess-->stop[処理終了]
 
