@@ -16,6 +16,11 @@ gulp.task('default', function() {
     gulp.src(mermaidJSPath + '/mermaid.css')
         .pipe(gulp.dest('public/css/lib/mermaid'));
 
+    // markedをpublic下に設置する。
+    var markedPath = 'node_modules/marked';
+    gulp.src(markedPath + '/marked.min.js')
+        .pipe(gulp.dest('public/js/lib/marked'));
+
     // AngularJSをpublic下に設置する。
     var angularJSPath = 'node_modules/angular';
     gulp.src(angularJSPath + '/angular.min.js')
@@ -32,7 +37,7 @@ gulp.task('default', function() {
     var systemJSPath = 'node_modules/systemjs';
     gulp.src(systemJSPath + '/dist/system.js')
         .pipe(gulp.dest('public/js/lib/systemjs/'));
-        
+
     // rxjsをpublic下に設置する。
     var rxjsPath = 'node_modules/rxjs';
     gulp.src(rxjsPath + '/bundles/*.js')
