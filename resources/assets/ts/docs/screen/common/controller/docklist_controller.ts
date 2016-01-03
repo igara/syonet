@@ -1,5 +1,6 @@
 /// <reference path="../../../../../../../typings/angularjs/angular.d.ts" />
 /// <reference path="../../../../../../../typings/onsenui/onsenui.d.ts" />
+/// <reference path="../../../../../../../typings/marked/marked.d.ts" />
 var app = angular.module('app', ['onsen']);
 
 /**
@@ -15,19 +16,13 @@ class DockListController {
      * @param $location DockListLocation extends ng.ILocationService
      * @param $sce DockListSceProvider extends ng.ISCEService
      */
-    constructor(private $scope: DockListScope, private $location: DockListLocation, private $sce: DockListSceProvider) {
-        ons.findComponent
+    constructor(private $scope: DockListScope, private $location: DockListLocationService, private $sce: DockListSceService, private $http: DockListHttpService) {
         $scope.homeContent = $sce.trustAsHtml('home');
         $scope.commentsContent = $sce.trustAsHtml('comments');
-        $scope.docsContent = $sce.trustAsHtml('docs');
-        $scope.devContent = $sce.trustAsHtml(`
-        <li><a href="https://ide.c9.io/igara/slack_rack_php" target="_blank">Cloud9</a></li>
-        <li><a href="http://syonet.work:8080/ide.html" target="_blank">SyoNet環境上のCloud9</a></li>
-        <li><a href="https://syonet.work:1337/" target="_blank">vorlon</a></li>
-        <li><a href="https://github.com/igara/syonet/" target="_blank">SyoNetのソース</a></li>
-        `);
+        $scope.docsContent = $sce.trustAsHtml(`docs`);
+        $scope.devContent = $sce.trustAsHtml(``);
         $scope.hostName = $location.host;
-
+        
         $scope.onClickedTab = () => {
             // タブバーの押下後のイベントリスナーを削除
             ons.findComponent("ons-tabbar").off('postchange');
@@ -37,6 +32,24 @@ class DockListController {
                 angular.element(document.getElementById("saveTabberIndex")).val(ons.findComponent("ons-tabbar").getActiveTabIndex());
             });
         }; 
+        this.getDocsList($http);
+    }
+    
+    getDocsList($http: DockListHttpService) {
+        $http({
+            method: 'GET',
+            url: 'http://localhost:8000/docs/screen/docs_list/design/design_success.html'
+        }).then(function successCallback(response) {
+            // this callback will be called asynchronously
+            // when the response is available
+            alert(response);
+            alert('成功');
+        }, function errorCallback(response) {
+            // called asynchronously if an error occurs
+            // or server returns response with an error status.
+            alert(response);
+            alert('失敗');
+        });
     }
 }
 
@@ -66,13 +79,19 @@ interface DockListScope extends ng.IScope {
 /**
  * ローケションのサービスのinterface
  */
-interface DockListLocation extends ng.ILocationService {
+interface DockListLocationService extends ng.ILocationService {
 }
 
 /**
  * SCEサービスのinterface
  */
-interface DockListSceProvider extends ng.ISCEService {
+interface DockListSceService extends ng.ISCEService {
+}
+
+/**
+ * HTTPサービスのinterface
+ */
+interface DockListHttpService extends ng.IHttpService {
 }
 
 app.controller('DockListController', DockListController);
