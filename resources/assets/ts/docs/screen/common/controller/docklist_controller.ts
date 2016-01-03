@@ -16,12 +16,21 @@ class DockListController {
      * @param $location DockListLocation extends ng.ILocationService
      * @param $sce DockListSceProvider extends ng.ISCEService
      */
-    constructor(private $scope: DockListScope, private $location: DockListLocationService, private $sce: DockListSceService, private $http: DockListHttpService) {
+    constructor(private $scope: DockListScope, private $sce: DockListSceService, private $http: DockListHttpService) {
         $scope.homeContent = $sce.trustAsHtml('home');
         $scope.commentsContent = $sce.trustAsHtml('comments');
-        $scope.docsContent = $sce.trustAsHtml(`docs`);
+
+        $http({
+            method: 'GET',
+            url: '/docs/screen/readme.md'
+        }).then(function successCallback(response) {
+            // markdownの内容をHTMLにパースさせる。
+            $scope.docsContent = $sce.trustAsHtml(marked(String(response.data)));
+        }, function errorCallback(response) {
+            $scope.docsContent = $sce.trustAsHtml('読み込みエラー!/docs/screen/readme.mdが設置されておりません。');
+        });
+
         $scope.devContent = $sce.trustAsHtml(``);
-        $scope.hostName = $location.host;
         
         $scope.onClickedTab = () => {
             // タブバーの押下後のイベントリスナーを削除
@@ -31,25 +40,7 @@ class DockListController {
             ons.findComponent("ons-tabbar").on('postchange', () => {
                 angular.element(document.getElementById("saveTabberIndex")).val(ons.findComponent("ons-tabbar").getActiveTabIndex());
             });
-        }; 
-        this.getDocsList($http);
-    }
-    
-    getDocsList($http: DockListHttpService) {
-        $http({
-            method: 'GET',
-            url: 'http://localhost:8000/docs/screen/docs_list/design/design_success.html'
-        }).then(function successCallback(response) {
-            // this callback will be called asynchronously
-            // when the response is available
-            alert(response);
-            alert('成功');
-        }, function errorCallback(response) {
-            // called asynchronously if an error occurs
-            // or server returns response with an error status.
-            alert(response);
-            alert('失敗');
-        });
+        };
     }
 }
 
@@ -69,17 +60,8 @@ interface DockListScope extends ng.IScope {
     // タブバーのdevのページ内容
     devContent: string;
 
-    // ホスト名
-    hostName: any;
-
     // タブ押下時のイベント
     onClickedTab: any;
-}
-
-/**
- * ローケションのサービスのinterface
- */
-interface DockListLocationService extends ng.ILocationService {
 }
 
 /**
