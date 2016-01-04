@@ -36,7 +36,8 @@
         isController-->useController[HomeControllerを<br/>使用する]
         useController-->isAction{topActionが<br/>存在するか}
         isAction-->useAction[topActionを<br/>使用する]
-        useAction-->readTemplate{下記URLは存在するか <br/> https://***/tabbar/navigation/docs/docs_top <br/> Clickすると別フロー表示される!}
+        useAction-->clickDocs[Docsをタップする]
+        clickDocs-->readTemplate{下記URLは存在するか <br/> https://***/tabbar/navigation/docs/docs_top <br/> Clickすると別フロー表示される!}
         
         click readTemplate "/docs/screen/docs_list/flowchart/flowchart_php_docs.html" "https://***/tabbar/navigation/docs/docs_top のフローを表示"
         
