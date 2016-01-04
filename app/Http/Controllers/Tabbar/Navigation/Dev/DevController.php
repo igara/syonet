@@ -1,24 +1,24 @@
 <?php
 
-namespace App\Http\Controllers\Home;
+namespace App\Http\Controllers\Tabbar\Navigation\Dev;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Auth\Access\Response;
 use App\Settings\PathInfo;
+use Parsedown;
 
-class HomeController extends Controller
+class DevController extends Controller
 {
     /*
     |--------------------------------------------------------------------------
-    | HomeController
+    | DevController
     |--------------------------------------------------------------------------
     |
-    | Homeコントローラ
+    | Devコントローラ
     |
     */
 
     /**
-     * Create a new home controller instance.
+     * Create a new dev controller instance.
      *
      * @return void
      */
@@ -32,11 +32,10 @@ class HomeController extends Controller
     /**
      * topアクション
      *
-     * @return view home/topテンプレート
+     * @return view dev/dev_topテンプレート
      */
     public function topAction()
     {
-    	return view('home/top');
+    	return view('tabbar/navigation/dev/dev_top');
     }
-
 }
