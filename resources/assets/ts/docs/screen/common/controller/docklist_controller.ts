@@ -18,7 +18,7 @@ class DockListController {
      */
     constructor(private $scope: DockListScope, private $sce: DockListSceService, private $http: DockListHttpService) {
         $scope.homeContent = $sce.trustAsHtml('home');
-        $scope.commentsContent = $sce.trustAsHtml('comments');
+        $scope.contentsContent = $sce.trustAsHtml('contents');
 
         $http({
             method: 'GET',
@@ -52,7 +52,7 @@ interface DockListScope extends ng.IScope {
     homeContent: string;
 
     // タブバーのcommentsのページ内容
-    commentsContent: string;
+    contentsContent: string;
 
     // タブバーのdocsのページ内容
     docsContent: string;

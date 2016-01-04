@@ -1,42 +1,42 @@
 <?php
 
-namespace App\Http\Controllers\Chat;
+namespace App\Http\Controllers\Home;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Auth\Access\Response;
 use App\Settings\PathInfo;
 
-class ChatController extends Controller
+class HomeController extends Controller
 {
     /*
     |--------------------------------------------------------------------------
-    | ChatController
+    | HomeController
     |--------------------------------------------------------------------------
     |
-    | チャット機能が実装されているコントローラ
+    | Homeコントローラ
     |
     */
 
     /**
-     * Create a new authentication controller instance.
+     * Create a new home controller instance.
      *
      * @return void
      */
     public function __construct()
     {
-        $pathInfo = new PathInfo();
-        $pathInfo->getNodePath();
+        // $pathInfo = new PathInfo();
+        // $pathInfo->getNodePath();
 
     }
 
     /**
-     * indexを開く画面
+     * topアクション
      *
-     * @return Response
+     * @return view home/topテンプレート
      */
-    public function indexAction()
+    public function topAction()
     {
-    	return view('chat/index');
+    	return view('home/top');
     }
 
 }

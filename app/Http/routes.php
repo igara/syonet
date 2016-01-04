@@ -11,10 +11,5 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/debug/phantomjs', 'Debug\PhantomJSController@indexAction');
-
-Route::get('/chat/', 'Chat\ChatController@indexAction');
+Route::get('/', 'Home\HomeController@topAction');
+Route::get('/debug/phpinfo', 'Debug\ServerAndClientInfoController@phpinfoAction');
