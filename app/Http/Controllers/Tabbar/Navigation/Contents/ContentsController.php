@@ -35,7 +35,7 @@ class ContentsController extends Controller
      * @return view contents/contents_topテンプレート
      */
     public function topAction()
-    {exit();
+    {
     	return view('tabbar/navigation/contents/contents_top');
     }
 }
