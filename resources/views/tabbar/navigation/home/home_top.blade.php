@@ -7,13 +7,13 @@
     <script type="text/javascript" src="/js/lib/angular/angular.min.js"></script>
     <script type="text/javascript" src="/js/lib/onsenui/onsenui.min.js"></script>
     <script type="text/javascript" src="/js/lib/onsenui/angular-onsenui.min.js"></script>
-    <script type="text/javascript" src="/js/docs/screen/common/controller/docklist_controller.js"></script>
+    <script type="text/javascript" src="/js/common/controller/common_controller.js"></script>
     <script type="text/javascript" src="/js/lib/marked/marked.min.js"></script>
 </head>
-<body ng-controller="DockListController">
+<body ng-controller="CommonController">
     <ons-sliding-menu var="menu"
-        menu-page="/docs/screen/common/design/design_menu.html"
-        main-page="/docs/screen/common/design/design_tabbar.html"
+        menu-page="/sidemenu/sidemenu_top"
+        main-page="/tabbar/tabbar_top"
         side="left" type="push" max-slide-distance="200px">
     </ons-sliding-menu>
     

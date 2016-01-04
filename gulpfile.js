@@ -53,7 +53,9 @@ gulp.task('tsbuild', function() {
     /* resources/assets/ts/docs/下に存在する、ビルドで作成されたjsファイルを
        public/js/docs/下にディレクトリ構造ごとコピーする */
     gulp.src('resources/assets/ts/docs/**/*.js')
-        .pipe(gulp.dest('public/js/docs/')); 
+        .pipe(gulp.dest('public/js/docs/'));
+    gulp.src('resources/assets/ts/common/**/*.js')
+        .pipe(gulp.dest('public/js/common/')); 
 });
 
 gulp.task('tsconfig', function() {

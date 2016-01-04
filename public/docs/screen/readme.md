@@ -11,7 +11,10 @@ https://github.com/igara/syonet/tree/master/public/docs/screen
 ## docs_list
 * 対象URL
     * URL：https://syonet.work/ のDocsタブ
-    * URL：https://syonet.work/docs/
+    * Docsタブの中身
+        * URL：https://syonet.work/tabbar/navigation/docs/docs_top
+    * readme.mdをパースした内容
+        * URL：https://syonet.work/tabbar/navigation/docs/screenlist
 * 画面設計
     * URL：https://syonet.work/docs/screen/docs_list/design/design.html
 * 処理設計
