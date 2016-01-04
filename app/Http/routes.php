@@ -12,4 +12,4 @@
 */
 
 Route::get('/', 'Home\HomeController@topAction');
-
+Route::get('/debug/phpinfo', 'Debug\ServerAndClientInfoController@phpinfoAction');
