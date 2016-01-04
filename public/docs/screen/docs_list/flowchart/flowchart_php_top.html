@@ -25,22 +25,23 @@
         style isRouting fill:#0f9
         style isController fill:#0f9
         style isAction fill:#0f9
-        style isFile fill:#0f9
+        style readTemplate fill:#0f9
 
         style errorCode fill:#ff0
         style displaySuccess fill:#09f
 
-        start[処理開始]-->readUrl[URLを読み込む<br/>https://***/docs/list/]
-        readUrl-->isRouting{Route.phpに<br/>URLのマップがされているか}
-        isRouting-->useRouting[Route.phpを使用する]
-        useRouting-->isController{DocsListControllerが<br/>存在するか}
-        isController-->useController[DocsListControllerを<br/>使用する]
-        useController-->isAction{screenActionが<br/>存在するか}
-        isAction-->useAction[screenActionを<br/>使用する]
-        useAction-->isFile{下記ファイルは存在するか <br/> public/docs/screen/readme.md}
+        start[処理開始]-->readUrl[URLを読み込む<br/>https://***/]
+        readUrl-->isRouting{routes.phpに<br/>URLのマップがされているか}
+        isRouting-->isController{HomeControllerが<br/>存在するか}
+        isController-->useController[HomeControllerを<br/>使用する]
+        useController-->isAction{topActionが<br/>存在するか}
+        isAction-->useAction[topActionを<br/>使用する]
+        useAction-->readTemplate{下記URLは存在するか <br/> https://***/docs <br/> Click!}
         
-        isFile-->readFile[ファイルの読み込みを非同期で行う]
-        readFile-->displaySuccess[画面毎のドキュメントを表示する]
+        click readTemplate "/docs/screen/docs_list/flowchart/flowchart_php_docs.html" "https://***/docs のフローを表示"
+        
+        readTemplate-->readHTML[HTMLとして読みこむ]
+        readHTML-->displaySuccess[画面毎のドキュメントを表示する]
         displaySuccess-->stop[処理終了]
 
         isRouting-->errorCode[404ページを表示する]
@@ -48,7 +49,7 @@
         isAction-->errorCode
         errorCode-->stop
 
-        isFile-->displayNotFile[画面にファイルが<br/>存在しないことを表示する]
+        readTemplate-->displayNotFile[画面に<br/>読み込み失敗したことを表示する]
         displayNotFile-->stop
 
 </div>

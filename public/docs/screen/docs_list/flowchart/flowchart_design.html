@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>docs_list</title>
+    <link href="/css/lib/mermaid/mermaid.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="/js/lib/mermaid/mermaid.js"></script>
+    <script>
+        var config = {
+            startOnLoad:true,
+            flowchart:{
+                    useMaxWidth:false,
+                    htmlLabels:true
+            }
+        };
+        mermaid.initialize(config);
+    </script>
+</head>
+<body>
+
+<div class="mermaid">
+    graph TD
+        style start fill:#f9f
+        style stop fill:#f9f
+
+        style isFile fill:#0f9
+
+        style errorCode fill:#ff0
+        style displaySuccess fill:#09f
+
+        start[処理開始]-->readUrl[URLを読み込む<br/>https://***/docs/screen/docs_list/design/design.html]
+        readUrl-->isHtml{HTMLとして存在するか}
+        isHtml-->isFile{下記ファイルは存在するか <br/> public/docs/screen/readme.md}
+        
+        isFile-->readFile[ファイルの読み込みを非同期で行う]
+        readFile-->displaySuccess[画面毎のドキュメントを表示する]
+        displaySuccess-->stop[処理終了]
+
+        isHtml-->errorCode[404ページを表示する]
+        errorCode-->stop
+
+        isFile-->displayNotFile[画面にファイルが<br/>存在しないことを表示する]
+        displayNotFile-->stop
+
+</div>
+</body>
+</html>

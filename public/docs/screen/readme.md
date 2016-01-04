@@ -11,8 +11,10 @@ https://github.com/igara/syonet/tree/master/public/docs/screen
 ## docs_list
 * 対象URL
     * URL：https://syonet.work/ のDocsタブ
-    * URL：https://syonet.work/docs/list/
+    * URL：https://syonet.work/docs/
 * 画面設計
     * URL：https://syonet.work/docs/screen/docs_list/design/design.html
 * 処理設計
-    * URL：https://syonet.work/docs/screen/docs_list/flowchart/flowchart.html
+    * URL：https://syonet.work/docs/screen/docs_list/flowchart/flowchart_php_top.html
+    * URL：https://syonet.work/docs/screen/docs_list/flowchart/flowchart_php_docs.html
+    * URL：https://syonet.work/docs/screen/docs_list/flowchart/flowchart_design.html
