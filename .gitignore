@@ -11,6 +11,7 @@ nbproject/
 public/css/lib/
 public/js/
 *.js
+*.map
 !tests/test.js
 !protractorconf.js
 typings/
