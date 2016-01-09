@@ -16,7 +16,4 @@
 	<li><a href="https://syonet.work:1337/" target="_blank">vorlon</a></li>
 	<li><a href="/debug/phpinfo" target="_blank">phpinfo</a></li>
 	<li><a href="https://github.com/igara/syonet/" target="_blank">SyoNetのソース</a></li>
-	<div ng-bind-html="devContent">
-		@{{devContent}}
-	</div>
 </ons-page>

@@ -4,20 +4,38 @@ https://github.com/igara/syonet/tree/master/public/docs/screen
 
 画面のドキュメントはdocs/screen/にディレクトリを切って設置を行う
 
-## Top
-* URL
-    * 本番：https://syonet.work/
+## タブ構成
+画面下に表示されているタブについて下記の構成になる
+* [Home](#Home)
+    * 表示するものについて未定
+* [Contents](#Contents)
+    * 表示するものについて未定
+* [Docs](#Docs)
+    * ドキュメントの表示を行う
+        * [サイト画面一覧画面](#SiteScreenList)
+* [Dev](#Dev)
+    * 開発ツールなど
 
-## docs_list
-* 対象URL
-    * URL：https://syonet.work/ のDocsタブ
-    * Docsタブの中身
-        * URL：https://syonet.work/tabbar/navigation/docs/docs_top
-    * readme.mdをパースした内容
-        * URL：https://syonet.work/tabbar/navigation/docs/screenlist
+TODO:タブ構成についてフローチャート化すること
+
+## <a name ="Home">Home</a>
+* 未定
+    * URL：https://syonet.work/ のHomeタブ
+    
+## <a name ="Contents">Contents</a>
+* 未定
+    * URL：https://syonet.work/ のContentタブ
+
+## <a name ="Docs">Docs</a>
+### <a name ="SiteScreenList">サイト画面一覧画面</a>
+* URL：https://syonet.work/ のDocsタブ
 * 画面設計
     * URL：https://syonet.work/docs/screen/docs_list/design/design.html
 * 処理設計
     * URL：https://syonet.work/docs/screen/docs_list/flowchart/flowchart_php_top.html
     * URL：https://syonet.work/docs/screen/docs_list/flowchart/flowchart_php_docs.html
     * URL：https://syonet.work/docs/screen/docs_list/flowchart/flowchart_design.html
+
+## <a name ="Dev">Dev</a>
+* 未定
+    * URL：https://syonet.work/ のDevタブ
