@@ -14,6 +14,7 @@
 Route::get('/', 'Tabbar\Navigation\Home\HomeController@topAction');
 
 Route::get('/tabbar/navigation/contents/contents_top', 'Tabbar\Navigation\Contents\ContentsController@topAction');
+Route::get('/tabbar/navigation/contents/contents_chat', 'Tabbar\Navigation\Contents\ContentsController@chatAction');
 
 
 Route::get('/tabbar/navigation/docs/docs_top', 'Tabbar\Navigation\Docs\DocsController@topAction');

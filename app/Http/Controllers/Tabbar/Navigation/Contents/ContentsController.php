@@ -38,4 +38,14 @@ class ContentsController extends Controller
     {
     	return view('tabbar/navigation/contents/contents_top');
     }
+
+    /**
+     * chatアクション
+     *
+     * @return view contents/contents_topテンプレート
+     */
+    public function chatAction()
+    {
+    	return view('tabbar/navigation/contents/contents_chat');
+    }
 }
