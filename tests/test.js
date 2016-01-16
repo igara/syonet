@@ -1,9 +1,18 @@
-describe('[docs] dock_list画面', function() {
-  it('タイトルがdock_list!', function() {
-    browser.get('http://localhost:8000/docs/screen/docs_list/design/design_success.html');
-
-    expect(browser.getTitle()).toEqual('docs_list');
-    // ここでストップ
-    browser.pause(); 
-  });
+"use strict";
+if (typeof require == "function" && typeof module == "object") {
+    var assert = require('power-assert');
+}
+function sum(ary){
+    return ary.reduce(function (prev, current) {
+        return prev + current;
+    }, 0);
+}
+describe('Array', function () {
+    var ary = [1, 2, 3];
+    describe('#indexOf()', function () {
+        it('should return index when the value is present', function () {
+            var expected = 1 + 2 + 30;
+            assert(sum(ary) === expected);
+        });
+    });
 });

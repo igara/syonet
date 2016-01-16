@@ -3,39 +3,34 @@
 namespace App\Http\Controllers\Tabbar;
 
 use App\Http\Controllers\Controller;
-use App\Settings\PathInfo;
+use Illuminate\Http\Request;
+use App\Http\Services\Tabbar\TabbarService;
 
-class TabbarController extends Controller
-{
-    /*
-    |--------------------------------------------------------------------------
-    | TabbarController
-    |--------------------------------------------------------------------------
-    |
-    | Tabbarコントローラ
-    |
-    */
+/**
+ * TabbarController
+ * 
+ * ページの下に表示しているタブバーを扱う
+ */
+class TabbarController extends Controller {
 
     /**
      * Create a new tabbar controller instance.
      *
      * @return void
      */
-    public function __construct()
-    {
-        // $pathInfo = new PathInfo();
-        // $pathInfo->getNodePath();
-
+    public function __construct() {
+        
     }
 
     /**
-     * topアクション
+     * tabbarアクション
      *
-     * @return view tabbar/tabbar_topテンプレート
+     * @return view tabbar/tabbarテンプレート
      */
-    public function topAction()
-    {
-    	return view('tabbar/tabbar_top');
+    public function tabbarAction(Request $request) {
+        $tabbarInfo = (new TabbarService())->getTabbarInfo($request);
+        $tabbarStatus = $request['tabbarstatus'];
+        return view('tabbar/tabbar', compact('tabbarInfo', 'tabbarStatus'));
     }
 
 }

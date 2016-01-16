@@ -22,12 +22,12 @@ class DockListController {
 
         $http({
             method: 'GET',
-            url: '/docs/screen/readme.md'
+            url: '/documents/screen/readme.md'
         }).then(function successCallback(response) {
             // markdownの内容をHTMLにパースさせる。
             $scope.docsContent = $sce.trustAsHtml(marked(String(response.data)));
         }, function errorCallback(response) {
-            $scope.docsContent = $sce.trustAsHtml('読み込みエラー!/docs/screen/readme.mdが設置されておりません。');
+            $scope.docsContent = $sce.trustAsHtml('読み込みエラー!/documents/screen/readme.mdが設置されておりません。');
         });
 
         $scope.devContent = $sce.trustAsHtml(``);

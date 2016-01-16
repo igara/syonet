@@ -11,5 +11,7 @@
 </ons-toolbar>
 <!-- /ヘッダー -->
 <ons-page>
-    {!! $parseMarkdown !!}
+    <div ng-bind-html="homeContent">
+        {{homeContent}}
+    </div>
 </ons-page>

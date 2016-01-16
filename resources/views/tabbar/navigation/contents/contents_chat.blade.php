@@ -11,7 +11,6 @@
 </ons-toolbar>
 <!-- /ヘッダー -->
 <ons-page>
-	<div ng-bind-html="homeContent">
-		{{homeContent}}
-	</div>
+	<iframe src="https://syonet.work/syochat/index.html" style="width: 100%;height: 50%;"></iframe>
+	<iframe src="https://syonet.work/syochat/index2.html" style="width: 100%;height: 50%;"></iframe>
 </ons-page>

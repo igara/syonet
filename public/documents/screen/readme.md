@@ -1,6 +1,6 @@
 # 画面のドキュメント
 このmdファイルにURLと画面を記載<br>
-https://github.com/igara/syonet/tree/master/public/docs/screen
+https://github.com/igara/syonet/tree/master/public/documents/screen
 
 画面のドキュメントはdocs/screen/にディレクトリを切って設置を行う
 
@@ -30,11 +30,11 @@ TODO:タブ構成についてフローチャート化すること
 ### <a name ="SiteScreenList">サイト画面一覧画面</a>
 * URL：https://syonet.work/ のDocsタブ
 * 画面設計
-    * URL：https://syonet.work/docs/screen/docs_list/design/design.html
+    * URL：https://syonet.work/documents/screen/docs_list/design/design.html
 * 処理設計
-    * URL：https://syonet.work/docs/screen/docs_list/flowchart/flowchart_php_top.html
-    * URL：https://syonet.work/docs/screen/docs_list/flowchart/flowchart_php_docs.html
-    * URL：https://syonet.work/docs/screen/docs_list/flowchart/flowchart_design.html
+    * URL：https://syonet.work/documents/screen/docs_list/flowchart/flowchart_php_top.html
+    * URL：https://syonet.work/documents/screen/docs_list/flowchart/flowchart_php_docs.html
+    * URL：https://syonet.work/documents/screen/docs_list/flowchart/flowchart_design.html
 
 ## <a name ="Dev">Dev</a>
 * 未定

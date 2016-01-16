@@ -3,27 +3,21 @@
 namespace App\Http\Controllers\Debug;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
-class ServerAndClientInfoController extends Controller
-{
-    /*
-    |--------------------------------------------------------------------------
-    | ServerAndClientInfoController
-    |--------------------------------------------------------------------------
-    |
-    | このコントローラーはクライアントとサーバの情報を扱う
-    |
-    */
+/**
+ * ServerAndClientInfoController
+ * 
+ * このコントローラーはクライアントとサーバの情報を扱う
+ */
+class ServerAndClientInfoController extends Controller {
 
     /**
      * Create a new ServerAndClientInfo controller instance.
      *
      * @return void
      */
-    public function __construct()
-    {
-
+    public function __construct() {
+        
     }
 
     /**
@@ -31,8 +25,8 @@ class ServerAndClientInfoController extends Controller
      *
      * @return view debug/phpinfoテンプレート
      */
-    public function phpinfoAction()
-    {
-    	return view('debug/phpinfo');
+    public function phpinfoAction() {
+        return view('debug/phpinfo');
     }
+
 }

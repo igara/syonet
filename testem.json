@@ -1,0 +1,11 @@
+{
+  "framework": "mocha",
+  "before_tests": "./node_modules/.bin/gulp",
+  "src_files": [
+	"./test/*.js"
+  ],
+  "serve_files": [
+        "./node_modules/power-assert/build/power-assert.js",
+        "./powered-test/*.js"
+  ]
+}
