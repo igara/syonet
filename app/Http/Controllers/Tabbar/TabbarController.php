@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Tabbar;
 
 use App\Http\Controllers\Controller;
-use App\Settings\PathInfo;
 
 class TabbarController extends Controller
 {
