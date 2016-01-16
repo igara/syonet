@@ -14,7 +14,7 @@ class PathInfo {
      */
     public function getRootUrlInfo() {
         return [
-            'TOP_SCREEN' => [
+            'ROOT_TOP' => [
                 'URL' => '/'
             ]
         ];
@@ -53,8 +53,8 @@ class PathInfo {
      */
     public function getHomeTabUrlInfo() {
         return [
-            'TOP_SCREEN' => [
-                'URL' => '/'
+            'TABBAR_HOME_TOP' => [
+                'URL' => '/tabbar/navigation/home/home_top'
             ]
         ];
     }

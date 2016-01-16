@@ -22,6 +22,7 @@ $rootUrlInfo = $pathInfo->getRootUrlInfo();
 // tabbarのurl情報
 $tabbarUrlInfo = $pathInfo->getTabbarUrlInfo();
 
+// sidemenuのurl情報
 $sidemenuUrlInfo = $pathInfo->getSideMenuUrlInfo();
 
 // homeタブのurl情報
@@ -36,14 +37,17 @@ $docsTabUrlInfo = $pathInfo->getDocsTabUrlInfo();
 // devタブのurl情報
 $devTabUrlInfo = $pathInfo->getDevTabUrlInfo();
 
-
-Route::get($rootUrlInfo['TOP_SCREEN']['URL'], 'Tabbar\Navigation\Home\HomeController@topAction');
+// rootページ
+Route::get($rootUrlInfo['ROOT_TOP']['URL'], 'Root\RootController@topAction');
 
 // タブバー
 Route::get($tabbarUrlInfo['TABBAR']['URL'], 'Tabbar\TabbarController@topAction');
 
 // サイドメニュー
 Route::get($sidemenuUrlInfo['SIDEMENU']['URL'], 'SideMenu\SideMenuController@topAction');
+
+// homeタブ
+Route::get($homeTabUrlInfo['TABBAR_HOME_TOP']['URL'], 'Tabbar\Navigation\Home\HomeController@topAction');
 
 // contentsタブ
 Route::get($contentsTabUrlInfo['TABBAR_CONTENTS_TOP']['URL'], 'Tabbar\Navigation\Contents\ContentsController@topAction');
