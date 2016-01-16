@@ -3,29 +3,21 @@
 namespace App\Http\Controllers\SideMenu;
 
 use App\Http\Controllers\Controller;
-use App\Settings\PathInfo;
 
-class SideMenuController extends Controller
-{
-    /*
-    |--------------------------------------------------------------------------
-    | SideMenuController
-    |--------------------------------------------------------------------------
-    |
-    | SideMenuコントローラ
-    |
-    */
+/**
+ * SideMenuController
+ * 
+ * ページを横にスワイプしたときに横から表示されるメニューを扱う
+ */
+class SideMenuController extends Controller {
 
     /**
      * Create a new sidemenu controller instance.
      *
      * @return void
      */
-    public function __construct()
-    {
-        // $pathInfo = new PathInfo();
-        // $pathInfo->getNodePath();
-
+    public function __construct() {
+        
     }
 
     /**
@@ -33,9 +25,8 @@ class SideMenuController extends Controller
      *
      * @return view sidemenu/sidemenu_topテンプレート
      */
-    public function topAction()
-    {
-    	return view('sidemenu/sidemenu_top');
+    public function topAction() {
+        return view('sidemenu/sidemenu_top');
     }
 
 }
