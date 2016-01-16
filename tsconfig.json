@@ -12,5 +12,10 @@
         "suppressImplicitAnyIndexErrors": true,
         "sourceMap": false,
         "target": "ES5"
-    }
+    },
+    "files": [
+        "resources/assets/ts/common/controller/common_controller.ts",
+        "resources/assets/ts/docs/screen/common/component/comments_component.ts",
+        "resources/assets/ts/docs/screen/common/controller/docklist_controller.ts"
+    ]
 }
