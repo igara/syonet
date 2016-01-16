@@ -38,27 +38,31 @@ $docsTabUrlInfo = $pathInfo->getDocsTabUrlInfo();
 $devTabUrlInfo = $pathInfo->getDevTabUrlInfo();
 
 // rootページ
-Route::get($rootUrlInfo['ROOT_TOP']['URL'], 'Root\RootController@topAction');
+Route::get($rootUrlInfo['TOP']['URL'], 'Root\RootController@topAction');
+Route::get($rootUrlInfo['HOME']['URL'], 'Root\RootController@homeAction');
+Route::get($rootUrlInfo['CONTENTS']['URL'], 'Root\RootController@contentsAction');
+Route::get($rootUrlInfo['DOCS']['URL'], 'Root\RootController@docsAction');
+Route::get($rootUrlInfo['DEV']['URL'], 'Root\RootController@devAction');
 
 // タブバー
-Route::get($tabbarUrlInfo['TABBAR']['URL'], 'Tabbar\TabbarController@topAction');
+Route::get($tabbarUrlInfo['TABBAR']['URL'], 'Tabbar\TabbarController@tabbarAction');
 
 // サイドメニュー
 Route::get($sidemenuUrlInfo['SIDEMENU']['URL'], 'SideMenu\SideMenuController@topAction');
 
 // homeタブ
-Route::get($homeTabUrlInfo['TABBAR_HOME_TOP']['URL'], 'Tabbar\Navigation\Home\HomeController@topAction');
+Route::get($homeTabUrlInfo['TOP']['URL'], 'Tabbar\Navigation\Home\HomeController@topAction');
 
 // contentsタブ
-Route::get($contentsTabUrlInfo['TABBAR_CONTENTS_TOP']['URL'], 'Tabbar\Navigation\Contents\ContentsController@topAction');
-Route::get($contentsTabUrlInfo['TABBAR_CONTENTS_CHAT']['URL'], 'Tabbar\Navigation\Contents\ContentsController@chatAction');
+Route::get($contentsTabUrlInfo['TOP']['URL'], 'Tabbar\Navigation\Contents\ContentsController@topAction');
+Route::get($contentsTabUrlInfo['CHAT']['URL'], 'Tabbar\Navigation\Contents\ContentsController@chatAction');
 
 // docsタブ
-Route::get($docsTabUrlInfo['TABBAR_DOCS_TOP']['URL'], 'Tabbar\Navigation\Docs\DocsController@topAction');
-Route::get($docsTabUrlInfo['TABBAR_DOCS_SCREENLIST']['URL'], 'Tabbar\Navigation\Docs\DocsController@screenListAction');
+Route::get($docsTabUrlInfo['TOP']['URL'], 'Tabbar\Navigation\Docs\DocsController@topAction');
+Route::get($docsTabUrlInfo['SCREENLIST']['URL'], 'Tabbar\Navigation\Docs\DocsController@screenListAction');
 
 // devタブ
-Route::get($devTabUrlInfo['TABBAR_DEV_TOP']['URL'], 'Tabbar\Navigation\Dev\DevController@topAction');
+Route::get($devTabUrlInfo['TOP']['URL'], 'Tabbar\Navigation\Dev\DevController@topAction');
 
 
 Route::get('/debug/phpinfo', 'Debug\ServerAndClientInfoController@phpinfoAction');

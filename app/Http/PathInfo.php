@@ -10,12 +10,24 @@ class PathInfo {
     /**
      * rootページのurl情報を取得する
      * 
-     * @return rootのページのurl情報
+     * @return array rootのページのurl情報
      */
     public function getRootUrlInfo() {
         return [
-            'ROOT_TOP' => [
+            'TOP' => [
                 'URL' => '/'
+            ],
+            'HOME' => [
+                'URL' => '/home'
+            ],
+            'CONTENTS' => [
+                'URL' => '/contents'
+            ],
+            'DOCS' => [
+                'URL' => '/docs'
+            ],
+            'DEV' => [
+                'URL' => '/dev'
             ]
         ];
     }
@@ -23,12 +35,12 @@ class PathInfo {
     /**
      * tabbarのurl情報を取得する
      * 
-     * @return tabbarのurl情報
+     * @return array tabbarのurl情報
      */
     public function getTabbarUrlInfo() {
         return [
             'TABBAR' => [
-                'URL' => '/tabbar/tabbar_top'
+                'URL' => '/tabbar/tabbar'
             ]
         ];
     }
@@ -36,7 +48,7 @@ class PathInfo {
     /**
      * sidemenuのurl情報を取得する
      * 
-     * @return sidemenuのurl情報
+     * @return array sidemenuのurl情報
      */
     public function getSideMenuUrlInfo() {
         return [
@@ -49,11 +61,11 @@ class PathInfo {
     /**
      * homeタブで呼ばれるページのurl情報を取得する
      * 
-     * @return homeタブで呼ばれるページのurl情報
+     * @return array homeタブで呼ばれるページのurl情報
      */
     public function getHomeTabUrlInfo() {
         return [
-            'TABBAR_HOME_TOP' => [
+            'TOP' => [
                 'URL' => '/tabbar/navigation/home/home_top'
             ]
         ];
@@ -62,14 +74,14 @@ class PathInfo {
     /**
      * Contentsタブで呼ばれるページのurl情報を取得する
      * 
-     * @return Contentsタブで呼ばれるページのurl情報
+     * @return array Contentsタブで呼ばれるページのurl情報
      */
     public function getContentsTabUrlInfo() {
         return [
-            'TABBAR_CONTENTS_TOP' => [
+            'TOP' => [
                 'URL' => '/tabbar/navigation/contents/contents_top'
             ],
-            'TABBAR_CONTENTS_CHAT' => [
+            'CHAT' => [
                 'URL' => '/tabbar/navigation/contents/contents_chat'
             ]
         ];
@@ -78,14 +90,14 @@ class PathInfo {
     /**
      * Docsタブで呼ばれるページのurl情報を取得する
      * 
-     * @return Docsタブで呼ばれるページのurl情報
+     * @return array Docsタブで呼ばれるページのurl情報
      */
     public function getDocsTabUrlInfo() {
         return [
-            'TABBAR_DOCS_TOP' => [
+            'TOP' => [
                 'URL' => '/tabbar/navigation/docs/docs_top'
             ],
-            'TABBAR_DOCS_SCREENLIST' => [
+            'SCREENLIST' => [
                 'URL' => '/tabbar/navigation/docs/screenlist'
             ]
         ];
@@ -94,11 +106,11 @@ class PathInfo {
     /**
      * Devタブで呼ばれるページのurl情報を取得する
      * 
-     * @return Devタブで呼ばれるページのurl情報
+     * @return array Devタブで呼ばれるページのurl情報
      */
     public function getDevTabUrlInfo() {
         return [
-            'TABBAR_DEV_TOP' => [
+            'TOP' => [
                 'URL' => '/tabbar/navigation/dev/dev_top'
             ]
         ];

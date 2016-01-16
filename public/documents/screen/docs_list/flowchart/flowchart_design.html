@@ -27,9 +27,9 @@
         style errorCode fill:#ff0
         style displaySuccess fill:#09f
 
-        start[処理開始]-->readUrl[URLを読み込む<br/>https://***/docs/screen/docs_list/design/design.html]
+        start[処理開始]-->readUrl[URLを読み込む<br/>https://***/documents/screen/docs_list/design/design.html]
         readUrl-->isHtml{HTMLとして存在するか}
-        isHtml-->isFile{下記ファイルは存在するか <br/> public/docs/screen/readme.md}
+        isHtml-->isFile{下記ファイルは存在するか <br/> public/documents/screen/readme.md}
         
         isFile-->readFile[ファイルの読み込みを非同期で行う]
         readFile-->displaySuccess[画面毎のドキュメントを表示する]

@@ -46,7 +46,7 @@ class DocsController extends Controller {
      * 画面のドキュメントを管轄している一覧を取得する
      */
     private function getDocsScreenListHtml() {
-        $readmeFile = file_get_contents('docs/screen/readme.md');
+        $readmeFile = file_get_contents('documents/screen/readme.md');
         return Parsedown::instance()->text($readmeFile);
     }
 
