@@ -16,7 +16,8 @@ https://github.com/igara/syonet/tree/master/public/documents/screen
 * [Dev](#Dev)
     * 開発ツールなど
 
-TODO:タブ構成についてフローチャート化すること
+タブ構成についての概念図<br>
+URL：https://syonet.work/documents/sitearch/sitearch.html
 
 ## <a name ="Home">Home</a>
 * 未定
