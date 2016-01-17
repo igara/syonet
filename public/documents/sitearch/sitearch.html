@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>site_architecture</title>
+    <link href="/css/lib/mermaid/mermaid.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="/js/lib/mermaid/mermaid.js"></script>
+    <script>
+        var config = {
+            startOnLoad:true,
+            flowchart:{
+                    useMaxWidth:false,
+                    htmlLabels:true
+            }
+        };
+        mermaid.initialize(config);
+    </script>
+</head>
+<body>
+
+<div class="mermaid">
+    graph TD
+        style link fill:#0f0
+        
+        style topAction fill:#0f0
+        style homeAction fill:#0f0
+        style contentsAction fill:#0f0
+        style docsAction fill:#0f0
+        style devAction fill:#0f0
+        
+        style tabbarAction fill:#0f0
+        
+        style rootTopTmp fill:#0f0
+        style rootHomeTmp fill:#0f0
+        style rootContentsTmp fill:#0f0
+        style rootDocsTmp fill:#0f0
+        style rootDevTmp fill:#0f0
+        
+        style tabbarTmp fill:#0f0
+        
+        style homeParam fill:#0f0
+        style contentsParam fill:#0f0
+        style docsParam fill:#0f0
+        style devParam fill:#0f0
+        
+        link[この色の箇所はクリックすると<br>ソースを表示する]
+        
+        urlTop[https://***/?***]-->topAction
+        urlHome[https://***/home/?***]-->homeAction
+        urlContents[https://***/contents/?***]-->contentsAction
+        urlDocs[https://***/docs/?***]-->docsAction
+        urlDev[https://***/dev/?***]-->devAction
+
+        click topAction "https://github.com/igara/syonet/blob/master/app/Http/Controllers/Root/RootController.php#L25" "RootControllerのソースを表示"
+        click homeAction "https://github.com/igara/syonet/blob/master/app/Http/Controllers/Root/RootController.php#L43" "RootControllerのソースを表示"
+        click contentsAction "https://github.com/igara/syonet/blob/master/app/Http/Controllers/Root/RootController.php#L61" "RootControllerのソースを表示"
+        click docsAction "https://github.com/igara/syonet/blob/master/app/Http/Controllers/Root/RootController.php#L79" "RootControllerのソースを表示"
+        click devAction "https://github.com/igara/syonet/blob/master/app/Http/Controllers/Root/RootController.php#L97" "RootControllerのソースを表示"
+        
+        subgraph RootController
+            topAction-->addHomeParam[tabbarStutasがhome]
+            homeAction-->addHomeParam
+            addHomeParam-->rootTopTmp[root_top.blade.phpを<br>読み込む]
+            addHomeParam-->rootHomeTmp[root_home.blade.phpを<br>読み込む]
+
+            contentsAction-->addContentsParam[tabbarStutasがcontents]
+            addContentsParam-->rootContentsTmp[root_contents.blade.phpを<br>読み込む]
+
+            docsAction-->addDocsParam[tabbarStutasがdocs]
+            addDocsParam-->rootDocsTmp[root_docs.blade.phpを<br>読み込む]
+
+            devAction-->addDevParam[tabbarStutasがdev]
+            addDevParam-->rootDevTmp[root_dev.blade.phpを<br>読み込む]
+        end
+        click rootTopTmp "https://github.com/igara/syonet/blob/master/resources/views/root/root_top.blade.php" "root_top.blade.phpのソースを表示"
+        click rootHomeTmp "https://github.com/igara/syonet/blob/master/resources/views/root/root_top.blade.php" "root_home.blade.phpのソースを表示"
+        click rootContentsTmp "https://github.com/igara/syonet/blob/master/resources/views/root/root_contents.blade.php" "root_contents.blade.phpのソースを表示"
+        click rootDocsTmp "https://github.com/igara/syonet/blob/master/resources/views/root/root_docs.blade.php" "root_docs.blade.phpのソースを表示"
+        click rootDevTmp "https://github.com/igara/syonet/blob/master/resources/views/root/root_dev.blade.php" "root_dev.blade.phpのソースを表示"
+
+        subgraph TabbarController
+            rootTopTmp-->tabbarAction
+            rootHomeTmp-->tabbarAction
+            rootContentsTmp-->tabbarAction
+            rootDocsTmp-->tabbarAction
+            rootDevTmp-->tabbarAction
+                        click tabbarAction "https://github.com/igara/syonet/blob/master/app/Http/Controllers/Tabbar/TabbarController.php" "TabbarController.phpのソースを表示"
+
+            tabbarAction-->tabbarTmp[tabbar.blade.phpを読み込む]
+            click tabbarTmp "https://github.com/igara/syonet/blob/master/resources/views/tabbar/tabbar.blade.php" "tabbar.blade.phpのソースを表示"
+
+            tabbarTmp-->tabbarStutasHome[tabbarStutasがhome<br>homeタブが初回表示時選択される]
+            tabbarTmp-->tabbarStutasContents[tabbarStutasがcontents<br>contentsタブが初回表示時選択される]
+            tabbarTmp-->tabbarStutasDocs[tabbarStutasがdocs<br>docsタブが初回表示時選択される]
+            tabbarTmp-->tabbarStutasDev[tabbarStutasがdev<br>devタブが初回表示時選択される]
+
+            tabbarStutasHome-->homeParam[https://***/?home=***<br>homeのパラメータがPathInfo.phpに<br>記載なければその画面を表示する<br><br>なければそのタブのTOPを表示]
+            tabbarStutasContents-->homeParam
+            tabbarStutasDocs-->homeParam
+            tabbarStutasDev-->homeParam
+
+            tabbarStutasHome-->contentsParam[https://***/?contents=***<br>contentsのパラメータがPathInfo.phpに<br>記載なければその画面を表示する<br><br>なければそのタブのTOPを表示]
+            tabbarStutasContents-->contentsParam
+            tabbarStutasDocs-->contentsParam
+            tabbarStutasDev-->contentsParam
+
+            tabbarStutasHome-->docsParam[https://***/?docs=***<br>docsのパラメータがPathInfo.phpに<br>記載なければその画面を表示する<br><br>なければそのタブのTOPを表示]
+            tabbarStutasContents-->docsParam
+            tabbarStutasDocs-->docsParam
+            tabbarStutasDev-->docsParam
+
+            tabbarStutasHome-->devParam[https://***/?dev=***<br>devのパラメータがPathInfo.phpに<br>記載なければその画面を表示する<br><br>なければそのタブのTOPを表示]
+            tabbarStutasContents-->devParam
+            tabbarStutasDocs-->devParam
+            tabbarStutasDev-->devParam
+
+            subgraph Tabbarの中身
+                homeParam
+                click homeParam "https://github.com/igara/syonet/blob/master/app/Http/PathInfo.php#L61" "PathInfo.phpを開く"
+                contentsParam
+                click contentsParam "https://github.com/igara/syonet/blob/master/app/Http/PathInfo.php#L74" "PathInfo.phpを開く"
+                docsParam
+                click docsParam "https://github.com/igara/syonet/blob/master/app/Http/PathInfo.php#L90" "PathInfo.phpを開く"
+                devParam
+                click devParam "https://github.com/igara/syonet/blob/master/app/Http/PathInfo.php#L106" "PathInfo.phpを開く"
+            end
+        end
+
+</div>
+</body>
+</html>
