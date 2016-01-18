@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="app">
+<html lang="ja" ng-app="app">
 <head>
-    <title>SyoNet!</title>	
+    <title>SyoNet!</title>
+    <meta charset="UTF-8">
     <meta name="description" content="Web・Networkなどの技術サイトです。">
     <link href="/css/lib/onsenui/onsenui.css" rel="stylesheet" type="text/css">
     <link href="/css/lib/onsenui/onsen-css-components-blue-basic-theme.css" rel="stylesheet" type="text/css">
