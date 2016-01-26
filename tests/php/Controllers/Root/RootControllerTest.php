@@ -20,7 +20,11 @@ class RootControllerTest extends TestCase
         // Viewオブジェクトにアサインされている情報を取得する。
         $getAssignData = $topAction->getData();
         // 失敗時はエラーメッセージが表示される
-        $this->assertArrayHasKey('tabbarParams', $getAssignData, 'error:アサイン情報としてtabbarParamsが存在しない');
+        $this->assertArrayHasKey(
+            'tabbarParams',
+            $getAssignData,
+            'error:アサイン情報としてtabbarParamsが存在しない'
+        );
     }
 
     /**
@@ -35,7 +39,11 @@ class RootControllerTest extends TestCase
         // Viewオブジェクトにアサインされている情報を取得する。
         $getAssignData = $topAction->getData();
         // 失敗時はエラーメッセージが表示される
-        $this->assertArrayHasKey('home', $getAssignData['tabbarParams'], 'error:アサイン情報としてtabbarParamsにhomeが存在しない');
+        $this->assertArrayHasKey(
+            'home',
+            $getAssignData['tabbarParams'],
+            'error:アサイン情報としてtabbarParamsにhomeが存在しない'
+        );
     }
 
     /**
@@ -50,7 +58,11 @@ class RootControllerTest extends TestCase
         // Viewオブジェクトにアサインされている情報を取得する。
         $getAssignData = $topAction->getData();
         // 失敗時はエラーメッセージが表示される
-        $this->assertArrayHasKey('contents', $getAssignData['tabbarParams'], 'error:アサイン情報としてtabbarParamsにcontentsが存在しない');
+        $this->assertArrayHasKey(
+            'contents',
+            $getAssignData['tabbarParams'],
+            'error:アサイン情報としてtabbarParamsにcontentsが存在しない'
+        );
     }
 
     /**
@@ -65,7 +77,11 @@ class RootControllerTest extends TestCase
         // Viewオブジェクトにアサインされている情報を取得する。
         $getAssignData = $topAction->getData();
         // 失敗時はエラーメッセージが表示される
-        $this->assertArrayHasKey('docs', $getAssignData['tabbarParams'], 'error:アサイン情報としてtabbarParamsにdocsが存在しない');
+        $this->assertArrayHasKey(
+            'docs',
+            $getAssignData['tabbarParams'],
+            'error:アサイン情報としてtabbarParamsにdocsが存在しない'
+        );
     }
 
     /**
@@ -80,7 +96,11 @@ class RootControllerTest extends TestCase
         // Viewオブジェクトにアサインされている情報を取得する。
         $getAssignData = $topAction->getData();
         // 失敗時はエラーメッセージが表示される
-        $this->assertArrayHasKey('dev', $getAssignData['tabbarParams'], 'error:アサイン情報としてtabbarParamsにdevが存在しない');
+        $this->assertArrayHasKey(
+            'dev',
+            $getAssignData['tabbarParams'],
+            'error:アサイン情報としてtabbarParamsにdevが存在しない'
+        );
     }
 
     /**
@@ -95,7 +115,10 @@ class RootControllerTest extends TestCase
         // Viewオブジェクトにアサインされている情報を取得する。
         $getAssignData = $topAction->getData();
         // 失敗時はエラーメッセージが表示される
-        $this->assertNull($getAssignData['tabbarParams']['home'], 'error:リクエストがない場合にtabbarParamsのhomeがnullになっていない');
+        $this->assertNull(
+            $getAssignData['tabbarParams']['home'],
+            'error:リクエストがない場合にtabbarParamsのhomeがnullになっていない'
+        );
     }
 
     /**
@@ -110,7 +133,10 @@ class RootControllerTest extends TestCase
         // Viewオブジェクトにアサインされている情報を取得する。
         $getAssignData = $topAction->getData();
         // 失敗時はエラーメッセージが表示される
-        $this->assertNull($getAssignData['tabbarParams']['contents'], 'error:リクエストがない場合にtabbarParamsのcontentsがnullになっていない');
+        $this->assertNull(
+            $getAssignData['tabbarParams']['contents'],
+            'error:リクエストがない場合にtabbarParamsのcontentsがnullになっていない'
+        );
     }
 
     /**
@@ -125,7 +151,10 @@ class RootControllerTest extends TestCase
         // Viewオブジェクトにアサインされている情報を取得する。
         $getAssignData = $topAction->getData();
         // 失敗時はエラーメッセージが表示される
-        $this->assertNull($getAssignData['tabbarParams']['docs'], 'error:リクエストがない場合にtabbarParamsのdocsがnullになっていない');
+        $this->assertNull(
+            $getAssignData['tabbarParams']['docs'],
+            'error:リクエストがない場合にtabbarParamsのdocsがnullになっていない'
+        );
     }
 
     /**
@@ -140,7 +169,10 @@ class RootControllerTest extends TestCase
         // Viewオブジェクトにアサインされている情報を取得する。
         $getAssignData = $topAction->getData();
         // 失敗時はエラーメッセージが表示される
-        $this->assertNull($getAssignData['tabbarParams']['dev'], 'error:リクエストがない場合にtabbarParamsのdevがnullになっていない');
+        $this->assertNull(
+            $getAssignData['tabbarParams']['dev'],
+            'error:リクエストがない場合にtabbarParamsのdevがnullになっていない'
+        );
     }
 
     /**
@@ -155,7 +187,11 @@ class RootControllerTest extends TestCase
         // Viewオブジェクトにアサインされている情報を取得する。
         $getAssignData = $topAction->getData();
         // 失敗時はエラーメッセージが表示される
-        $this->assertEquals($getAssignData['tabbarParams']['home'], 'top', 'error:home=topのリクエストのとき場合にtabbarParamsのhomeがtopになっていない');
+        $this->assertEquals(
+            $getAssignData['tabbarParams']['home'],
+            'top',
+            'error:home=topのリクエストのとき場合にtabbarParamsのhomeがtopになっていない'
+        );
     }
 
     /**
@@ -170,7 +206,11 @@ class RootControllerTest extends TestCase
         // Viewオブジェクトにアサインされている情報を取得する。
         $getAssignData = $topAction->getData();
         // 失敗時はエラーメッセージが表示される
-        $this->assertEquals($getAssignData['tabbarParams']['home'], 'hogefuga', 'error:home=topのリクエストのとき場合にtabbarParamsのhomeがtopになっていない');
+        $this->assertEquals(
+            $getAssignData['tabbarParams']['home'],
+            'hogefuga',
+            'error:home=topのリクエストのとき場合にtabbarParamsのhomeがtopになっていない'
+        );
     }
 
     /**
@@ -185,7 +225,11 @@ class RootControllerTest extends TestCase
         // Viewオブジェクトにアサインされている情報を取得する。
         $getAssignData = $topAction->getData();
         // 失敗時はエラーメッセージが表示される
-        $this->assertArrayHasKey('tabbarStatus', $getAssignData, 'error:アサイン情報としてtabbarStatusが存在しない');
+        $this->assertArrayHasKey(
+            'tabbarStatus',
+            $getAssignData,
+            'error:アサイン情報としてtabbarStatusが存在しない'
+        );
     }
 
     /**
@@ -200,6 +244,10 @@ class RootControllerTest extends TestCase
         // Viewオブジェクトにアサインされている情報を取得する。
         $getAssignData = $topAction->getData();
         // 失敗時はエラーメッセージが表示される
-        $this->assertEquals($getAssignData['tabbarStatus'], 'home', 'error:アサイン情報としてtabbarStatusはhomeではない');
+        $this->assertEquals(
+            $getAssignData['tabbarStatus'],
+            'home',
+            'error:アサイン情報としてtabbarStatusはhomeではない'
+        );
     }
 }
