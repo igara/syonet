@@ -63,6 +63,3 @@ Route::get($docsTabUrlInfo['SCREENLIST']['URL'], 'Tabbar\Navigation\Docs\DocsCon
 
 // devタブ
 Route::get($devTabUrlInfo['TOP']['URL'], 'Tabbar\Navigation\Dev\DevController@topAction');
-
-
-Route::get('/debug/phpinfo', 'Debug\ServerAndClientInfoController@phpinfoAction');
