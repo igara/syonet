@@ -211,7 +211,121 @@ class RootControllerTest extends TestCase
         $this->assertEquals(
             $getAssignData['tabbarParams']['home'],
             'hogefuga',
-            'error:home=topのリクエストのとき場合にtabbarParamsのhomeがtopになっていない'
+            'error:home=hogefugaのリクエストのとき場合にtabbarParamsのhomeがhogefugaになっていない'
+        );
+    }
+
+    /**
+     * topActionでcontents=topというリクエストがあった場合、
+     * アサイン情報のtabbarParamsの中のcontentsがtopになることを確認.
+     */
+    public function testTopActionIsContentsParamEqualTop()
+    {
+        $rootController = new RootController();
+        $request = new Request(['contents' => 'top']);
+        $topAction = $rootController->topAction($request);
+        // Viewオブジェクトにアサインされている情報を取得する。
+        $getAssignData = $topAction->getData();
+        // 失敗時はエラーメッセージが表示される
+        $this->assertEquals(
+            $getAssignData['tabbarParams']['contents'],
+            'top',
+            'error:contents=topのリクエストのとき場合にtabbarParamsのcontentsがtopになっていない'
+        );
+    }
+
+    /**
+     * topActionでcontents=hogefugaというリクエストがあった場合、
+     * アサイン情報のtabbarParamsの中のcontentsがhogefugaになることを確認.
+     */
+    public function testTopActionIsContentsParamEqualHogefuga()
+    {
+        $rootController = new RootController();
+        $request = new Request(['contents' => 'hogefuga']);
+        $topAction = $rootController->topAction($request);
+        // Viewオブジェクトにアサインされている情報を取得する。
+        $getAssignData = $topAction->getData();
+        // 失敗時はエラーメッセージが表示される
+        $this->assertEquals(
+            $getAssignData['tabbarParams']['contents'],
+            'hogefuga',
+            'error:contents=hogefugaのリクエストのとき場合にtabbarParamsのcontentsがhogefugaになっていない'
+        );
+    }
+
+    /**
+     * topActionでdocs=topというリクエストがあった場合、
+     * アサイン情報のtabbarParamsの中のdocsがtopになることを確認.
+     */
+    public function testTopActionIsDocsParamEqualTop()
+    {
+        $rootController = new RootController();
+        $request = new Request(['docs' => 'top']);
+        $topAction = $rootController->topAction($request);
+        // Viewオブジェクトにアサインされている情報を取得する。
+        $getAssignData = $topAction->getData();
+        // 失敗時はエラーメッセージが表示される
+        $this->assertEquals(
+            $getAssignData['tabbarParams']['docs'],
+            'top',
+            'error:docs=topのリクエストのとき場合にtabbarParamsのdocsがtopになっていない'
+        );
+    }
+
+    /**
+     * topActionでdocs=hogefugaというリクエストがあった場合、
+     * アサイン情報のtabbarParamsの中のdocsがhogefugaになることを確認.
+     */
+    public function testTopActionIsDocsParamEqualHogefuga()
+    {
+        $rootController = new RootController();
+        $request = new Request(['docs' => 'hogefuga']);
+        $topAction = $rootController->topAction($request);
+        // Viewオブジェクトにアサインされている情報を取得する。
+        $getAssignData = $topAction->getData();
+        // 失敗時はエラーメッセージが表示される
+        $this->assertEquals(
+            $getAssignData['tabbarParams']['docs'],
+            'hogefuga',
+            'error:docs=hogefugaのリクエストのとき場合にtabbarParamsのdocsがhogefugaになっていない'
+        );
+    }
+
+    /**
+     * topActionでdev=topというリクエストがあった場合、
+     * アサイン情報のtabbarParamsの中のdevがtopになることを確認.
+     */
+    public function testTopActionIsDevParamEqualTop()
+    {
+        $rootController = new RootController();
+        $request = new Request(['dev' => 'top']);
+        $topAction = $rootController->topAction($request);
+        // Viewオブジェクトにアサインされている情報を取得する。
+        $getAssignData = $topAction->getData();
+        // 失敗時はエラーメッセージが表示される
+        $this->assertEquals(
+            $getAssignData['tabbarParams']['dev'],
+            'top',
+            'error:dev=topのリクエストのとき場合にtabbarParamsのdevがtopになっていない'
+        );
+    }
+
+    /**
+     * topActionでdev=hogefugaというリクエストがあった場合、
+     * アサイン情報のtabbarParamsの中のdevがhogefugaになることを確認.
+     */
+    public function testTopActionIsDevParamEqualHogefuga()
+    {
+        $rootController = new RootController();
+        $request = new Request(['dev' => 'hogefuga']);
+        $topAction = $rootController->topAction($request);
+        // Viewオブジェクトにアサインされている情報を取得する。
+        $getAssignData = $topAction->getData();
+        // 失敗時はエラーメッセージが表示される
+        $this->assertEquals(
+            $getAssignData['tabbarParams']['dev'],
+            'hogefuga',
+            'error:dev=hogefugaのリクエストのとき場合にtabbarParamsのdevがhogefugaになっていない'
         );
     }
 
