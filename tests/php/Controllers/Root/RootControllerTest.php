@@ -5,7 +5,7 @@ use Illuminate\Http\Request;
 
 /**
  * RootControllerクラスのテストを行う.
- * 
+ *
  * @SuppressWarnings(PHPMD.TooManyPublicMethods)
  */
 class RootControllerTest extends TestCase
