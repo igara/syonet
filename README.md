@@ -1,18 +1,10 @@
-## syonet
-
-「みんなで1つのサイトを自由に作るぞ」計画<br>
-
-チャットルームを入れてみた<br>
+# syonet
 
 [![Join the chat at https://gitter.im/igara/syonet](https://badges.gitter.im/igara/syonet.svg)](https://gitter.im/igara/syonet?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
-Travis CIを取り入れてみた<br>
-
 [![Build Status](https://travis-ci.org/igara/syonet.svg?branch=master)](https://travis-ci.org/igara/syonet)
-
-テストのカバレッジをみれるようにしてみた<br>
-
 [![Coverage Status](https://coveralls.io/repos/github/igara/syonet/badge.svg?branch=master)](https://coveralls.io/github/igara/syonet?branch=master)
+
+「みんなで1つのサイトを自由に作るぞ」計画<br>
 
 プロジェクト内容についてwikiに記載してます<br>
 https://github.com/igara/syonet/wiki
@@ -20,34 +12,3 @@ https://github.com/igara/syonet/wiki
 
 こまめにissues更新しています。<br>
 https://github.com/igara/syonet/issues
-
-
-
-
-## Laravel PHP Framework
-
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
-
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
-
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
-
-## Official Documentation
-
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
-### License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
