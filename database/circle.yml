@@ -1,0 +1,15 @@
+machine:
+  timezone: Asia/Tokyo
+  php:
+    version: 7.0.0RC7
+
+dependencies:
+  override:
+    - cp -p .env.example .env
+    - composer self-update
+    - composer install
+    - php artisan key:generate
+
+test:
+  override:
+    - vendor/bin/phpunit
