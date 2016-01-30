@@ -18,7 +18,7 @@
     </testsuites>
     <filter>
         <whitelist>
-            <directory>app</directory>
+            <directory>tests/php</directory>
         </whitelist>
     </filter>
     <php>
