@@ -1,16 +1,20 @@
 language: php
 
-before_script:
-    - cp -p .env.example .env
-    - composer self-update
-    - composer install
-    - php artisan key:generate
-
 php:
     - 5.6
     - 7.0
     - hhvm
     - nightly
 
+before_script:
+    - cp -p .env.example .env
+    - composer self-update
+    - composer install
+    - php artisan key:generate
+
 script:
-  - vendor/bin/phpunit
+    - mkdir -p build/logs
+    - php vendor/bin/phpunit --coverage-clover build/logs/clover.xml
+
+after_script:
+    - php vendor/bin/coveralls
