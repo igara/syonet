@@ -10,6 +10,10 @@ Travis CIを取り入れてみた<br>
 
 [![Build Status](https://travis-ci.org/igara/syonet.svg?branch=master)](https://travis-ci.org/igara/syonet)
 
+テストのカバレッジをみれるようにしてみた<br>
+
+[![Coverage Status](https://coveralls.io/repos/github/igara/syonet/badge.svg?branch=master)](https://coveralls.io/github/igara/syonet?branch=master)
+
 プロジェクト内容についてwikiに記載してます<br>
 https://github.com/igara/syonet/wiki
 
