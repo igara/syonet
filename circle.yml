@@ -6,7 +6,7 @@ machine:
 dependencies:
   override:
     - cp -p .env.example .env
-    - composer install
+    - composer install --prefer-source --no-interaction
     - php artisan key:generate
 
 test:
