@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http;
+namespace App\Http\Consts;
 
 /**
- * syonetに用いるURLやパスを用いるクラス
+ * syonetに用いるURLを用いるクラス
  */
-class PathInfo {
+class UrlInfo {
 
     /**
      * rootページのurl情報を取得する

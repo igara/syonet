@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\PathInfo;
+use App\Http\Consts\UrlInfo;
 
 /*
   |--------------------------------------------------------------------------
@@ -13,29 +13,29 @@ use App\Http\PathInfo;
   |
  */
 
-// PathInfoクラスをインスタンス化したものを取得する
-$pathInfo = new PathInfo();
+// UrlInfoクラスをインスタンス化したものを取得する
+$urlInfo = new UrlInfo();
 
 // rootページのurl情報
-$rootUrlInfo = $pathInfo->getRootUrlInfo();
+$rootUrlInfo = $urlInfo->getRootUrlInfo();
 
 // tabbarのurl情報
-$tabbarUrlInfo = $pathInfo->getTabbarUrlInfo();
+$tabbarUrlInfo = $urlInfo->getTabbarUrlInfo();
 
 // sidemenuのurl情報
-$sidemenuUrlInfo = $pathInfo->getSideMenuUrlInfo();
+$sidemenuUrlInfo = $urlInfo->getSideMenuUrlInfo();
 
 // homeタブのurl情報
-$homeTabUrlInfo = $pathInfo->getHomeTabUrlInfo();
+$homeTabUrlInfo = $urlInfo->getHomeTabUrlInfo();
 
 // contentsタブのurl情報
-$contentsTabUrlInfo = $pathInfo->getContentsTabUrlInfo();
+$contentsTabUrlInfo = $urlInfo->getContentsTabUrlInfo();
 
 // docsタブのurl情報
-$docsTabUrlInfo = $pathInfo->getDocsTabUrlInfo();
+$docsTabUrlInfo = $urlInfo->getDocsTabUrlInfo();
 
 // devタブのurl情報
-$devTabUrlInfo = $pathInfo->getDevTabUrlInfo();
+$devTabUrlInfo = $urlInfo->getDevTabUrlInfo();
 
 // rootページ
 Route::get($rootUrlInfo['TOP']['URL'], 'Root\RootController@topAction');

@@ -3,7 +3,7 @@
 namespace App\Http\Services\Tabbar;
 
 use Illuminate\Http\Request;
-use App\Http\PathInfo;
+use App\Http\Consts\UrlInfo;
 
 /**
  * TabbarService
@@ -37,13 +37,13 @@ class TabbarService {
             'docs',
             'dev'
         ]);
-        // PathInfoのインスタンス取得
-        $pathInfo = new PathInfo();
+        // UrlInfoのインスタンス取得
+        $urlInfo = new UrlInfo();
         return [
-            'HOME' => $this->_getHomeTabInfo($tabbar['home'], $pathInfo->getHomeTabUrlInfo()),
-            'CONTENTS' => $this->_getContentsTabInfo($tabbar['contents'], $pathInfo->getContentsTabUrlInfo()),
-            'DOCS' => $this->_getDocsTabInfo($tabbar['docs'], $pathInfo->getDocsTabUrlInfo()),
-            'DEV' => $this->_getDevTabInfo($tabbar['dev'], $pathInfo->getDevTabUrlInfo())
+            'HOME' => $this->_getHomeTabInfo($tabbar['home'], $urlInfo->getHomeTabUrlInfo()),
+            'CONTENTS' => $this->_getContentsTabInfo($tabbar['contents'], $urlInfo->getContentsTabUrlInfo()),
+            'DOCS' => $this->_getDocsTabInfo($tabbar['docs'], $urlInfo->getDocsTabUrlInfo()),
+            'DEV' => $this->_getDevTabInfo($tabbar['dev'], $urlInfo->getDevTabUrlInfo())
         ];
     }
 
