@@ -446,7 +446,7 @@ class HomeActionTest extends TestCase
 
     /**
      * homeActionで
-     * 使用されているbladeがroot_home.bladeであることを確認
+     * 使用されているbladeがroot_home.bladeであることを確認.
      */
     public function testHomeActionUsedBladeName()
     {

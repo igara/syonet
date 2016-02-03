@@ -445,7 +445,7 @@ class ContentsActionTest extends TestCase
     }
     /**
      * contentsActionで
-     * 使用されているbladeがroot_contents.bladeであることを確認
+     * 使用されているbladeがroot_contents.bladeであることを確認.
      */
     public function testContentsActionUsedBladeName()
     {

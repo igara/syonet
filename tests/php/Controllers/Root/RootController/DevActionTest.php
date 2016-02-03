@@ -446,7 +446,7 @@ class DevActionTest extends TestCase
 
     /**
      * devActionで
-     * 使用されているbladeがroot_dev.bladeであることを確認
+     * 使用されているbladeがroot_dev.bladeであることを確認.
      */
     public function testDevActionUsedBladeName()
     {

@@ -446,7 +446,7 @@ class DocsActionTest extends TestCase
 
     /**
      * docsActionで
-     * 使用されているbladeがroot_docs.bladeであることを確認
+     * 使用されているbladeがroot_docs.bladeであることを確認.
      */
     public function testDocsActionUsedBladeName()
     {

@@ -446,7 +446,7 @@ class TopActionTest extends TestCase
 
     /**
      * topActionで
-     * 使用されているbladeがroot_top.bladeであることを確認
+     * 使用されているbladeがroot_top.bladeであることを確認.
      */
     public function testTopActionUsedBladeName()
     {
