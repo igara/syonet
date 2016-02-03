@@ -1,119 +1,125 @@
 <?php
 
-namespace App\Http\Consts;
+namespace app\Http\Consts;
 
 /**
- * syonetに用いるURLを用いるクラス
+ * syonetに用いるURLを用いるクラス.
  */
-class UrlInfo {
-
+class UrlInfo
+{
     /**
-     * rootページのurl情報を取得する
+     * rootページのurl情報を取得する.
      * 
      * @return array rootのページのurl情報
      */
-    public function getRootUrlInfo() {
+    public function getRootUrlInfo()
+    {
         return [
             'TOP' => [
-                'URL' => '/'
+                'URL' => '/',
             ],
             'HOME' => [
-                'URL' => '/home'
+                'URL' => '/home',
             ],
             'CONTENTS' => [
-                'URL' => '/contents'
+                'URL' => '/contents',
             ],
             'DOCS' => [
-                'URL' => '/docs'
+                'URL' => '/docs',
             ],
             'DEV' => [
-                'URL' => '/dev'
-            ]
+                'URL' => '/dev',
+            ],
         ];
     }
 
     /**
-     * tabbarのurl情報を取得する
+     * tabbarのurl情報を取得する.
      * 
      * @return array tabbarのurl情報
      */
-    public function getTabbarUrlInfo() {
+    public function getTabbarUrlInfo()
+    {
         return [
             'TABBAR' => [
-                'URL' => '/tabbar/tabbar'
-            ]
+                'URL' => '/tabbar/tabbar',
+            ],
         ];
     }
 
     /**
-     * sidemenuのurl情報を取得する
+     * sidemenuのurl情報を取得する.
      * 
      * @return array sidemenuのurl情報
      */
-    public function getSideMenuUrlInfo() {
+    public function getSideMenuUrlInfo()
+    {
         return [
             'SIDEMENU' => [
-                'URL' => '/sidemenu/sidemenu_top'
-            ]
+                'URL' => '/sidemenu/sidemenu_top',
+            ],
         ];
     }
 
     /**
-     * homeタブで呼ばれるページのurl情報を取得する
+     * homeタブで呼ばれるページのurl情報を取得する.
      * 
      * @return array homeタブで呼ばれるページのurl情報
      */
-    public function getHomeTabUrlInfo() {
+    public function getHomeTabUrlInfo()
+    {
         return [
             'TOP' => [
-                'URL' => '/tabbar/navigation/home/home_top'
-            ]
+                'URL' => '/tabbar/navigation/home/home_top',
+            ],
         ];
     }
 
     /**
-     * Contentsタブで呼ばれるページのurl情報を取得する
+     * Contentsタブで呼ばれるページのurl情報を取得する.
      * 
      * @return array Contentsタブで呼ばれるページのurl情報
      */
-    public function getContentsTabUrlInfo() {
+    public function getContentsTabUrlInfo()
+    {
         return [
             'TOP' => [
-                'URL' => '/tabbar/navigation/contents/contents_top'
+                'URL' => '/tabbar/navigation/contents/contents_top',
             ],
             'CHAT' => [
-                'URL' => '/tabbar/navigation/contents/contents_chat'
-            ]
+                'URL' => '/tabbar/navigation/contents/contents_chat',
+            ],
         ];
     }
 
     /**
-     * Docsタブで呼ばれるページのurl情報を取得する
+     * Docsタブで呼ばれるページのurl情報を取得する.
      * 
      * @return array Docsタブで呼ばれるページのurl情報
      */
-    public function getDocsTabUrlInfo() {
+    public function getDocsTabUrlInfo()
+    {
         return [
             'TOP' => [
-                'URL' => '/tabbar/navigation/docs/docs_top'
+                'URL' => '/tabbar/navigation/docs/docs_top',
             ],
             'SCREENLIST' => [
-                'URL' => '/tabbar/navigation/docs/screenlist'
-            ]
+                'URL' => '/tabbar/navigation/docs/screenlist',
+            ],
         ];
     }
 
     /**
-     * Devタブで呼ばれるページのurl情報を取得する
+     * Devタブで呼ばれるページのurl情報を取得する.
      * 
      * @return array Devタブで呼ばれるページのurl情報
      */
-    public function getDevTabUrlInfo() {
+    public function getDevTabUrlInfo()
+    {
         return [
             'TOP' => [
-                'URL' => '/tabbar/navigation/dev/dev_top'
-            ]
+                'URL' => '/tabbar/navigation/dev/dev_top',
+            ],
         ];
     }
-
 }
