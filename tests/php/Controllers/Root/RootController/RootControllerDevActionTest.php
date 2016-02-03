@@ -4,23 +4,23 @@ use App\Http\Controllers\Root\RootController;
 use Illuminate\Http\Request;
 
 /**
- * RootControllerクラスのhomeActionのテストを行う.
+ * RootControllerクラスのdevActionのテストを行う.
  *
  * @SuppressWarnings(PHPMD.TooManyPublicMethods)
  */
-class HomeActionTest extends TestCase
+class RootControllerDevActionTest extends TestCase
 {
     /**
-     * homeActionで
+     * devActionで
      * アサイン情報にtabbarParamsが存在することを確認.
      */
-    public function testHomeActionIsKeyTabbarParams()
+    public function testDevActionIsKeyTabbarParams()
     {
         $rootController = new RootController();
         $request = new Request();
-        $homeAction = $rootController->homeAction($request);
+        $devAction = $rootController->devAction($request);
         // Viewオブジェクトにアサインされている情報を取得する。
-        $getAssignData = $homeAction->getData();
+        $getAssignData = $devAction->getData();
         // 失敗時はエラーメッセージが表示される
         $this->assertArrayHasKey(
             'tabbarParams',
@@ -30,16 +30,16 @@ class HomeActionTest extends TestCase
     }
 
     /**
-     * homeActionで
+     * devActionで
      * アサイン情報のtabbarParamsの中にhomeがあることを確認.
      */
-    public function testHomeActionIsKeyHome()
+    public function testDevActionIsKeyHome()
     {
         $rootController = new RootController();
         $request = new Request();
-        $homeAction = $rootController->homeAction($request);
+        $devAction = $rootController->devAction($request);
         // Viewオブジェクトにアサインされている情報を取得する。
-        $getAssignData = $homeAction->getData();
+        $getAssignData = $devAction->getData();
         // 失敗時はエラーメッセージが表示される
         $this->assertArrayHasKey(
             'home',
@@ -49,16 +49,16 @@ class HomeActionTest extends TestCase
     }
 
     /**
-     * homeActionで
+     * devActionで
      * アサイン情報のtabbarParamsの中にcontentsがあることを確認.
      */
-    public function testHomeActionIsKeyContents()
+    public function testDevActionIsKeyContents()
     {
         $rootController = new RootController();
         $request = new Request();
-        $homeAction = $rootController->homeAction($request);
+        $devAction = $rootController->devAction($request);
         // Viewオブジェクトにアサインされている情報を取得する。
-        $getAssignData = $homeAction->getData();
+        $getAssignData = $devAction->getData();
         // 失敗時はエラーメッセージが表示される
         $this->assertArrayHasKey(
             'contents',
@@ -68,16 +68,16 @@ class HomeActionTest extends TestCase
     }
 
     /**
-     * homeActionで
+     * devActionで
      * アサイン情報のtabbarParamsの中にdocsがあることを確認.
      */
-    public function testHomeActionIsKeyDocs()
+    public function testDevActionIsKeyDocs()
     {
         $rootController = new RootController();
         $request = new Request();
-        $homeAction = $rootController->homeAction($request);
+        $devAction = $rootController->devAction($request);
         // Viewオブジェクトにアサインされている情報を取得する。
-        $getAssignData = $homeAction->getData();
+        $getAssignData = $devAction->getData();
         // 失敗時はエラーメッセージが表示される
         $this->assertArrayHasKey(
             'docs',
@@ -87,16 +87,16 @@ class HomeActionTest extends TestCase
     }
 
     /**
-     * homeActionで
+     * devActionで
      * アサイン情報のtabbarParamsの中にdevがあることを確認.
      */
-    public function testHomeActionIsKeyDev()
+    public function testDevActionIsKeyDev()
     {
         $rootController = new RootController();
         $request = new Request();
-        $homeAction = $rootController->homeAction($request);
+        $devAction = $rootController->devAction($request);
         // Viewオブジェクトにアサインされている情報を取得する。
-        $getAssignData = $homeAction->getData();
+        $getAssignData = $devAction->getData();
         // 失敗時はエラーメッセージが表示される
         $this->assertArrayHasKey(
             'dev',
@@ -106,16 +106,16 @@ class HomeActionTest extends TestCase
     }
 
     /**
-     * homeActionでリクエストがない場合、
+     * devActionでリクエストがない場合、
      * アサイン情報のtabbarParamsの中のhomeがnullになることを確認.
      */
-    public function testHomeActionIsNullHome()
+    public function testDevActionIsNullHome()
     {
         $rootController = new RootController();
         $request = new Request();
-        $homeAction = $rootController->homeAction($request);
+        $devAction = $rootController->devAction($request);
         // Viewオブジェクトにアサインされている情報を取得する。
-        $getAssignData = $homeAction->getData();
+        $getAssignData = $devAction->getData();
         // 失敗時はエラーメッセージが表示される
         $this->assertNull(
             $getAssignData['tabbarParams']['home'],
@@ -124,16 +124,16 @@ class HomeActionTest extends TestCase
     }
 
     /**
-     * homeActionでリクエストがない場合、
+     * devActionでリクエストがない場合、
      * アサイン情報のtabbarParamsの中のcontentsがnullになることを確認.
      */
-    public function testHomeActionIsNullContents()
+    public function testDevActionIsNullContents()
     {
         $rootController = new RootController();
         $request = new Request();
-        $homeAction = $rootController->homeAction($request);
+        $devAction = $rootController->devAction($request);
         // Viewオブジェクトにアサインされている情報を取得する。
-        $getAssignData = $homeAction->getData();
+        $getAssignData = $devAction->getData();
         // 失敗時はエラーメッセージが表示される
         $this->assertNull(
             $getAssignData['tabbarParams']['contents'],
@@ -142,16 +142,16 @@ class HomeActionTest extends TestCase
     }
 
     /**
-     * homeActionでリクエストがない場合、
+     * devActionでリクエストがない場合、
      * アサイン情報のtabbarParamsの中のdocsがnullになることを確認.
      */
-    public function testHomeActionIsNullDocs()
+    public function testDevActionIsNullDocs()
     {
         $rootController = new RootController();
         $request = new Request();
-        $homeAction = $rootController->homeAction($request);
+        $devAction = $rootController->devAction($request);
         // Viewオブジェクトにアサインされている情報を取得する。
-        $getAssignData = $homeAction->getData();
+        $getAssignData = $devAction->getData();
         // 失敗時はエラーメッセージが表示される
         $this->assertNull(
             $getAssignData['tabbarParams']['docs'],
@@ -160,16 +160,16 @@ class HomeActionTest extends TestCase
     }
 
     /**
-     * homeActionでリクエストがない場合、
+     * devActionでリクエストがない場合、
      * アサイン情報のtabbarParamsの中のdevがnullになることを確認.
      */
-    public function testHomeActionIsNullDev()
+    public function testDevActionIsNullDev()
     {
         $rootController = new RootController();
         $request = new Request();
-        $homeAction = $rootController->homeAction($request);
+        $devAction = $rootController->devAction($request);
         // Viewオブジェクトにアサインされている情報を取得する。
-        $getAssignData = $homeAction->getData();
+        $getAssignData = $devAction->getData();
         // 失敗時はエラーメッセージが表示される
         $this->assertNull(
             $getAssignData['tabbarParams']['dev'],
@@ -178,16 +178,16 @@ class HomeActionTest extends TestCase
     }
 
     /**
-     * homeActionでhome=topというリクエストがあった場合、
+     * devActionでhome=topというリクエストがあった場合、
      * アサイン情報のtabbarParamsの中のhomeがtopになることを確認.
      */
-    public function testHomeActionIsHomeParamEqualTop()
+    public function testDevActionIsHomeParamEqualTop()
     {
         $rootController = new RootController();
         $request = new Request(['home' => 'top']);
-        $homeAction = $rootController->homeAction($request);
+        $devAction = $rootController->devAction($request);
         // Viewオブジェクトにアサインされている情報を取得する。
-        $getAssignData = $homeAction->getData();
+        $getAssignData = $devAction->getData();
         // 失敗時はエラーメッセージが表示される
         $this->assertEquals(
             $getAssignData['tabbarParams']['home'],
@@ -197,16 +197,16 @@ class HomeActionTest extends TestCase
     }
 
     /**
-     * homeActionでhome=hogefugaというリクエストがあった場合、
+     * devActionでhome=hogefugaというリクエストがあった場合、
      * アサイン情報のtabbarParamsの中のhomeがhogefugaになることを確認.
      */
-    public function testHomeActionIsHomeParamEqualHogefuga()
+    public function testDevActionIsHomeParamEqualHogefuga()
     {
         $rootController = new RootController();
         $request = new Request(['home' => 'hogefuga']);
-        $homeAction = $rootController->homeAction($request);
+        $devAction = $rootController->devAction($request);
         // Viewオブジェクトにアサインされている情報を取得する。
-        $getAssignData = $homeAction->getData();
+        $getAssignData = $devAction->getData();
         // 失敗時はエラーメッセージが表示される
         $this->assertEquals(
             $getAssignData['tabbarParams']['home'],
@@ -216,16 +216,16 @@ class HomeActionTest extends TestCase
     }
 
     /**
-     * homeActionでcontents=topというリクエストがあった場合、
+     * devActionでcontents=topというリクエストがあった場合、
      * アサイン情報のtabbarParamsの中のcontentsがtopになることを確認.
      */
-    public function testHomeActionIsContentsParamEqualTop()
+    public function testDevActionIsContentsParamEqualTop()
     {
         $rootController = new RootController();
         $request = new Request(['contents' => 'top']);
-        $homeAction = $rootController->homeAction($request);
+        $devAction = $rootController->devAction($request);
         // Viewオブジェクトにアサインされている情報を取得する。
-        $getAssignData = $homeAction->getData();
+        $getAssignData = $devAction->getData();
         // 失敗時はエラーメッセージが表示される
         $this->assertEquals(
             $getAssignData['tabbarParams']['contents'],
@@ -235,16 +235,16 @@ class HomeActionTest extends TestCase
     }
 
     /**
-     * homeActionでcontents=hogefugaというリクエストがあった場合、
+     * devActionでcontents=hogefugaというリクエストがあった場合、
      * アサイン情報のtabbarParamsの中のcontentsがhogefugaになることを確認.
      */
-    public function testHomeActionIsContentsParamEqualHogefuga()
+    public function testDevActionIsContentsParamEqualHogefuga()
     {
         $rootController = new RootController();
         $request = new Request(['contents' => 'hogefuga']);
-        $homeAction = $rootController->homeAction($request);
+        $devAction = $rootController->devAction($request);
         // Viewオブジェクトにアサインされている情報を取得する。
-        $getAssignData = $homeAction->getData();
+        $getAssignData = $devAction->getData();
         // 失敗時はエラーメッセージが表示される
         $this->assertEquals(
             $getAssignData['tabbarParams']['contents'],
@@ -255,16 +255,16 @@ class HomeActionTest extends TestCase
     }
 
     /**
-     * homeActionでdocs=topというリクエストがあった場合、
+     * devActionでdocs=topというリクエストがあった場合、
      * アサイン情報のtabbarParamsの中のdocsがtopになることを確認.
      */
-    public function testHomeActionIsDocsParamEqualTop()
+    public function testDevActionIsDocsParamEqualTop()
     {
         $rootController = new RootController();
         $request = new Request(['docs' => 'top']);
-        $homeAction = $rootController->homeAction($request);
+        $devAction = $rootController->devAction($request);
         // Viewオブジェクトにアサインされている情報を取得する。
-        $getAssignData = $homeAction->getData();
+        $getAssignData = $devAction->getData();
         // 失敗時はエラーメッセージが表示される
         $this->assertEquals(
             $getAssignData['tabbarParams']['docs'],
@@ -274,16 +274,16 @@ class HomeActionTest extends TestCase
     }
 
     /**
-     * homeActionでdocs=hogefugaというリクエストがあった場合、
+     * devActionでdocs=hogefugaというリクエストがあった場合、
      * アサイン情報のtabbarParamsの中のdocsがhogefugaになることを確認.
      */
-    public function testHomeActionIsDocsParamEqualHogefuga()
+    public function testDevActionIsDocsParamEqualHogefuga()
     {
         $rootController = new RootController();
         $request = new Request(['docs' => 'hogefuga']);
-        $homeAction = $rootController->homeAction($request);
+        $devAction = $rootController->devAction($request);
         // Viewオブジェクトにアサインされている情報を取得する。
-        $getAssignData = $homeAction->getData();
+        $getAssignData = $devAction->getData();
         // 失敗時はエラーメッセージが表示される
         $this->assertEquals(
             $getAssignData['tabbarParams']['docs'],
@@ -293,16 +293,16 @@ class HomeActionTest extends TestCase
     }
 
     /**
-     * homeActionでdev=topというリクエストがあった場合、
+     * devActionでdev=topというリクエストがあった場合、
      * アサイン情報のtabbarParamsの中のdevがtopになることを確認.
      */
-    public function testHomeActionIsDevParamEqualTop()
+    public function testDevActionIsDevParamEqualTop()
     {
         $rootController = new RootController();
         $request = new Request(['dev' => 'top']);
-        $homeAction = $rootController->homeAction($request);
+        $devAction = $rootController->devAction($request);
         // Viewオブジェクトにアサインされている情報を取得する。
-        $getAssignData = $homeAction->getData();
+        $getAssignData = $devAction->getData();
         // 失敗時はエラーメッセージが表示される
         $this->assertEquals(
             $getAssignData['tabbarParams']['dev'],
@@ -312,16 +312,16 @@ class HomeActionTest extends TestCase
     }
 
     /**
-     * homeActionでdev=hogefugaというリクエストがあった場合、
+     * devActionでdev=hogefugaというリクエストがあった場合、
      * アサイン情報のtabbarParamsの中のdevがhogefugaになることを確認.
      */
-    public function testHomeActionIsDevParamEqualHogefuga()
+    public function testDevActionIsDevParamEqualHogefuga()
     {
         $rootController = new RootController();
         $request = new Request(['dev' => 'hogefuga']);
-        $homeAction = $rootController->homeAction($request);
+        $devAction = $rootController->devAction($request);
         // Viewオブジェクトにアサインされている情報を取得する。
-        $getAssignData = $homeAction->getData();
+        $getAssignData = $devAction->getData();
         // 失敗時はエラーメッセージが表示される
         $this->assertEquals(
             $getAssignData['tabbarParams']['dev'],
@@ -331,16 +331,16 @@ class HomeActionTest extends TestCase
     }
 
     /**
-     * homeActionで
+     * devActionで
      * アサイン情報のアサイン情報にtabbarStatusが存在することを確認.
      */
-    public function testHomeActionIsKeyTabbarStatus()
+    public function testDevActionIsKeyTabbarStatus()
     {
         $rootController = new RootController();
         $request = new Request();
-        $homeAction = $rootController->homeAction($request);
+        $devAction = $rootController->devAction($request);
         // Viewオブジェクトにアサインされている情報を取得する。
-        $getAssignData = $homeAction->getData();
+        $getAssignData = $devAction->getData();
         // 失敗時はエラーメッセージが表示される
         $this->assertArrayHasKey(
             'tabbarStatus',
@@ -350,97 +350,114 @@ class HomeActionTest extends TestCase
     }
 
     /**
-     * homeActionでリクエストがない場合、
-     * アサイン情報のtabbarStatusがhomeであることを確認する.
+     * devActionでリクエストがない場合、
+     * アサイン情報のtabbarStatusがdevであることを確認する.
      */
-    public function testHomeActionIsTabbarStatusEqualHomeWhenNoRequestParam()
+    public function testDevActionIsTabbarStatusEqualHomeWhenNoRequestParam()
     {
         $rootController = new RootController();
         $request = new Request();
-        $homeAction = $rootController->homeAction($request);
+        $devAction = $rootController->devAction($request);
         // Viewオブジェクトにアサインされている情報を取得する。
-        $getAssignData = $homeAction->getData();
+        $getAssignData = $devAction->getData();
         // 失敗時はエラーメッセージが表示される
         $this->assertEquals(
             $getAssignData['tabbarStatus'],
-            'home',
-            'error:アサイン情報としてtabbarStatusはhomeではない'
+            'dev',
+            'error:アサイン情報としてtabbarStatusはdevではない'
         );
     }
 
     /**
-     * homeActionでhome=topというリクエストがあった場合、
-     * アサイン情報のtabbarStatusがhomeであることを確認する.
+     * devActionでhome=topというリクエストがあった場合、
+     * アサイン情報のtabbarStatusがdevであることを確認する.
      */
-    public function testHomeActionIsTabbarStatusEqualHomeWhenIsHomeParam()
+    public function testDevActionIsTabbarStatusEqualHomeWhenIsHomeParam()
     {
         $rootController = new RootController();
         $request = new Request(['home' => 'top']);
-        $homeAction = $rootController->homeAction($request);
+        $devAction = $rootController->devAction($request);
         // Viewオブジェクトにアサインされている情報を取得する。
-        $getAssignData = $homeAction->getData();
+        $getAssignData = $devAction->getData();
         // 失敗時はエラーメッセージが表示される
         $this->assertEquals(
             $getAssignData['tabbarStatus'],
-            'home',
-            'error:アサイン情報としてtabbarStatusはhomeではない'
+            'dev',
+            'error:アサイン情報としてtabbarStatusはdevではない'
         );
     }
 
     /**
-     * homeActionでcontents=topというリクエストがあった場合、
-     * アサイン情報のtabbarStatusがhomeであることを確認する.
+     * devActionでcontents=topというリクエストがあった場合、
+     * アサイン情報のtabbarStatusがdevであることを確認する.
      */
-    public function testHomeActionIsTabbarStatusEqualHomeWhenIsContentsParam()
+    public function testDevActionIsTabbarStatusEqualHomeWhenIsContentsParam()
     {
         $rootController = new RootController();
         $request = new Request(['contents' => 'top']);
-        $homeAction = $rootController->homeAction($request);
+        $devAction = $rootController->devAction($request);
         // Viewオブジェクトにアサインされている情報を取得する。
-        $getAssignData = $homeAction->getData();
+        $getAssignData = $devAction->getData();
         // 失敗時はエラーメッセージが表示される
         $this->assertEquals(
             $getAssignData['tabbarStatus'],
-            'home',
-            'error:アサイン情報としてtabbarStatusはhomeではない'
+            'dev',
+            'error:アサイン情報としてtabbarStatusはdevではない'
         );
     }
 
     /**
-     * homeActionでdocs=topというリクエストがあった場合、
-     * アサイン情報のtabbarStatusがhomeであることを確認する.
+     * devActionでdocs=topというリクエストがあった場合、
+     * アサイン情報のtabbarStatusがdevであることを確認する.
      */
-    public function testHomeActionIsTabbarStatusEqualHomeWhenIsDocsParam()
+    public function testDevActionIsTabbarStatusEqualHomeWhenIsDocsParam()
     {
         $rootController = new RootController();
         $request = new Request(['docs' => 'top']);
-        $homeAction = $rootController->homeAction($request);
+        $devAction = $rootController->devAction($request);
         // Viewオブジェクトにアサインされている情報を取得する。
-        $getAssignData = $homeAction->getData();
+        $getAssignData = $devAction->getData();
         // 失敗時はエラーメッセージが表示される
         $this->assertEquals(
             $getAssignData['tabbarStatus'],
-            'home',
-            'error:アサイン情報としてtabbarStatusはhomeではない'
+            'dev',
+            'error:アサイン情報としてtabbarStatusはdevではない'
         );
     }
 
     /**
-     * homeActionでdev=topというリクエストがあった場合、
-     * アサイン情報のtabbarStatusがhomeであることを確認する.
+     * devActionでdev=topというリクエストがあった場合、
+     * アサイン情報のtabbarStatusがdevであることを確認する.
      */
-    public function testHomeActionIsTabbarStatusEqualHomeWhenIsDevParam()
+    public function testDevActionIsTabbarStatusEqualHomeWhenIsDevParam()
     {
         $rootController = new RootController();
         $request = new Request(['dev' => 'top']);
-        $homeAction = $rootController->homeAction($request);
+        $devAction = $rootController->devAction($request);
         // Viewオブジェクトにアサインされている情報を取得する。
-        $getAssignData = $homeAction->getData();
+        $getAssignData = $devAction->getData();
         // 失敗時はエラーメッセージが表示される
         $this->assertEquals(
             $getAssignData['tabbarStatus'],
-            'home',
-            'error:アサイン情報としてtabbarStatusはhomeではない'
+            'dev',
+            'error:アサイン情報としてtabbarStatusはdevではない'
+        );
+    }
+
+    /**
+     * devActionで
+     * 使用されているbladeがroot_dev.bladeであることを確認.
+     */
+    public function testDevActionUsedBladeName()
+    {
+        $rootController = new RootController();
+        $request = new Request();
+        $devAction = $rootController->devAction($request);
+        // 失敗時はエラーメッセージが表示される
+        $this->assertEquals(
+            $devAction->getName(),
+            'root.root_dev',
+            'error:使用されているbladeはroot_dev.bladeではない'
         );
     }
 }
