@@ -443,4 +443,21 @@ class DocsActionTest extends TestCase
             'error:アサイン情報としてtabbarStatusはdocsではない'
         );
     }
+
+    /**
+     * docsActionで
+     * 使用されているbladeがroot_docs.bladeであることを確認
+     */
+    public function testDocsActionUsedBladeName()
+    {
+        $rootController = new RootController();
+        $request = new Request();
+        $docsAction = $rootController->docsAction($request);
+        // 失敗時はエラーメッセージが表示される
+        $this->assertEquals(
+            $docsAction->getName(),
+            'root.root_docs',
+            'error:使用されているbladeはroot_docs.bladeではない'
+        );
+    }
 }

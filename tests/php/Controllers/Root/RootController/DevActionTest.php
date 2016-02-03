@@ -443,4 +443,21 @@ class DevActionTest extends TestCase
             'error:アサイン情報としてtabbarStatusはdevではない'
         );
     }
+
+    /**
+     * devActionで
+     * 使用されているbladeがroot_dev.bladeであることを確認
+     */
+    public function testDevActionUsedBladeName()
+    {
+        $rootController = new RootController();
+        $request = new Request();
+        $devAction = $rootController->devAction($request);
+        // 失敗時はエラーメッセージが表示される
+        $this->assertEquals(
+            $devAction->getName(),
+            'root.root_dev',
+            'error:使用されているbladeはroot_dev.bladeではない'
+        );
+    }
 }

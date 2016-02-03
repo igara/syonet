@@ -443,4 +443,21 @@ class TopActionTest extends TestCase
             'error:アサイン情報としてtabbarStatusはhomeではない'
         );
     }
+
+    /**
+     * topActionで
+     * 使用されているbladeがroot_top.bladeであることを確認
+     */
+    public function testTopActionUsedBladeName()
+    {
+        $rootController = new RootController();
+        $request = new Request();
+        $topAction = $rootController->topAction($request);
+        // 失敗時はエラーメッセージが表示される
+        $this->assertEquals(
+            $topAction->getName(),
+            'root.root_top',
+            'error:使用されているbladeはroot_top.bladeではない'
+        );
+    }
 }

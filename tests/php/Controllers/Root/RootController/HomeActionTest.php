@@ -443,4 +443,21 @@ class HomeActionTest extends TestCase
             'error:アサイン情報としてtabbarStatusはhomeではない'
         );
     }
+
+    /**
+     * homeActionで
+     * 使用されているbladeがroot_home.bladeであることを確認
+     */
+    public function testHomeActionUsedBladeName()
+    {
+        $rootController = new RootController();
+        $request = new Request();
+        $homeAction = $rootController->homeAction($request);
+        // 失敗時はエラーメッセージが表示される
+        $this->assertEquals(
+            $homeAction->getName(),
+            'root.root_home',
+            'error:使用されているbladeはroot_home.bladeではない'
+        );
+    }
 }

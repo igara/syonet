@@ -443,4 +443,20 @@ class ContentsActionTest extends TestCase
             'error:アサイン情報としてtabbarStatusはcontentsではない'
         );
     }
+    /**
+     * contentsActionで
+     * 使用されているbladeがroot_contents.bladeであることを確認
+     */
+    public function testContentsActionUsedBladeName()
+    {
+        $rootController = new RootController();
+        $request = new Request();
+        $contentsAction = $rootController->contentsAction($request);
+        // 失敗時はエラーメッセージが表示される
+        $this->assertEquals(
+            $contentsAction->getName(),
+            'root.root_contents',
+            'error:使用されているbladeはroot_contents.bladeではない'
+        );
+    }
 }
