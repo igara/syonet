@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
  *
  * @SuppressWarnings(PHPMD.TooManyPublicMethods)
  */
-class DevActionTest extends TestCase
+class RootControllerDevActionTest extends TestCase
 {
     /**
      * devActionで
