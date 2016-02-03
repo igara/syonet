@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
  *
  * @SuppressWarnings(PHPMD.TooManyPublicMethods)
  */
-class SideMenuControllerTopActionTestp extends TestCase
+class SideMenuControllerTopActionTest extends TestCase
 {
     /**
      * topActionで
