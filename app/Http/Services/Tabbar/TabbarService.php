@@ -3,7 +3,10 @@
 namespace App\Http\Services\Tabbar;
 
 use Illuminate\Http\Request;
-use App\Http\Consts\UrlInfo;
+use App\Http\Consts\UrlInfo\Tabbar\Navigation\HomeUrlInfo;
+use App\Http\Consts\UrlInfo\Tabbar\Navigation\ContentsUrlInfo;
+use App\Http\Consts\UrlInfo\Tabbar\Navigation\DocsUrlInfo;
+use App\Http\Consts\UrlInfo\Tabbar\Navigation\DevUrlInfo;
 
 /**
  * TabbarService
@@ -27,7 +30,7 @@ class TabbarService {
      * 
      * @param Request リクエストパラメータ
      * @return array 各tabで表示するためのURL
-     * 
+     *  
      */
     public function getTabbarInfo($request) {
         // リクエストパラメータからタブの情報を取得する
@@ -37,13 +40,16 @@ class TabbarService {
             'docs',
             'dev'
         ]);
-        // UrlInfoのインスタンス取得
-        $urlInfo = new UrlInfo();
+
+        $homeUrlInfo = new HomeUrlInfo();
+        $contentsUrlInfo = new ContentsUrlInfo();
+        $docsUrlInfo = new DocsUrlInfo();
+        $devUrlInfo = new DevUrlInfo();
         return [
-            'HOME' => $this->_getHomeTabInfo($tabbar['home'], $urlInfo->getHomeTabUrlInfo()),
-            'CONTENTS' => $this->_getContentsTabInfo($tabbar['contents'], $urlInfo->getContentsTabUrlInfo()),
-            'DOCS' => $this->_getDocsTabInfo($tabbar['docs'], $urlInfo->getDocsTabUrlInfo()),
-            'DEV' => $this->_getDevTabInfo($tabbar['dev'], $urlInfo->getDevTabUrlInfo())
+            'HOME' => $this->_getHomeTabInfo($tabbar['home'], $homeUrlInfo->getHomeTabUrlInfo()),
+            'CONTENTS' => $this->_getContentsTabInfo($tabbar['contents'], $contentsUrlInfo->getContentsTabUrlInfo()),
+            'DOCS' => $this->_getDocsTabInfo($tabbar['docs'], $docsUrlInfo->getDocsTabUrlInfo()),
+            'DEV' => $this->_getDevTabInfo($tabbar['dev'], $devUrlInfo->getDevTabUrlInfo())
         ];
     }
 

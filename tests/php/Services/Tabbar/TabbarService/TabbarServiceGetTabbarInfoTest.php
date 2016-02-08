@@ -2,7 +2,10 @@
 
 use App\Http\Services\Tabbar\TabbarService;
 use Illuminate\Http\Request;
-use App\Http\Consts\UrlInfo;
+use App\Http\Consts\UrlInfo\Tabbar\Navigation\HomeUrlInfo;
+use App\Http\Consts\UrlInfo\Tabbar\Navigation\ContentsUrlInfo;
+use App\Http\Consts\UrlInfo\Tabbar\Navigation\DocsUrlInfo;
+use App\Http\Consts\UrlInfo\Tabbar\Navigation\DevUrlInfo;
 
 /**
  * TabbarServiceクラスのgetTabbarInfoのテストを行う.
@@ -22,8 +25,8 @@ class TabbarServiceGetTabbarInfoTest extends TestCase
         $request = new Request();
         $getHomeFromGetTabbarInfo = $tabbarService->getTabbarInfo($request)['HOME'];
 
-        $urlInfo = new UrlInfo();
-        $getHomeTabTopUrl = $urlInfo->getHomeTabUrlInfo()['TOP'];
+        $homeUrlInfo = new HomeUrlInfo();
+        $getHomeTabTopUrl = $homeUrlInfo->getHomeTabUrlInfo()['TOP'];
         // 失敗時はエラーメッセージが表示される
         $this->assertEquals(
             $getHomeFromGetTabbarInfo,
@@ -43,8 +46,8 @@ class TabbarServiceGetTabbarInfoTest extends TestCase
         $request = new Request();
         $getContentsFromGetTabbarInfo = $tabbarService->getTabbarInfo($request)['CONTENTS'];
 
-        $urlInfo = new UrlInfo();
-        $getContentsTabTopUrl = $urlInfo->getContentsTabUrlInfo()['TOP'];
+        $contentsUrlInfo = new ContentsUrlInfo();
+        $getContentsTabTopUrl = $contentsUrlInfo->getContentsTabUrlInfo()['TOP'];
         // 失敗時はエラーメッセージが表示される
         $this->assertEquals(
             $getContentsFromGetTabbarInfo,
@@ -64,8 +67,8 @@ class TabbarServiceGetTabbarInfoTest extends TestCase
         $request = new Request();
         $getDocsFromGetTabbarInfo = $tabbarService->getTabbarInfo($request)['DOCS'];
 
-        $urlInfo = new UrlInfo();
-        $getDocsTabTopUrl = $urlInfo->getDocsTabUrlInfo()['TOP'];
+        $docsUrlInfo = new DocsUrlInfo();
+        $getDocsTabTopUrl = $docsUrlInfo->getDocsTabUrlInfo()['TOP'];
         // 失敗時はエラーメッセージが表示される
         $this->assertEquals(
             $getDocsFromGetTabbarInfo,
@@ -85,8 +88,8 @@ class TabbarServiceGetTabbarInfoTest extends TestCase
         $request = new Request();
         $getDevFromGetTabbarInfo = $tabbarService->getTabbarInfo($request)['DEV'];
 
-        $urlInfo = new UrlInfo();
-        $getDevTabTopUrl = $urlInfo->getDevTabUrlInfo()['TOP'];
+        $devUrlInfo = new DevUrlInfo();
+        $getDevTabTopUrl = $devUrlInfo->getDevTabUrlInfo()['TOP'];
         // 失敗時はエラーメッセージが表示される
         $this->assertEquals(
             $getDevFromGetTabbarInfo,
@@ -106,8 +109,8 @@ class TabbarServiceGetTabbarInfoTest extends TestCase
         $request = new Request(['home' => 'top']);
         $getHomeFromGetTabbarInfo = $tabbarService->getTabbarInfo($request)['HOME'];
 
-        $urlInfo = new UrlInfo();
-        $getHomeTabTopUrl = $urlInfo->getHomeTabUrlInfo()['TOP'];
+        $homeUrlInfo = new HomeUrlInfo();
+        $getHomeTabTopUrl = $homeUrlInfo->getHomeTabUrlInfo()['TOP'];
         // 失敗時はエラーメッセージが表示される
         $this->assertEquals(
             $getHomeFromGetTabbarInfo,
@@ -127,8 +130,8 @@ class TabbarServiceGetTabbarInfoTest extends TestCase
         $request = new Request(['contents' => 'top']);
         $getContentsFromGetTabbarInfo = $tabbarService->getTabbarInfo($request)['CONTENTS'];
 
-        $urlInfo = new UrlInfo();
-        $getContentsTabTopUrl = $urlInfo->getContentsTabUrlInfo()['TOP'];
+        $contentsUrlInfo = new ContentsUrlInfo();
+        $getContentsTabTopUrl = $contentsUrlInfo->getContentsTabUrlInfo()['TOP'];
         // 失敗時はエラーメッセージが表示される
         $this->assertEquals(
             $getContentsFromGetTabbarInfo,
@@ -148,8 +151,8 @@ class TabbarServiceGetTabbarInfoTest extends TestCase
         $request = new Request(['docs' => 'top']);
         $getDocsFromGetTabbarInfo = $tabbarService->getTabbarInfo($request)['DOCS'];
 
-        $urlInfo = new UrlInfo();
-        $getDocsTabTopUrl = $urlInfo->getDocsTabUrlInfo()['TOP'];
+        $docsUrlInfo = new DocsUrlInfo();
+        $getDocsTabTopUrl = $docsUrlInfo->getDocsTabUrlInfo()['TOP'];
         // 失敗時はエラーメッセージが表示される
         $this->assertEquals(
             $getDocsFromGetTabbarInfo,
@@ -169,8 +172,8 @@ class TabbarServiceGetTabbarInfoTest extends TestCase
         $request = new Request(['docs' => 'screenlist']);
         $getDocsFromGetTabbarInfo = $tabbarService->getTabbarInfo($request)['DOCS'];
 
-        $urlInfo = new UrlInfo();
-        $getDocsTabTopUrl = $urlInfo->getDocsTabUrlInfo()['SCREENLIST'];
+        $docsUrlInfo = new DocsUrlInfo();
+        $getDocsTabTopUrl = $docsUrlInfo->getDocsTabUrlInfo()['SCREENLIST'];
         // 失敗時はエラーメッセージが表示される
         $this->assertEquals(
             $getDocsFromGetTabbarInfo,
@@ -190,8 +193,8 @@ class TabbarServiceGetTabbarInfoTest extends TestCase
         $request = new Request(['dev' => 'top']);
         $getDevFromGetTabbarInfo = $tabbarService->getTabbarInfo($request)['DEV'];
 
-        $urlInfo = new UrlInfo();
-        $getDevTabTopUrl = $urlInfo->getDevTabUrlInfo()['TOP'];
+        $devUrlInfo = new DevUrlInfo();
+        $getDevTabTopUrl = $devUrlInfo->getDevTabUrlInfo()['TOP'];
         // 失敗時はエラーメッセージが表示される
         $this->assertEquals(
             $getDevFromGetTabbarInfo,
