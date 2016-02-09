@@ -29,7 +29,12 @@ class TabbarController extends Controller {
      */
     public function tabbarAction(Request $request) {
         $tabbarInfo = (new TabbarService())->getTabbarInfo($request);
-        $tabbarStatus = $request['tabbarstatus'];
+        // タブバーの状態はデフォルトでhome
+        $tabbarStatus = 'home';
+        // リクエストにタブバーの状態がある場合
+        if(isset($request['tabbarstatus'])) {
+            $tabbarStatus = $request['tabbarstatus'];
+        }
         return view('tabbar/tabbar', compact('tabbarInfo', 'tabbarStatus'));
     }
 
