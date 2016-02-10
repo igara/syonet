@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Tabbar\Navigation\Docs;
 
 use App\Http\Controllers\Controller;
-use Parsedown;
+use App\Http\Services\Docs\MarkdownService;
 
 /**
  * DocsController
@@ -29,7 +29,8 @@ class DocsController extends Controller {
      *         assign:$parseMarkdown readmeファイルをパースさせた内容
      */
     public function topAction() {
-        $parseMarkdown = $this->getDocsScreenListHtml();
+        $markdownFile = public_path() . '/documents/screen/readme.md';
+        $parseMarkdown = (new MarkdownService())->getHtmlFromMarkdown($markdownFile);
         return view('tabbar/navigation/docs/docs_top', compact('parseMarkdown'));
     }
 
@@ -39,15 +40,7 @@ class DocsController extends Controller {
      * @return markdownをhtmlにパースした内容
      */
     public function screenListAction() {
-        return $this->getDocsScreenListHtml();
+        $markdownFile = public_path() . '/documents/screen/readme.md';
+        return (new MarkdownService())->getHtmlFromMarkdown($markdownFile);
     }
-
-    /**
-     * 画面のドキュメントを管轄している一覧を取得する
-     */
-    private function getDocsScreenListHtml() {
-        $readmeFile = file_get_contents('documents/screen/readme.md');
-        return Parsedown::instance()->text($readmeFile);
-    }
-
 }
