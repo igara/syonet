@@ -9,59 +9,59 @@ use App\Http\Consts\UrlInfo\Tabbar\Navigation\DocsUrlInfo;
 use App\Http\Consts\UrlInfo\Tabbar\Navigation\DevUrlInfo;
 
 /**
- * TabbarService
+ * TabbarService.
  *
  * タブバーの加工を行う
- *
  */
-class TabbarService {
-
+class TabbarService
+{
     /**
      * Create a new docs controller instance.
-     *
-     * @return void
      */
-    public function __construct() {
-        
+    public function __construct()
+    {
     }
 
     /**
-     * タブの情報を取得する
+     * タブの情報を取得する.
      * 
      * @param Request リクエストパラメータ
+     *
      * @return array 各tabで表示するためのURL
-     *  
      */
-    public function getTabbarInfo($request) {
+    public function getTabbarInfo($request)
+    {
         // リクエストパラメータからタブの情報を取得する
         $tabbar = $request->only([
             'home',
             'contents',
             'docs',
-            'dev'
+            'dev',
         ]);
 
         $homeUrlInfo = new HomeUrlInfo();
         $contentsUrlInfo = new ContentsUrlInfo();
         $docsUrlInfo = new DocsUrlInfo();
         $devUrlInfo = new DevUrlInfo();
+
         return [
             'HOME' => $this->_getHomeTabInfo($tabbar['home'], $homeUrlInfo->getHomeTabUrlInfo()),
             'CONTENTS' => $this->_getContentsTabInfo($tabbar['contents'], $contentsUrlInfo->getContentsTabUrlInfo()),
             'DOCS' => $this->_getDocsTabInfo($tabbar['docs'], $docsUrlInfo->getDocsTabUrlInfo()),
-            'DEV' => $this->_getDevTabInfo($tabbar['dev'], $devUrlInfo->getDevTabUrlInfo())
+            'DEV' => $this->_getDevTabInfo($tabbar['dev'], $devUrlInfo->getDevTabUrlInfo()),
         ];
     }
 
     /**
-     * Homeタブの情報を取得する
+     * Homeタブの情報を取得する.
      * 
-     * @param string $homeParam リクエストパラメータのhomeの値
-     * @param array $homeTabUrlInfo Homeタブ内に表示するページのURL一覧
+     * @param string $homeParam      リクエストパラメータのhomeの値
+     * @param array  $homeTabUrlInfo Homeタブ内に表示するページのURL一覧
+     *
      * @return string Homeタブに表示するページのURL
-     * 
      */
-    private function _getHomeTabInfo($homeParam, $homeTabUrlInfo) {
+    private function _getHomeTabInfo($homeParam, $homeTabUrlInfo)
+    {
 
         // パラメータからHomeタブのlistのキー値を作成する
         $listkey = strtoupper($homeParam);
@@ -76,14 +76,15 @@ class TabbarService {
     }
 
     /**
-     * Contentsタブの情報を取得する
+     * Contentsタブの情報を取得する.
      * 
-     * @param string $contentsParam リクエストパラメータのcontentsの値
-     * @param array $contentsTabUrlInfo Contentsタブ内に表示するページのURL一覧
+     * @param string $contentsParam      リクエストパラメータのcontentsの値
+     * @param array  $contentsTabUrlInfo Contentsタブ内に表示するページのURL一覧
+     *
      * @return string Contentsタブに表示するページのURL
-     * 
      */
-    private function _getContentsTabInfo($contentsParam, $contentsTabUrlInfo) {
+    private function _getContentsTabInfo($contentsParam, $contentsTabUrlInfo)
+    {
 
         // パラメータからContentsタブのlistのキー値を作成する
         $listkey = strtoupper($contentsParam);
@@ -98,14 +99,15 @@ class TabbarService {
     }
 
     /**
-     * Devタブの情報を取得する
+     * Devタブの情報を取得する.
      * 
-     * @param string $devParam リクエストパラメータのDevの値
-     * @param array $devTabUrlInfo Devタブ内に表示するページのURL一覧
+     * @param string $devParam      リクエストパラメータのDevの値
+     * @param array  $devTabUrlInfo Devタブ内に表示するページのURL一覧
+     *
      * @return string Devタブに表示するページのURL
-     * 
      */
-    private function _getDevTabInfo($devParam, $devTabUrlInfo) {
+    private function _getDevTabInfo($devParam, $devTabUrlInfo)
+    {
 
         // パラメータからDevタブのlistのキー値を作成する
         $listkey = strtoupper($devParam);
@@ -120,14 +122,15 @@ class TabbarService {
     }
 
     /**
-     * Docsタブの情報を取得する
+     * Docsタブの情報を取得する.
      * 
-     * @param string $docsParam リクエストパラメータのdocsの値
-     * @param array $docsTabUrlInfo Docsタブ内に表示するページのURL一覧
+     * @param string $docsParam      リクエストパラメータのdocsの値
+     * @param array  $docsTabUrlInfo Docsタブ内に表示するページのURL一覧
+     *
      * @return string Docsタブに表示するページのURL
-     * 
      */
-    private function _getDocsTabInfo($docsParam, $docsTabUrlInfo) {
+    private function _getDocsTabInfo($docsParam, $docsTabUrlInfo)
+    {
 
         // パラメータからDocsタブのlistのキー値を作成する
         $listkey = strtoupper($docsParam);
@@ -140,5 +143,4 @@ class TabbarService {
             return $docsTabUrlInfo[$listkey];
         }
     }
-
 }
