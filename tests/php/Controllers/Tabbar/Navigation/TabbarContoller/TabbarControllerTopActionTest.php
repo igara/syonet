@@ -229,7 +229,7 @@ class TabbarControllerTabbarActionTest extends TestCase
         );
     }
 
-	/**
+    /**
      * tabbarActionでdev=topというリクエストがあった場合、
      * アサイン情報のtabbarInfoのdevがtopのURLになることを確認.
      */
