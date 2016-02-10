@@ -26,9 +26,13 @@ class MarkdownService {
      * 
      * @param string $markdownFile Markdownのファイル名
      * @return string HTML
+     *         ファイルの読み込みに失敗したときはfalseを返す
      */
     public function getHtmlFromMarkdown($markdownFile) {
-        return Parsedown::instance()->text(file_get_contents($markdownFile));
+        if (file_exists($markdownFile)) {
+            return Parsedown::instance()->text(file_get_contents($markdownFile));
+        }
+        return FALSE;
     }
 
 }
