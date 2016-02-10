@@ -5,37 +5,36 @@ namespace App\Http\Controllers\Tabbar\Navigation\Contents;
 use App\Http\Controllers\Controller;
 
 /**
- * ContentsController
+ * ContentsController.
  * 
  * contentsタブ内で表示するコンテンツを扱う
  */
-class ContentsController extends Controller {
-
+class ContentsController extends Controller
+{
     /**
      * Create a new contents controller instance.
-     *
-     * @return void
      */
-    public function __construct() {
-        
+    public function __construct()
+    {
     }
 
     /**
-     * topアクション
+     * topアクション.
      *
      * @return view contents/contents_topテンプレート
      */
-    public function topAction() {
+    public function topAction()
+    {
         return view('tabbar/navigation/contents/contents_top');
     }
 
     /**
-     * chatアクション
+     * chatアクション.
      *
      * @return view contents/contents_topテンプレート
      */
-    public function chatAction() {
+    public function chatAction()
+    {
         return view('tabbar/navigation/contents/contents_chat');
     }
-
 }

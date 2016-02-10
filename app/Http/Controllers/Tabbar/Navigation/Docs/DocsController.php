@@ -3,51 +3,45 @@
 namespace App\Http\Controllers\Tabbar\Navigation\Docs;
 
 use App\Http\Controllers\Controller;
-use Parsedown;
+use App\Http\Services\Docs\MarkdownService;
 
 /**
- * DocsController
+ * DocsController.
  *
  * Docsタブ内で表示するコンテンツを扱う
- *
  */
-class DocsController extends Controller {
-
+class DocsController extends Controller
+{
     /**
      * Create a new docs controller instance.
-     *
-     * @return void
      */
-    public function __construct() {
-        
+    public function __construct()
+    {
     }
 
     /**
-     * topアクション
+     * topアクション.
      *
      * @return view docs/docs_topテンプレート
-     *         assign:$parseMarkdown readmeファイルをパースさせた内容
+     *              assign:$parseMarkdown readmeファイルをパースさせた内容
      */
-    public function topAction() {
-        $parseMarkdown = $this->getDocsScreenListHtml();
+    public function topAction()
+    {
+        $markdownFile = public_path().'/documents/screen/readme.md';
+        $parseMarkdown = (new MarkdownService())->getHtmlFromMarkdown($markdownFile);
+
         return view('tabbar/navigation/docs/docs_top', compact('parseMarkdown'));
     }
 
     /**
-     * screenListアクション
+     * screenListアクション.
      *
-     * @return markdownをhtmlにパースした内容
+     * @return markdownをhtmlにパースした� 容
      */
-    public function screenListAction() {
-        return $this->getDocsScreenListHtml();
-    }
+    public function screenListAction()
+    {
+        $markdownFile = public_path().'/documents/screen/readme.md';
 
-    /**
-     * 画面のドキュメントを管轄している一覧を取得する
-     */
-    private function getDocsScreenListHtml() {
-        $readmeFile = file_get_contents('documents/screen/readme.md');
-        return Parsedown::instance()->text($readmeFile);
+        return (new MarkdownService())->getHtmlFromMarkdown($markdownFile);
     }
-
 }

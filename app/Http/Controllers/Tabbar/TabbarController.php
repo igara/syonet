@@ -7,30 +7,34 @@ use Illuminate\Http\Request;
 use App\Http\Services\Tabbar\TabbarService;
 
 /**
- * TabbarController
+ * TabbarController.
  * 
  * ページの下に表示しているタブバーを扱う
  */
-class TabbarController extends Controller {
-
+class TabbarController extends Controller
+{
     /**
      * Create a new tabbar controller instance.
-     *
-     * @return void
      */
-    public function __construct() {
-        
+    public function __construct()
+    {
     }
 
     /**
-     * tabbarアクション
+     * tabbarアクション.
      *
      * @return view tabbar/tabbarテンプレート
      */
-    public function tabbarAction(Request $request) {
+    public function tabbarAction(Request $request)
+    {
         $tabbarInfo = (new TabbarService())->getTabbarInfo($request);
-        $tabbarStatus = $request['tabbarstatus'];
+        // タブバーの状態はデフォルトでhome
+        $tabbarStatus = 'home';
+        // リクエストにタブバーの状態がある場合
+        if (isset($request['tabbarstatus'])) {
+            $tabbarStatus = $request['tabbarstatus'];
+        }
+
         return view('tabbar/tabbar', compact('tabbarInfo', 'tabbarStatus'));
     }
-
 }
