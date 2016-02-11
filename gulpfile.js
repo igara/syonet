@@ -78,7 +78,7 @@ gulp.task('tsbuild', function() {
 gulp.task('tsdevbuild', function() {
     var shell = require('gulp-shell');
     // tsファイルのビルド
-    gulp.src('').pipe(shell('./node_modules/.bin/tsc --sourcemap'));
+    gulp.src('').pipe(shell('./node_modules/.bin/tsc --sourcemap --watch'));
 
     /* resources/assets/ts/docs/下に存在する、ビルドで作成されたjsファイルを
        public/js/docs/下にディレクトリ構造ごとコピーする */
