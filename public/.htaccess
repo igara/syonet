@@ -15,4 +15,5 @@
     Header set Cache-Control no-cache
     session.cookie_secure = On
     session.cookie_httponly = On
+    Header always set X-XSS-Protection "1; mode=block"
 </IfModule>
