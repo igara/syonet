@@ -47,6 +47,8 @@ $app = require_once __DIR__.'/../bootstrap/app.php';
 |
 */
 
+header("X-Frame-Options: DENY");
+
 $kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
 
 $response = $kernel->handle(
