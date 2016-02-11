@@ -9,4 +9,8 @@
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^ index.php [L]
+
+    Header set X-FRAME-OPTIONS "DENY"
+    session.cookie_secure = On
+    session.cookie_httponly = On
 </IfModule>

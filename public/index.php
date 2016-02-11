@@ -48,6 +48,8 @@ $app = require_once __DIR__.'/../bootstrap/app.php';
 */
 
 header("X-Frame-Options: DENY");
+ini_set('session.cookie_httponly', 1);
+ini_set('session.cookie_secure', 1);
 
 $kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
 
