@@ -51,7 +51,7 @@ header("X-Frame-Options: DENY");
 ini_set('session.cookie_httponly', 1);
 ini_set('session.cookie_secure', 1);
 header("Cache-Control: no-cache, must-revalidate");
-header("Cache-Control: post-check=0, pre-check=0", false);
+header("Pragma: no-cache");
 
 $kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
 
