@@ -11,6 +11,8 @@
     RewriteRule ^ index.php [L]
 
     Header set X-FRAME-OPTIONS "DENY"
+    Header set Pragma no-cache
+    Header set Cache-Control no-cache
     session.cookie_secure = On
     session.cookie_httponly = On
 </IfModule>
