@@ -4,6 +4,7 @@
   "private": true,
   "devDependencies": {
     "angular": "^1.5.0",
+    "blanket": "^1.2.1",
     "del": "^2.2.0",
     "gulp": "^3.9.1",
     "gulp-shell": "^0.5.2",
