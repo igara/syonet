@@ -108,7 +108,8 @@ gulp.task('clean', function(cb) {
     del(['resources/assets/ts/**/*.map'], cb);
     del(['public/js/**/*.ts'], cb);
     del(['public/js/**/*.js'], cb);
-    del(['public/js/**/*.map'], cb);    
+    del(['public/js/**/*.map'], cb);
+    del(['tests/e2e/**/*.js'], cb);
 });
 
 /**
@@ -121,6 +122,6 @@ gulp.task('tsconfig', function() {
     var tsConfig = require('gulp-tsconfig-update');
     
     // ビルド対象のファイルを指定する
-    gulp.src('resources/assets/ts/**/*.ts')
+    gulp.src(['resources/assets/ts/**/*.ts','tests/e2e/**/*.ts'])
         .pipe(tsConfig());
 });

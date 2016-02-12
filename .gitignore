@@ -12,6 +12,5 @@ public/css/lib/
 public/js/
 *.js
 *.map
-!tests/test.js
-!protractorconf.js
+!e2ephantom.js
 typings/

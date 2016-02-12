@@ -11,10 +11,11 @@
         "emitDecoratorMetadata": true,
         "suppressImplicitAnyIndexErrors": true,
         "sourceMap": false,
-        "target": "ES5"
+        "target": "es5"
     },
     "files": [
         "resources/assets/ts/common/controller/common_controller.ts",
-        "resources/assets/ts/docs/screen/common/controller/docklist_controller.ts"
+        "resources/assets/ts/docs/screen/common/controller/docklist_controller.ts",
+        "tests/e2e/sample/sample.ts"
     ]
 }
