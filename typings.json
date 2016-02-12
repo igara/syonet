@@ -1,9 +1,11 @@
 {
   "name": "igara",
   "ambientDependencies": {
-    "angular": "github:DefinitelyTyped/DefinitelyTyped/angularjs/angular.d.ts#5a8fc5ee71701431e4fdbb80c506e3c13f85a9ff",
-    "jquery": "github:DefinitelyTyped/DefinitelyTyped/jquery/jquery.d.ts#5a8fc5ee71701431e4fdbb80c506e3c13f85a9ff",
-    "onsenui": "github:DefinitelyTyped/DefinitelyTyped/onsenui/onsenui.d.ts#1da639a106527e0c4010b354a1efe52a3059a291",
-    "marked": "github:DefinitelyTyped/DefinitelyTyped/marked/marked.d.ts#fe563dff3428bac1260d1794e2c2ecf8f097535a"
+    "angular": "github:DefinitelyTyped/DefinitelyTyped/angularjs/angular.d.ts#75357ab8101c32379e2a59f396161a66688c6d26",
+    "angular-protractor": "github:DefinitelyTyped/DefinitelyTyped/angular-protractor/angular-protractor.d.ts#17fa1e5f269189f7f8e0f53f8c443e6c2eac562c",
+    "marked": "github:DefinitelyTyped/DefinitelyTyped/marked/marked.d.ts#493d3b6882c79289cd9597a45c287250297d5b9d",
+    "mocha": "github:DefinitelyTyped/DefinitelyTyped/mocha/mocha.d.ts#d6dd320291705694ba8e1a79497a908e9f5e6617",
+    "onsenui": "github:DefinitelyTyped/DefinitelyTyped/onsenui/onsenui.d.ts#76352a94c6e4a51e7f382aebaf0b63d9ac06ae12",
+    "power-assert": "github:DefinitelyTyped/DefinitelyTyped/power-assert/power-assert.d.ts#695da95a2405a9d6aae11944174227e1e7716e37"
   }
 }
