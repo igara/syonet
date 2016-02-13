@@ -9,10 +9,11 @@ class sample {
         describe('Array', function () {
             var ary = [1, 2, 3];
             describe('#indexOf()', function () {
-                it('tsで書いた方', function () {
+                it('tsで書いた方', function (done) {
                     var expected = 1 + 2 + 3;
                     var max:any = ary.forEach(args => max + args);
                     assert.default(6 === expected);
+                    done();
                 });
             });
         });

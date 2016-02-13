@@ -2,7 +2,7 @@ exports.config = {
   framework: 'mocha',
   mochaOpts: {
     ui: 'bdd',
-    reporter: 'spec'
+    reporter: 'nyan'
   },
   specs: [
     'tests/**/*.js'
