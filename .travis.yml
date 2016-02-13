@@ -1,7 +1,5 @@
 language: php
 
-node_js:
-    - 4.1
 php:
     - 5.6
     - 7.0
@@ -20,6 +18,10 @@ cache:
     - vendor
 
 before_script:
+    - curl -L git.io/nodebrew | perl - setup
+    - export PATH=$HOME/.nodebrew/current/bin:$PATH
+    - nodebrew install-binary 5.2.0
+    - nodebrew use 5.2.0
     - cp -p .env.example .env
     - composer self-update
     - composer install
