@@ -1,6 +1,4 @@
-/// <reference path="../../../../../typings/main/ambient/angular/angular.d.ts" />
-/// <reference path="../../../../../typings/main/ambient/onsenui/onsenui.d.ts" />
-
+/// <reference path="../../../../../typings/main.d.ts" />
 var app = angular.module('app', ['onsen']);
 
 /**

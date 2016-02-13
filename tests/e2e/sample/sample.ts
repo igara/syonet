@@ -1,6 +1,4 @@
-/// <reference path="../../../typings/main/ambient/power-assert/power-assert.d.ts" />
-/// <reference path="../../../typings/main/ambient/angular-protractor/angular-protractor.d.ts" />
-/// <reference path="../../../typings/main/ambient/mocha/mocha.d.ts" />
+/// <reference path="../../../typings/main.d.ts" />
 
 import * as assert from 'power-assert';
 
