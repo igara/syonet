@@ -4,7 +4,12 @@ php:
     - 5.6
     - 7.0
     - hhvm
-    - nightly
+
+sudo: false
+cache:
+  directories:
+    - node_modules
+    - vendor
 
 before_script:
     - cp -p .env.example .env
