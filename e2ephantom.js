@@ -4,12 +4,12 @@ exports.config = {
     ui: 'bdd',
     reporter: 'dot'
   },
-  specs: [
-    'tests/**/*.js'
-  ],
+  suites: {
+    full: 'tests/**/*.js'
+  },
   capabilities: {
     'browserName': 'phantomjs',
     'phantomjs.binary.path': './node_modules/.bin/phantomjs'
   },
-  baseUrl: 'http://localhost:8000/'
+  baseUrl: 'http://127.0.0.1:8000/'
 };
