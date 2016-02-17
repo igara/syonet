@@ -12,6 +12,6 @@ public/css/lib/
 public/js/
 *.js
 *.map
-!e2ephantom.js
+!e2efirefox.js
 typings/
 phantomjsdriver.log

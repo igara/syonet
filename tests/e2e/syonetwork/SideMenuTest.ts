@@ -78,6 +78,8 @@ class SideMenuTest {
                     assert.default(
                         isMenu === false,
                         'error:サイドメニューが開かれたままになっている');
+                        // スリープさせる
+                        browser.sleep(sleepTime);
                         done();
                 });
                 
