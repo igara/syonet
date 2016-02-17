@@ -16,6 +16,7 @@
     "files": [
         "resources/assets/ts/common/controller/common_controller.ts",
         "resources/assets/ts/docs/screen/common/controller/docklist_controller.ts",
-        "tests/e2e/sample/sample.ts"
+        "tests/e2e/BrowserSetting.ts",
+        "tests/e2e/syonetwork/SideMenuTest.ts"
     ]
 }
