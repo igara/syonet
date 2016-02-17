@@ -33,4 +33,4 @@ script:
 
 after_success:
     - travis_retry php vendor/bin/coveralls -v
-    - node_modules/.bin/protractor e2ephantom.js
+    - node_modules/.bin/protractor e2efirefox.js
