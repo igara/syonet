@@ -1,7 +1,7 @@
 {
   "name": "igara",
   "ambientDependencies": {
-    "angular": "github:DefinitelyTyped/DefinitelyTyped/angularjs/angular.d.ts#75357ab8101c32379e2a59f396161a66688c6d26",
+    "angular": "github:DefinitelyTyped/DefinitelyTyped/angularjs/angular.d.ts#17ef40452039d19e06dc2a3815ea898c505860fa",
     "angular-protractor": "github:DefinitelyTyped/DefinitelyTyped/angular-protractor/angular-protractor.d.ts#17fa1e5f269189f7f8e0f53f8c443e6c2eac562c",
     "empower": "github:DefinitelyTyped/DefinitelyTyped/empower/empower.d.ts#aeb7701fbef3b7fc7261d67c025c823666ab98ea",
     "jquery": "github:igara/DefinitelyTyped/jquery/jquery.d.ts#144ca38f83058b29f2b7b38c28e931a0139aa022",
