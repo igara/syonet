@@ -2,7 +2,8 @@ exports.config = {
   framework: 'mocha',
   mochaOpts: {
     ui: 'bdd',
-    reporter: 'dot'
+    reporter: 'dot',
+    timeout: 99999999
   },
   suites: {
     full: 'tests/**/*.js'
