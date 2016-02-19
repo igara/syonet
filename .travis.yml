@@ -22,7 +22,7 @@ before_script:
     - composer self-update
     - composer install
     - php artisan key:generate
-    - php artisan serve
+    - php artisan serve &
     - npm install
     - node_modules/.bin/gulp
     - node_modules/.bin/typings install
@@ -34,7 +34,7 @@ script:
     - chmod -R 777 build/logs
     - vendor/bin/phpunit --coverage-clover build/logs/clover.xml
     - node_modules/.bin/gulp tsbuild
-    - sh -e /etc/init.d/xvfb start
+    - sh -e /etc/init.d/xvfb start &
 
 after_success:
     - travis_retry php vendor/bin/coveralls -v
