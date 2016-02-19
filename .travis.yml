@@ -22,7 +22,7 @@ before_script:
     - composer self-update
     - composer install
     - php artisan key:generate
-    - php -S 127.0.0.1:8000 -t 'public/' &
+    - php artisan serve
     - npm install
     - node_modules/.bin/gulp
     - node_modules/.bin/typings install
