@@ -12,6 +12,7 @@ cache:
   directories:
     - node_modules
     - vendor
+    - typings
 
 before_script:
     - curl -L git.io/nodebrew | perl - setup
@@ -27,7 +28,8 @@ before_script:
     - node_modules/.bin/gulp
     - node_modules/.bin/typings install
     - node_modules/.bin/gulp tsbuild
-    - node_modules/.bin/webdriver-manager update
+    - node_modules/protractor/bin/webdriver-manager update
+    - node_modules/protractor/bin/webdriver-manager start &
 
 script:
     - mkdir -p build/logs
