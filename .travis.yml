@@ -34,7 +34,9 @@ script:
     - chmod -R 777 build/logs
     - vendor/bin/phpunit --coverage-clover build/logs/clover.xml
     - node_modules/.bin/gulp tsbuild
+    - sh -e /etc/init.d/xvfb
 
 after_success:
     - travis_retry php vendor/bin/coveralls -v
     - node_modules/.bin/protractor e2efirefox.js
+    - node_modules/.bin/protractor e2ephantom.js
