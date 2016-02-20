@@ -16,4 +16,5 @@ public/js/
 !e2echrome.js
 !e2ephantom.js
 typings/
+screenshot/
 phantomjsdriver.log

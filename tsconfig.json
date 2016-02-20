@@ -17,6 +17,12 @@
         "resources/assets/ts/common/controller/common_controller.ts",
         "resources/assets/ts/docs/screen/common/controller/docklist_controller.ts",
         "tests/e2e/BrowserSetting.ts",
-        "tests/e2e/syonetwork/SideMenuTest.ts"
+        "tests/e2e/SyonetWork.d.ts",
+        "tests/e2e/SyonetWork.ts",
+        "tests/e2e/syonetwork/SideMenuTest.ts",
+        "tests/e2e/syonetwork_contents/SideMenuTest.ts",
+        "tests/e2e/syonetwork_dev/SideMenuTest.ts",
+        "tests/e2e/syonetwork_docs/SideMenuTest.ts",
+        "tests/e2e/syonetwork_home/SideMenuTest.ts"
     ]
 }
