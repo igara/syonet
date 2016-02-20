@@ -2,7 +2,7 @@ exports.config = {
   onPrepare: function () {
     browser.ignoreSynchronization = true;
   },
-  seleniumAddress: 'http://localhost:4444/wd/hub',
+  seleniumAddress: 'http://127.0.0.1:4444/wd/hub',
   framework: 'mocha',
   mochaOpts: {
     ui: 'bdd',

@@ -6,7 +6,7 @@ import * as assert from 'power-assert';
 import browserSetting = require('../BrowserSetting');
 
 // テストを行うページのURL
-const url = 'http://localhost:8000/';
+const url = 'http://127.0.0.1:8000/';
 
 // スリープさせる時間を取得
 const sleepTime = browserSetting.getSleepTime();
