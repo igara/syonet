@@ -4,3 +4,9 @@
  * @var menu:SlidingMenuView
  */
 var menu:SlidingMenuView;
+
+/**
+ * SyoNetで使われるタブバーの型定義
+ * @var tabbar:TabbarView
+ */
+var tabbar:TabbarView;
