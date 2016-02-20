@@ -4,9 +4,10 @@
 
 import * as assert from 'power-assert';
 import browserSetting = require('../BrowserSetting');
+import fs = require('fs');
 
 // テストを行うページのURL
-const url = 'http://127.0.0.1:8000/';
+const url = 'http://localhost:8000/';
 
 // スリープさせる時間を取得
 const sleepTime = browserSetting.getSleepTime();
@@ -50,8 +51,6 @@ class SideMenuTest {
                 .mouseMove(body, {x:browserSize.width, y:browserSize.height / 2})
                 .mouseUp()
                 .perform();
-                // スリープさせる
-                browser.sleep(sleepTime);
 
                 // ブラウザ内のJavaScriptを実行させる
                 browser.executeAsyncScript(function() {
@@ -61,6 +60,19 @@ class SideMenuTest {
                     assert.default(
                         isMenu === true,
                         'error:サイドメニューが開かれていない');
+                    // スリープさせる
+                    browser.sleep(sleepTime);
+                    // スクリーンショットを取る
+                    browser.takeScreenshot().then(function(data) {
+                        fs.writeFile(
+                            'screenshot/syonetwork/OpenedSideMenu.png',
+                            data.replace(/^data:image\/png;base64,/,''), 
+                            'base64',
+                            function(error) {
+                                if(error) throw error;
+                            }
+                        );
+                    });
                 });
 
                 // 左にスワイプする
@@ -78,9 +90,20 @@ class SideMenuTest {
                     assert.default(
                         isMenu === false,
                         'error:サイドメニューが開かれたままになっている');
-                        // スリープさせる
-                        browser.sleep(sleepTime);
-                        done();
+                    // スリープさせる
+                    browser.sleep(sleepTime);
+                    // スクリーンショットを取る
+                    browser.takeScreenshot().then(function(data) {
+                        fs.writeFile(
+                            'screenshot/syonetwork/ClosedSideMenu.png',
+                            data.replace(/^data:image\/png;base64,/,''), 
+                            'base64',
+                            function(error) {
+                                if(error) throw error;
+                            }
+                        );
+                    });
+                    done();
                 });
                 
             });
