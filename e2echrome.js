@@ -1,8 +1,8 @@
 exports.config = {
-  seleniumAddress: 'http://127.0.0.1:4444/wd/hub',
   onPrepare: function () {
     browser.ignoreSynchronization = true;
   },
+  seleniumAddress: 'http://127.0.0.1:4444/wd/hub',
   framework: 'mocha',
   mochaOpts: {
     ui: 'bdd',
@@ -12,9 +12,7 @@ exports.config = {
   },
   specs: ['tests/**/*.js'],
   capabilities: {
-    'browserName': 'phantomjs',
-    'phantomjs.binary.path': 'node_modules/.bin/phantomjs',
-    'phantomjs.ghostdriver.cli.args': ['--loglevel=DEBUG']
+    'browserName': 'chrome'
   },
   baseUrl: 'http://127.0.0.1:8000/'
 };
