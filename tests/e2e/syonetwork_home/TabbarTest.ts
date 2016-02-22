@@ -7,7 +7,7 @@ import browserSetting = require('../BrowserSetting');
 import fs = require('fs');
 
 // テストを行うページのURL
-const url = 'http://localhost:8000/';
+const url = 'http://localhost:8000/home';
 
 // スリープさせる時間を取得
 const sleepTime = browserSetting.getSleepTime();
@@ -63,7 +63,7 @@ class TabbarTest {
                     // スクリーンショットを取る
                     browser.takeScreenshot().then(function(data) {
                         fs.writeFile(
-                            'screenshot/syonetwork/ClickedContentsTab.png',
+                            'screenshot/syonetwork_home/ClickedContentsTab.png',
                             data.replace(/^data:image\/png;base64,/,''), 
                             'base64',
                             function(error) {
@@ -87,7 +87,7 @@ class TabbarTest {
                     // スクリーンショットを取る
                     browser.takeScreenshot().then(function(data) {
                         fs.writeFile(
-                            'screenshot/syonetwork/ClickedDocsTab.png',
+                            'screenshot/syonetwork_home/ClickedDocsTab.png',
                             data.replace(/^data:image\/png;base64,/,''), 
                             'base64',
                             function(error) {
@@ -111,7 +111,7 @@ class TabbarTest {
                     // スクリーンショットを取る
                     browser.takeScreenshot().then(function(data) {
                         fs.writeFile(
-                            'screenshot/syonetwork/ClickedDevTab.png',
+                            'screenshot/syonetwork_home/ClickedDevTab.png',
                             data.replace(/^data:image\/png;base64,/,''), 
                             'base64',
                             function(error) {
@@ -135,7 +135,7 @@ class TabbarTest {
                     // スクリーンショットを取る
                     browser.takeScreenshot().then(function(data) {
                         fs.writeFile(
-                            'screenshot/syonetwork/ClickedHomeTab.png',
+                            'screenshot/syonetwork_home/ClickedHomeTab.png',
                             data.replace(/^data:image\/png;base64,/,''), 
                             'base64',
                             function(error) {

@@ -7,7 +7,7 @@ import browserSetting = require('../BrowserSetting');
 import fs = require('fs');
 
 // テストを行うページのURL
-const url = 'http://localhost:8000/';
+const url = 'http://localhost:8000/contents';
 
 // スリープさせる時間を取得
 const sleepTime = browserSetting.getSleepTime();
@@ -48,6 +48,30 @@ class TabbarTest {
                 browser.waitForAngular();
                 // テスト開始時、スリープさせる
                 browser.sleep(sleepTime);
+                // Homeタブを押下する
+                homeTab.click();
+                // ブラウザ内のJavaScriptを実行させる
+                browser.executeAsyncScript(function() {
+                    var callback = arguments[arguments.length - 1];
+                    callback(tabbar.getActiveTabIndex());
+                }).then(function(tabIndex) {
+                    assert.default(
+                        tabIndex === 0,
+                        'error:Homeタブが押下されていない');
+                    // スリープさせる
+                    browser.sleep(sleepTime);
+                    // スクリーンショットを取る
+                    browser.takeScreenshot().then(function(data) {
+                        fs.writeFile(
+                            'screenshot/syonetwork_contents/ClickedHomeTab.png',
+                            data.replace(/^data:image\/png;base64,/,''), 
+                            'base64',
+                            function(error) {
+                                if(error) throw error;
+                            }
+                        );
+                    });
+                });
                 // Contentsタブを押下する
                 contentsTab.click();
                 // ブラウザ内のJavaScriptを実行させる
@@ -63,7 +87,7 @@ class TabbarTest {
                     // スクリーンショットを取る
                     browser.takeScreenshot().then(function(data) {
                         fs.writeFile(
-                            'screenshot/syonetwork/ClickedContentsTab.png',
+                            'screenshot/syonetwork_contents/ClickedContentsTab.png',
                             data.replace(/^data:image\/png;base64,/,''), 
                             'base64',
                             function(error) {
@@ -87,7 +111,7 @@ class TabbarTest {
                     // スクリーンショットを取る
                     browser.takeScreenshot().then(function(data) {
                         fs.writeFile(
-                            'screenshot/syonetwork/ClickedDocsTab.png',
+                            'screenshot/syonetwork_contents/ClickedDocsTab.png',
                             data.replace(/^data:image\/png;base64,/,''), 
                             'base64',
                             function(error) {
@@ -111,31 +135,7 @@ class TabbarTest {
                     // スクリーンショットを取る
                     browser.takeScreenshot().then(function(data) {
                         fs.writeFile(
-                            'screenshot/syonetwork/ClickedDevTab.png',
-                            data.replace(/^data:image\/png;base64,/,''), 
-                            'base64',
-                            function(error) {
-                                if(error) throw error;
-                            }
-                        );
-                    });
-                });
-                // Homeタブを押下する
-                homeTab.click();
-                // ブラウザ内のJavaScriptを実行させる
-                browser.executeAsyncScript(function() {
-                    var callback = arguments[arguments.length - 1];
-                    callback(tabbar.getActiveTabIndex());
-                }).then(function(tabIndex) {
-                    assert.default(
-                        tabIndex === 0,
-                        'error:Homeタブが押下されていない');
-                    // スリープさせる
-                    browser.sleep(sleepTime);
-                    // スクリーンショットを取る
-                    browser.takeScreenshot().then(function(data) {
-                        fs.writeFile(
-                            'screenshot/syonetwork/ClickedHomeTab.png',
+                            'screenshot/syonetwork_contents/ClickedDevTab.png',
                             data.replace(/^data:image\/png;base64,/,''), 
                             'base64',
                             function(error) {
