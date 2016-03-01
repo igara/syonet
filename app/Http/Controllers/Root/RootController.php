@@ -28,16 +28,11 @@ class RootController extends Controller
      */
     public function topAction(Request $request)
     {
-        // リクエストパラメータからタブの情報を取得する
-        $tabbarParams = $request->only([
-            'home',
-            'contents',
-            'docs',
-            'dev',
-        ]);
+        // リクエストパラメータを取得する
+        $requestParams = $request->getQueryString();
         $tabbarStatus = 'home';
 
-        return view('root/root_top', compact('tabbarParams', 'tabbarStatus'));
+        return view('root/root_top', compact('requestParams', 'tabbarStatus'));
     }
 
     /**
@@ -49,16 +44,11 @@ class RootController extends Controller
      */
     public function homeAction(Request $request)
     {
-        // リクエストパラメータからタブの情報を取得する
-        $tabbarParams = $request->only([
-            'home',
-            'contents',
-            'docs',
-            'dev',
-        ]);
+        // リクエストパラメータを取得する
+        $requestParams = $request->getQueryString();
         $tabbarStatus = 'home';
 
-        return view('root/root_home', compact('tabbarParams', 'tabbarStatus'));
+        return view('root/root_home', compact('requestParams', 'tabbarStatus'));
     }
 
     /**
@@ -70,16 +60,11 @@ class RootController extends Controller
      */
     public function contentsAction(Request $request)
     {
-        // リクエストパラメータからタブの情報を取得する
-        $tabbarParams = $request->only([
-            'home',
-            'contents',
-            'docs',
-            'dev',
-        ]);
+        // リクエストパラメータを取得する
+        $requestParams = $request->getQueryString();
         $tabbarStatus = 'contents';
 
-        return view('root/root_contents', compact('tabbarParams', 'tabbarStatus'));
+        return view('root/root_contents', compact('requestParams', 'tabbarStatus'));
     }
 
     /**
@@ -91,16 +76,11 @@ class RootController extends Controller
      */
     public function docsAction(Request $request)
     {
-        // リクエストパラメータからタブの情報を取得する
-        $tabbarParams = $request->only([
-            'home',
-            'contents',
-            'docs',
-            'dev',
-        ]);
+        // リクエストパラメータを取得する
+        $requestParams = $request->getQueryString();
         $tabbarStatus = 'docs';
 
-        return view('root/root_docs', compact('tabbarParams', 'tabbarStatus'));
+        return view('root/root_docs', compact('requestParams', 'tabbarStatus'));
     }
 
     /**
@@ -112,15 +92,10 @@ class RootController extends Controller
      */
     public function devAction(Request $request)
     {
-        // リクエストパラメータからタブの情報を取得する
-        $tabbarParams = $request->only([
-            'home',
-            'contents',
-            'docs',
-            'dev',
-        ]);
+        // リクエストパラメータを取得する
+        $requestParams = $request->getQueryString();
         $tabbarStatus = 'dev';
 
-        return view('root/root_dev', compact('tabbarParams', 'tabbarStatus'));
+        return view('root/root_dev', compact('requestParams', 'tabbarStatus'));
     }
 }

@@ -10,12 +10,11 @@
     <script type="text/javascript" src="/js/lib/onsenui/onsenui.min.js"></script>
     <script type="text/javascript" src="/js/lib/onsenui/angular-onsenui.min.js"></script>
     <script type="text/javascript" src="/js/common/controller/common_controller.js"></script>
-    <script type="text/javascript" src="/js/lib/marked/marked.min.js"></script>
 </head>
 <body ng-controller="CommonController">
     <ons-sliding-menu var="menu"
         menu-page="/sidemenu/sidemenu_top"
-        main-page="/tabbar/tabbar/?home={{{ $tabbarParams['home'] }}}&contents={{{ $tabbarParams['contents'] }}}&docs={{{ $tabbarParams['docs'] }}}&dev={{{ $tabbarParams['dev'] }}}&tabbarstatus={{{ $tabbarStatus }}}"
+        main-page="/tabbar/tabbar/?{{{ $requestParams }}}&tabbarstatus={{{ $tabbarStatus }}}"
         side="left" type="push" max-slide-distance="200px">
     </ons-sliding-menu>
     
