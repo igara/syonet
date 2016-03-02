@@ -6,10 +6,10 @@
     <meta name="description" content="Web・Networkなどの技術サイトです。">
     <link href="/css/lib/onsenui/onsenui.css" rel="stylesheet" type="text/css">
     <link href="/css/lib/onsenui/onsen-css-components-blue-basic-theme.css" rel="stylesheet" type="text/css">
-    <script async type="text/javascript" src="/js/lib/angular/angular.min.js"></script>
-    <script async type="text/javascript" src="/js/lib/onsenui/onsenui.min.js"></script>
-    <script async type="text/javascript" src="/js/lib/onsenui/angular-onsenui.min.js"></script>
-    <script async type="text/javascript" src="/js/common/controller/common_controller.js"></script>
+    <script type="text/javascript" src="/js/lib/angular/angular.min.js"></script>
+    <script type="text/javascript" src="/js/lib/onsenui/onsenui.min.js"></script>
+    <script type="text/javascript" src="/js/lib/onsenui/angular-onsenui.min.js"></script>
+    <script type="text/javascript" src="/js/common/controller/common_controller.js"></script>
 </head>
 <body ng-controller="CommonController">
     <ons-sliding-menu var="menu"
