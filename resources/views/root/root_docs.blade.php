@@ -14,7 +14,7 @@
 <body ng-controller="CommonController">
     <ons-sliding-menu var="menu"
         menu-page="/sidemenu/sidemenu_top"
-        main-page="/tabbar/tabbar/?{{{ $requestParams }}}&tabbarstatus={{{ $tabbarStatus }}}"
+        main-page="/tabbar/tabbar/?{{ $requestParams }}&tabbarstatus={{ $tabbarStatus }}"
         side="left" type="push" max-slide-distance="200px">
     </ons-sliding-menu>
     
