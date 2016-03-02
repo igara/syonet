@@ -70,6 +70,21 @@ gulp.task('tsbuild', function() {
 });
 
 /**
+ * public/css・js/下にあるファイルのgzip圧縮を行う
+ * 
+ * command:./node_modules/.bin/gulp gzip
+ */
+gulp.task('gzip', function() {
+    var gzip = require('gulp-gzip');
+    gulp.src('public/css/**/*.css')
+		.pipe(gzip())
+		.pipe(gulp.dest('public/css/'));
+    gulp.src('public/js/**/*.js')
+		.pipe(gzip())
+		.pipe(gulp.dest('public/js/'));
+});
+
+/**
  * resources/assets/ts下にあるTypeScriptのトランスパイルを行い、
  * sourcemapも出力する。
  * 

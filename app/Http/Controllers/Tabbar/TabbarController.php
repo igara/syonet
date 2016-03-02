@@ -34,7 +34,9 @@ class TabbarController extends Controller
         if (isset($request['tabbarstatus'])) {
             $tabbarStatus = $request['tabbarstatus'];
         }
+        // リクエストパラメータを取得する
+        $requestParams = $request->getQueryString();
 
-        return view('tabbar/tabbar', compact('tabbarInfo', 'tabbarStatus'));
+        return view('tabbar/tabbar', compact('tabbarInfo', 'tabbarStatus', 'requestParams'));
     }
 }
