@@ -151,5 +151,6 @@ gulp.task('tsconfig', function() {
 gulp.task('tsdcreate', function() {
     var shell = require('gulp-shell');
     // tsdファイルの作成を行う
-    gulp.src('').pipe(shell('./node_modules/.bin/tsc --declaration typings/syonet/*'));
+    gulp.src('').pipe(shell('./node_modules/.bin/tsc -d typings/syonet/SyonetWork.ts'));
+    gulp.src('').pipe(shell('./node_modules/.bin/tsc -d typings/syonet/BrowserSetting.ts'));
 });
