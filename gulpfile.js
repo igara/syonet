@@ -66,7 +66,9 @@ gulp.task('tsbuild', function() {
     gulp.src('resources/assets/ts/docs/**/*.js')
         .pipe(gulp.dest('public/js/docs/'));
     gulp.src('resources/assets/ts/common/**/*.js')
-        .pipe(gulp.dest('public/js/common/')); 
+        .pipe(gulp.dest('public/js/common/'));
+    gulp.src('resources/assets/ts/contents/**/*.js')
+        .pipe(gulp.dest('public/js/contents/'));
 });
 
 /**
@@ -137,6 +139,17 @@ gulp.task('tsconfig', function() {
     var tsConfig = require('gulp-tsconfig-update');
     
     // ビルド対象のファイルを指定する
-    gulp.src(['resources/assets/ts/**/*.ts','tests/e2e/**/*.ts'])
+    gulp.src(['resources/assets/ts/**/*.ts','tests/e2e/**/*.ts', 'typings/syonet/*.ts'])
         .pipe(tsConfig());
+});
+
+/**
+ * typings/syonet/下にあるTypeScriptの型定義ファイルを作成する
+ * 
+ * command:./node_modules/.bin/gulp tsdcreate
+ */
+gulp.task('tsdcreate', function() {
+    var shell = require('gulp-shell');
+    // tsdファイルの作成を行う
+    gulp.src('').pipe(shell('./node_modules/.bin/tsc --declaration typings/syonet/*'));
 });

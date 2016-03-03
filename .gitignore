@@ -15,6 +15,7 @@ public/js/
 !e2efirefox.js
 !e2echrome.js
 !e2ephantom.js
-typings/
+typings/**/*d.ts
 screenshot/
 phantomjsdriver.log
+!typings/syonet/SyonetWork.ts
