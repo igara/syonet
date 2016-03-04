@@ -112,6 +112,12 @@ gulp.task('tsdevbuild', function() {
         .pipe(gulp.dest('public/js/common/')); 
     gulp.src('resources/assets/ts/common/**/*.map')
         .pipe(gulp.dest('public/js/common/')); 
+    gulp.src('resources/assets/ts/contents/**/*.js')
+        .pipe(gulp.dest('public/js/contents/'));
+    gulp.src('resources/assets/ts/contents/**/*.ts')
+        .pipe(gulp.dest('public/js/contents/')); 
+    gulp.src('resources/assets/ts/contents/**/*.map')
+        .pipe(gulp.dest('public/js/contents/')); 
 });
 
 /**
