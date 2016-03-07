@@ -21,6 +21,9 @@ class ContentsUrlInfo
             'CHAT' => [
                 'URL' => '/tabbar/navigation/contents/contents_chat',
             ],
+            'CONNPASS' => [
+                'URL' => '/tabbar/navigation/contents/it_connpass',
+            ],
         ];
     }
 }

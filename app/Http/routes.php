@@ -19,6 +19,8 @@ Route::get('/tabbar/navigation/home/home_top', 'Tabbar\Navigation\Home\HomeContr
 // contentsタブ
 Route::get('/tabbar/navigation/contents/contents_top', 'Tabbar\Navigation\Contents\ContentsController@topAction');
 Route::get('/tabbar/navigation/contents/contents_chat', 'Tabbar\Navigation\Contents\ContentsController@chatAction');
+// connpass
+Route::get('/tabbar/navigation/contents/it_connpass', 'Tabbar\Navigation\Contents\It\EventController@connpassAction');
 
 // docsタブ
 Route::get('/tabbar/navigation/docs/docs_top', 'Tabbar\Navigation\Docs\DocsController@topAction');
