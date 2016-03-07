@@ -10,15 +10,8 @@ class CommonController {
      * constructor
      * 
      * @param $scope DockListScope extends ng.IScope
-     * @param $location DockListLocation extends ng.ILocationService
-     * @param $sce DockListSceProvider extends ng.ISCEService
      */
-    constructor(private $scope: CommonScope, private $sce: CommonSceService, private $http: CommonHttpService) {
-        $scope.homeContent = $sce.trustAsHtml('home');
-        $scope.contentsContent = $sce.trustAsHtml('contents');
-        $scope.docsContent = $sce.trustAsHtml(`docs`);
-        $scope.devContent = $sce.trustAsHtml(`dev`);
-        
+    constructor(private $scope: CommonScope) {        
         $scope.onClickedTab = () => {
             // タブバーの押下後のイベントリスナーを削除
             ons.findComponent("ons-tabbar").off('postchange');
@@ -35,32 +28,8 @@ class CommonController {
  * スコープのinterface 
  */
 interface CommonScope extends ng.IScope {
-    // タブバーのhomeのページ内容
-    homeContent: string;
-
-    // タブバーのcommentsのページ内容
-    contentsContent: string;
-
-    // タブバーのdocsのページ内容
-    docsContent: string;
-
-    // タブバーのdevのページ内容
-    devContent: string;
-
     // タブ押下時のイベント
     onClickedTab: any;
-}
-
-/**
- * SCEサービスのinterface
- */
-interface CommonSceService extends ng.ISCEService {
-}
-
-/**
- * HTTPサービスのinterface
- */
-interface CommonHttpService extends ng.IHttpService {
 }
 
 app.controller('CommonController', CommonController);
