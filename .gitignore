@@ -19,3 +19,6 @@ typings/**/*d.ts
 screenshot/
 phantomjsdriver.log
 !typings/syonet/SyonetWork.ts
+!typings/syonet/SyonetWork.d.ts
+!typings/syonet/BrowserSetting.ts
+!typings/syonet/BrowserSetting.d.ts
