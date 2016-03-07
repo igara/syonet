@@ -1,9 +1,9 @@
 /// <reference path="../../../typings/main.d.ts" />
-/// <reference path="../BrowserSetting.ts" />
-/// <reference path="../SyonetWork.d.ts" />
+/// <reference path="../../../typings/syonet/BrowserSetting.ts" />
+/// <reference path="../../../typings/syonet/SyonetWork.d.ts" />
 
 import * as assert from 'power-assert';
-import browserSetting = require('../BrowserSetting');
+import browserSetting = require('../../../typings/syonet/BrowserSetting');
 import fs = require('fs');
 
 // テストを行うページのURL
