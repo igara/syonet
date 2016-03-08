@@ -9,7 +9,9 @@
     <script type="text/javascript" src="/js/lib/angular/angular.min.js"></script>
     <script type="text/javascript" src="/js/lib/onsenui/onsenui.min.js"></script>
     <script type="text/javascript" src="/js/lib/onsenui/angular-onsenui.min.js"></script>
-    <script type="text/javascript" src="/js/common/controller/common_controller.js"></script>
+    <script>
+        var app = angular.module('app', ['onsen']);
+    </script>
 </head>
 <body>
     <ons-sliding-menu var="menu"
