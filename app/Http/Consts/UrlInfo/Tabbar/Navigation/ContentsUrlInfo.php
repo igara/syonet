@@ -23,6 +23,7 @@ class ContentsUrlInfo
             ],
             'CONNPASS' => [
                 'URL' => '/tabbar/navigation/contents/it_connpass',
+                'LIST_TEMPLATE_URL' => '/tabbar/navigation/contents/it_connpass/list',
             ],
         ];
     }
