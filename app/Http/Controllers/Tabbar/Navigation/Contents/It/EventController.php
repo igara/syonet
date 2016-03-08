@@ -45,4 +45,13 @@ class EventController extends Controller
             compact('getConnpassOneMonthEvent')
         );
     }
+
+    /**
+     * connpassアクション.
+     *
+     */
+    public function connpassListAction()
+    {
+        return view('tabbar/navigation/contents/it/event/connpass_list');
+    }
 }
