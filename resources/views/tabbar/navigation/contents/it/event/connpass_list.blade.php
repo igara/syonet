@@ -8,21 +8,22 @@
 <li class="list__header">
     @{{$ctrl.getJson['results_start']}}〜@{{$ctrl.getJson['results_returned']}}件 (該当件数：@{{$ctrl.getJson['results_available']}}件)
 </li>
-<ons-list-item ng-repeat="connpassCasset in $ctrl.getJson['events']" modifier="inset" class="list-item-container">
-    <ons-row>
-        <ons-col>
-            <div class="name">
-                <a href="@{{connpassCasset.event_url}}">
-                    @{{connpassCasset.title}}
-                </a>
-            </div>
-            <div class="location">
-                <i class="fa fa-map-marker"></i> @{{connpassCasset.address}}
-            </div>
-            <div class="desc">
-                @{{connpassCasset.place}}
-            </div>
-        </ons-col>
-        <ons-col width="40px"></ons-col>
-    </ons-row>
-</ons-list-item>
+<ons-list>
+    <div ng-repeat="connpassCasset in $ctrl.getJson['events']" class="center list__item__center list__item--inset__center">
+        <ons-row>
+            <ons-col>
+                <div class="name">
+                    <a href="@{{connpassCasset.event_url}}">
+                        @{{connpassCasset.title}}
+                    </a>
+                </div>
+                <div class="location">
+                    <i class="fa fa-map-marker"></i> @{{connpassCasset.address}}
+                </div>
+                <div class="desc">
+                    @{{connpassCasset.place}}
+                </div>
+            </ons-col>
+        </ons-row>
+    </div>
+</ons-list>
