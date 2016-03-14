@@ -10,16 +10,16 @@ class ConnpassCtrl {
     // locationを扱うサービス
     locationService:ng.ILocationService;
     // JSONデータを扱う
-    getJson: any;
+    getJson:any;
     // 年月を取得する 
-    year:any;
-    month:any;
+    yearParam:any;
+    monthParam:any;
     // 検索開始位置
-    start:any;
+    startParam:any;
     // 検索出力数
-    count:any;
+    countParam:any;
     // キーワード
-    keyword:any;
+    keywordParam:any;
 
     /**
      * コンストラクタ
@@ -29,17 +29,17 @@ class ConnpassCtrl {
         this.locationService = $location;
 
         // 年月を取得する 
-        this.year = this.getYear();
-        this.month = this.getMonth();
+        this.yearParam = this.getYearParam();
+        this.monthParam = this.getMonthParam();
         // 検索開始位置
-        this.start = this.getStart();
+        this.startParam = this.getStartParam();
         // 検索出力数
-        this.count = this.getCount();
+        this.countParam = this.getCountParam();
         
         // URLパラメータから検索ワードを取得する
-        this.keyword = this.getKeyword();
+        this.keywordParam = this.getKeywordParam();
 
-        this.callConnpassApiJson(this.keyword, this.year, this.month, this.start, this.count);
+        this.callConnpassApiJson(this.keywordParam, this.yearParam, this.monthParam, this.startParam, this.countParam);
     }
 
     /**
@@ -58,7 +58,7 @@ class ConnpassCtrl {
      * 検索する時の年を取得する
      * @return number 年
      */
-    getYear() {
+    getYearParam() {
         // URLパラメータから年を取得する
         var year = this.locationService.search(location.search).search()["year"];
         // パラメータのyearがundefinedもしくは数字ではない場合今年
@@ -72,7 +72,7 @@ class ConnpassCtrl {
      * 検索する時の月を取得する
      * @return number 月
      */
-    getMonth() {
+    getMonthParam() {
         // URLパラメータから月を取得する
         var month = this.locationService.search(location.search).search()["month"];
         // パラメータのmonthがundefinedもしくは数字ではない場合今月
@@ -90,7 +90,7 @@ class ConnpassCtrl {
      * 検索する時の検索開始位置を取得する
      * @return number 検索開始位置
      */
-    getStart() {
+    getStartParam() {
         // URLパラメータから検索開始位置を取得する
         var start = this.locationService.search(location.search).search()["start"];
         // パラメータのstartがundefinedもしくは数字ではない場合1
@@ -104,7 +104,7 @@ class ConnpassCtrl {
      * 検索する時の検索開出力数を取得する
      * @return number 検索開出力数
      */
-    getCount() {
+    getCountParam() {
         // URLパラメータから検索出力数を取得する
         var count = this.locationService.search(location.search).search()["count"];
         // パラメータのcountがundefinedもしくは数字ではない場合20
@@ -118,8 +118,50 @@ class ConnpassCtrl {
      * 検索する時のキーワードを取得する
      * @return string キーワード
      */
-    getKeyword() {
+    getKeywordParam() {
         return this.locationService.search(location.search).search()["keyword"];
+    }
+
+    /**
+     * 日付のフォーマットを適応した日付を取得する
+     * @param any 日付
+     * @return string 'XXXX/XX/XX XX:XX:XX'
+     */
+    getFormatedData(dataTime:any) {
+        var date:Date = new Date(dataTime);
+        // paramから年を取得する
+        var year:any = date.getFullYear();
+        // paramから月を取得する
+        var month:any = date.getMonth() + 1;
+        // paramから日を取得する
+        var day:any = date.getDate();
+        // paramから時を取得する
+        var hh:any = date.getHours();
+        // paramから分を取得する
+        var mm:any = date.getMinutes();
+        // paramから秒を取得する
+        var ss:any = date.getSeconds();
+        // 月が２桁にならない場合、0埋めする
+        if (month < 10) {
+            month = '0' + month;
+        }
+        // 日が２桁にならない場合、0埋めする
+        if (day < 10) {
+            day = '0' + day;
+        }
+        // 時が２桁にならない場合、0埋めする
+        if (hh < 10) {
+            hh = '0' + hh;
+        }
+        // 分が２桁にならない場合、0埋めする
+        if (mm < 10) {
+            mm = '0' + mm;
+        }
+        // 秒が２桁にならない場合、0埋めする
+        if (ss < 10) {
+            ss = '0' + ss;
+        }
+        return `${year}/${month}/${day} ${hh}:${mm}:${ss}`;
     }
 }
 
