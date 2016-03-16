@@ -32,6 +32,31 @@ class ConnpassEventService
     }
 
     /**
+     * 今年の年数字を取得
+     * 
+     * @param array $param リクエストパラメータ
+     * @return string 今年
+     */
+    public function getYear($param) {
+        if (isset($param['year']) && is_numeric($param['year'])){
+            return $param['year'];
+        }
+        return date('Y');
+    }
+    /**
+     * 今月の月数字を取得
+     * 
+     * @param array $param リクエストパラメータ
+     * @return string 今月
+     */
+    public function getMonth($param) {
+        if (isset($param['month']) && is_numeric($param['month'])){
+            return $param['month'];
+        }
+        return date('m');
+    }
+
+    /**
      * connpassのAPIからJSONを取得する.
      * 
      * @param array リクエストパラム
