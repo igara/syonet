@@ -46,7 +46,7 @@ class ConnpassCtrl {
      * ConnpassAPIから情報を取得する
      */
     callConnpassApiJson(keyword:string, year:string, month:string, start:string, count:string) {
-        this.http.jsonp(`//connpass.com/api/v1/event/?keyword=${keyword}&count=${count}&start=${start}&ym${year}${month}&callback=JSON_CALLBACK`)
+        this.http.jsonp(`//connpass.com/api/v1/event/?keyword=${keyword}&count=${count}&start=${start}&ym=${year}${month}&callback=JSON_CALLBACK`)
         .success((data, status) => {
             this.getJson = data;
         }).error(error => {
