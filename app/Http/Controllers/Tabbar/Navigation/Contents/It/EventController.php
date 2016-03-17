@@ -39,16 +39,18 @@ class EventController extends Controller
     public function connpassAction(Request $request)
     {
         $connpassEventEvent = new ConnpassEventService();
-        $getConnpassOneMonthEvent = $connpassEventEvent->getConnpassApiOneMonthEventJson($request);
+        $month = $connpassEventEvent->getMonth($request);
+        $year = $connpassEventEvent->getYear($request);
         return view(
             'tabbar/navigation/contents/it/event/connpass',
-            compact('getConnpassOneMonthEvent')
+            compact('month','year')
         );
     }
 
     /**
      * connpassアクション.
      *
+     * @return view contents/it/event/connpass_listテンプレート
      */
     public function connpassListAction()
     {

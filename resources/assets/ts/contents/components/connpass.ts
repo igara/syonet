@@ -18,6 +18,10 @@ class ConnpassCtrl {
     startParam:any;
     // 検索出力数
     countParam:any;
+    // ページ
+    pageParam:any;
+    // Math関数
+    Math:Math;
     // キーワード
     keywordParam:any;
 
@@ -27,7 +31,7 @@ class ConnpassCtrl {
     constructor($http: ng.IHttpService, $location:ng.ILocationService) {
         this.http = $http;
         this.locationService = $location;
-
+        this.Math = Math;
         // 年月を取得する 
         this.yearParam = this.getYearParam();
         this.monthParam = this.getMonthParam();
@@ -35,18 +39,22 @@ class ConnpassCtrl {
         this.startParam = this.getStartParam();
         // 検索出力数
         this.countParam = this.getCountParam();
+        // ページ
+        this.pageParam = this.getPageParam();
+        var start = this.getPageInfo().start;
+        var count = this.getPageInfo().count;
         
         // URLパラメータから検索ワードを取得する
         this.keywordParam = this.getKeywordParam();
 
-        this.callConnpassApiJson(this.keywordParam, this.yearParam, this.monthParam, this.startParam, this.countParam);
+        this.callConnpassApiJson(this.keywordParam, this.yearParam, this.monthParam, start.toString(), count);
     }
 
     /**
      * ConnpassAPIから情報を取得する
      */
     callConnpassApiJson(keyword:string, year:string, month:string, start:string, count:string) {
-        this.http.jsonp(`//connpass.com/api/v1/event/?keyword=${keyword}&count=${count}&start=${start}&ym${year}${month}&callback=JSON_CALLBACK`)
+        this.http.jsonp(`//connpass.com/api/v1/event/?keyword=${keyword}&count=${count}&start=${start}&ym=${year}${month}&callback=JSON_CALLBACK`)
         .success((data, status) => {
             this.getJson = data;
         }).error(error => {
@@ -101,8 +109,8 @@ class ConnpassCtrl {
     }
 
     /**
-     * 検索する時の検索開出力数を取得する
-     * @return number 検索開出力数
+     * 検索する時の検索出力数を取得する
+     * @return number 検索出力数
      */
     getCountParam() {
         // URLパラメータから検索出力数を取得する
@@ -112,6 +120,34 @@ class ConnpassCtrl {
             count = 20;
         }
         return count;
+    }
+    /**
+     * ページを取得する
+     * @return number ページ
+     */
+    getPageParam() {
+        // URLパラメータから検索開始位置を取得する
+        var page = this.locationService.search(location.search).search()["page"];
+        // パラメータのstartがundefinedもしくは数字ではない場合1
+        if (page === undefined || !isFinite(page)) {
+            page = 1;
+        }
+        return page;
+    }
+    /**
+     * ページに対する情報を取得する
+     * @return number ページの情報
+     */
+    getPageInfo() {
+        var start = this.startParam;
+        var count = this.countParam;
+        if (this.pageParam > 1) {
+            start = (this.pageParam - 1) * this.countParam + 1;
+        }
+        return {
+            'start':start,
+            'count':this.countParam
+        };
     }
 
     /**
@@ -162,6 +198,17 @@ class ConnpassCtrl {
             ss = '0' + ss;
         }
         return `${year}/${month}/${day} ${hh}:${mm}:${ss}`;
+    }
+
+    /**
+     * 検索ヒット数を配列化し取得する
+     * @param resultCount any 検索ヒット数
+     * @return any arr 検索ヒット数（配列）
+     */
+    getCountArray(resultCount:any) {
+        var arr:any = [];
+        for (var i = 1; i <= resultCount; ++i) arr.push(i);
+        return arr;
     }
 }
 

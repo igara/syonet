@@ -1,12 +1,9 @@
-<form action="" method="get">
-    <input type="hidden" name="contents" value="connpass">
-    <input type="text" class="text-input" placeholder="@{{$ctrl.yearParam}}" name="year" style="width: 50px;">年
-    <input type="text" class="text-input" placeholder="@{{$ctrl.monthParam}}" name="month" style="width: 50px;">月
-    <input type="text" class="search-input" placeholder="keyword (例)swift" name="keyword" style="width: 200px;">
-    <input type="submit" class="button button--light" value="検索">
-</form>
-<li class="list__header">
-    @{{$ctrl.getJson['results_start']}}〜@{{$ctrl.getJson['results_returned']}}件 (該当件数：@{{$ctrl.getJson['results_available']}}件)
+<span ng-repeat="count in $ctrl.getCountArray($ctrl.getJson['results_available'])" style="display:inline;">
+    <a href="/contents/?contents=connpass&year=@{{$ctrl.yearParam}}&month=@{{$ctrl.monthParam}}&keyword=@{{$ctrl.keywordParam}}&page=@{{(count + 1) / $ctrl.countParam}}" ng-if="(count + 1) % $ctrl.countParam == 0">@{{(count + 1) / $ctrl.countParam}} </a>
+    <a href="/contents/?contents=connpass&year=@{{$ctrl.yearParam}}&month=@{{$ctrl.monthParam}}&keyword=@{{$ctrl.keywordParam}}&page=@{{$ctrl.Math.ceil((count + 1) / $ctrl.countParam)}}" ng-if="count + 1 == $ctrl.getJson['results_available'] && (count + 1) % $ctrl.countParam != 0">@{{$ctrl.Math.ceil((count + 1) / $ctrl.countParam)}}</a>
+</span>
+<li class="list__header" ng-if="$ctrl.getJson['results_returned']">
+    @{{$ctrl.getJson['results_start']}}〜@{{$ctrl.getJson['results_start'] -1 + $ctrl.getJson['results_returned']}}件 (該当件数：@{{$ctrl.getJson['results_available']}}件)
 </li>
 <ons-list>
     <div ng-repeat="connpassCasset in $ctrl.getJson['events']" class="center list__item__center list__item--inset__center">
