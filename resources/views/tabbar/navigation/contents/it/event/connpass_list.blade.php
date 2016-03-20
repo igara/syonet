@@ -1,6 +1,6 @@
 <span ng-repeat="count in $ctrl.getCountArray($ctrl.getJson['results_available'])" style="display:inline;">
     <a href="/contents/?contents=connpass&year=@{{$ctrl.yearParam}}&month=@{{$ctrl.monthParam}}&keyword=@{{$ctrl.keywordParam}}&page=@{{(count + 1) / $ctrl.countParam}}" ng-if="(count + 1) % $ctrl.countParam == 0">@{{(count + 1) / $ctrl.countParam}} </a>
-    <a href="/contents/?contents=connpass&year=@{{$ctrl.yearParam}}&month=@{{$ctrl.monthParam}}&keyword=@{{$ctrl.keywordParam}}&page=@{{$ctrl.Math.ceil((count + 1) / $ctrl.countParam)}}" ng-if="count + 1 == $ctrl.getJson['results_available'] && (count + 1) % $ctrl.countParam != 0">@{{$ctrl.Math.ceil((count + 1) / $ctrl.countParam)}}</a>
+    <a href="/contents/?contents=connpass&year=@{{$ctrl.yearParam}}&month=@{{$ctrl.monthParam}}&keyword=@{{$ctrl.keywordParam}}&page=@{{$ctrl.Math.ceil($ctrl.getJson['results_available'] / $ctrl.countParam)}}" ng-if="$ctrl.getJson['results_available'] > $ctrl.countParam && count + 1 == $ctrl.getJson['results_available'] && $ctrl.getJson['results_available'] % $ctrl.countParam != 0">@{{$ctrl.Math.ceil($ctrl.getJson['results_available'] / $ctrl.countParam)}}だ</a>
 </span>
 <li class="list__header" ng-if="$ctrl.getJson['results_returned']">
     @{{$ctrl.getJson['results_start']}}〜@{{$ctrl.getJson['results_start'] -1 + $ctrl.getJson['results_returned']}}件 (該当件数：@{{$ctrl.getJson['results_available']}}件)
