@@ -19,6 +19,7 @@
     "protractor": "^3.1.1",
     "typescript": "^1.8.0",
     "typings": "^0.6.7",
-    "vorlon": "^0.2.1"
+    "vorlon": "^0.2.1",
+    "webpack": "^1.12.14"
   }
 }

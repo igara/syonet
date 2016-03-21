@@ -67,8 +67,17 @@ gulp.task('tsbuild', function() {
         .pipe(gulp.dest('public/js/docs/'));
     gulp.src('resources/assets/ts/common/**/*.js')
         .pipe(gulp.dest('public/js/common/'));
-    gulp.src('resources/assets/ts/contents/**/*.js')
-        .pipe(gulp.dest('public/js/contents/'));
+});
+
+/**
+ * resources/assets/ts下の依存関係のあるJSファイルを結合させる
+ * 
+ * command:./node_modules/.bin/gulp concat
+ */
+gulp.task('concat', function() {
+    var shell = require('gulp-shell');
+    // JSファイルの結合
+    gulp.src('').pipe(shell('./node_modules/.bin/webpack -p resources/assets/ts/contents/components/connpass.js public/js/contents/components/connpass.js'));
 });
 
 /**
