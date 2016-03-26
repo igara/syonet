@@ -17,6 +17,7 @@
     "phantomjs": "^2.1.3",
     "power-assert": "^1.2.0",
     "protractor": "^3.1.1",
+    "styledocco": "^0.6.6",
     "typescript": "^1.8.0",
     "typings": "^0.6.7",
     "vorlon": "^0.2.1",
