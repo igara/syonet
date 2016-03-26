@@ -11,7 +11,11 @@
 </ons-toolbar>
 <!-- /ヘッダー -->
 <ons-page>
-	<div ng-bind-html="contentsContent">
-		@{{contentsContent}}
-	</div>
+    <ons-list>
+        <ons-row>
+            <ons-col>
+                <a href="/contents/?contents=connpass">Connpassイベント検索</a>
+            </ons-col>
+        </ons-row>
+    </ons-list>
 </ons-page>
