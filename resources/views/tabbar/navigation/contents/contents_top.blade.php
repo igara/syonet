@@ -13,7 +13,7 @@
 <ons-page>
     <ons-list>
         <ons-row>
-            <ons-col>
+            <ons-col class="center list__item__center list__item--inset__center">
                 <a href="/contents/?contents=connpass">Connpassイベント検索</a>
             </ons-col>
         </ons-row>
