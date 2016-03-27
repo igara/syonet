@@ -5,7 +5,7 @@ var gulp = require('gulp');
  * 
  * command:./node_modules/.bin/gulp 
  */
-gulp.task('default', function() {
+gulp.task('default', ['libcopy', 'gzip'], function() {
 
 });
 
@@ -24,11 +24,18 @@ gulp.task('libcopy', function() {
  * 
  * command:./node_modules/.bin/gulp tsbuild
  */
-gulp.task('tsbuild', function() {
+gulp.task('tsbuild', ['tsconfig'], function() {
     var shell = require('gulp-shell');
     // tsファイルのビルド
-    gulp.src('').pipe(shell('./node_modules/.bin/tsc'));
+    return gulp.src('').pipe(shell('./node_modules/.bin/tsc'));
+});
 
+/**
+ * resources/assets/ts下にあるJSファイルの移動を行う
+ * 
+ * command:./node_modules/.bin/gulp buildcopy
+ */
+gulp.task('buildcopy', function() {
     /* resources/assets/ts/docs/下に存在する、ビルドで作成されたjsファイルを
        public/js/docs/下にディレクトリ構造ごとコピーする */
     gulp.src('resources/assets/ts/docs/**/*.js')
@@ -42,7 +49,7 @@ gulp.task('tsbuild', function() {
  * 
  * command:./node_modules/.bin/gulp concat
  */
-gulp.task('concat', function() {
+gulp.task('concat', ['tsbuild'], function() {
     var shell = require('gulp-shell');
     // JSファイルの結合
     gulp.src('').pipe(shell('./node_modules/.bin/webpack resources/assets/ts/contents/components/connpass.js public/js/contents/components/connpass.js'));
@@ -53,7 +60,7 @@ gulp.task('concat', function() {
  * 
  * command:./node_modules/.bin/gulp gzip
  */
-gulp.task('gzip', function() {
+gulp.task('gzip', ['concat'],function() {
     require('./gulpconfig/publiclibmanage').gzip(gulp);
 });
 
@@ -116,7 +123,7 @@ gulp.task('tsconfig', function() {
     var tsConfig = require('gulp-tsconfig-update');
     
     // ビルド対象のファイルを指定する
-    gulp.src(['resources/assets/ts/**/*.ts','tests/e2e/**/*.ts', 'typings/syonet/*.ts'])
+    return gulp.src(['resources/assets/ts/**/*.ts','tests/e2e/**/*.ts', 'typings/syonet/*.ts'])
         .pipe(tsConfig());
 });
 
