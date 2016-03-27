@@ -23,3 +23,4 @@ phantomjsdriver.log
 !typings/syonet/BrowserSetting.ts
 !typings/syonet/BrowserSetting.d.ts
 !webpack.config.js
+!gulpconfig/publiclibmanage.js
