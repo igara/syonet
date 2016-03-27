@@ -14,11 +14,11 @@
         "target": "es5"
     },
     "files": [
-        "resources/assets/ts/common/controller/common_controller.ts",
         "resources/assets/ts/contents/components/connpass.ts",
         "resources/assets/ts/contents/controllers/connpass.ts",
-        "resources/assets/ts/contents/interfaces/connpass.ts",
         "resources/assets/ts/contents/services/connpass.ts",
+        "resources/assets/ts/contents/interfaces/connpass.ts",
+        "resources/assets/ts/common/controller/common_controller.ts",
         "resources/assets/ts/docs/screen/common/controller/docklist_controller.ts",
         "tests/e2e/syonetwork/SideMenuTest.ts",
         "tests/e2e/syonetwork/TabbarTest.ts",
