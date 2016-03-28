@@ -138,3 +138,34 @@ gulp.task('tsdcreate', function() {
     gulp.src('').pipe(shell('./node_modules/.bin/tsc -d typings/syonet/SyonetWork.ts'));
     gulp.src('').pipe(shell('./node_modules/.bin/tsc -d typings/syonet/BrowserSetting.ts'));
 });
+
+var styleguide = require('sc5-styleguide');
+var sass = require('gulp-sass');
+
+gulp.task('styleguide:generate', function() {
+  return gulp.src('style/*.scss')
+    .pipe(styleguide.generate({
+        title: 'My Styleguide',
+        server: true,
+        rootPath: 'style',
+        overviewPath: 'style/README.md'
+      }))
+    .pipe(gulp.dest('style'));
+});
+
+gulp.task('styleguide:applystyles', function() {
+  return gulp.src('style/main.scss')
+    .pipe(sass({
+      errLogToConsole: true
+    }))
+    .pipe(styleguide.applyStyles())
+    .pipe(gulp.dest('style'));
+});
+
+gulp.task('watch', ['styleguide'], function() {
+  // Start watching changes and update styleguide whenever changes are detected
+  // Styleguide automatically detects existing server instance
+  gulp.watch(['style/*.scss'], ['styleguide']);
+});
+
+gulp.task('styleguide', ['styleguide:generate', 'styleguide:applystyles']);
