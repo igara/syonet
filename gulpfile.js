@@ -105,12 +105,12 @@ gulp.task('tsdevbuild', function() {
  */
 gulp.task('clean', function(cb) {
     var del = require('del');
-    del(['resources/assets/ts/**/*.js'], cb);
-    del(['resources/assets/ts/**/*.map'], cb);
-    del(['public/js/**/*.ts'], cb);
-    del(['public/js/**/*.js'], cb);
-    del(['public/js/**/*.map'], cb);
-    del(['tests/e2e/**/*.js'], cb);
+    del('resources/assets/ts/**/*.js', cb);
+    del('resources/assets/ts/**/*.map', cb);
+    del('public/js/', cb);
+    del('tests/e2e/**/*.js', cb);
+    del('public/css/', cb);
+    del('public/documents/styleguide/', cb);
 });
 
 /**
