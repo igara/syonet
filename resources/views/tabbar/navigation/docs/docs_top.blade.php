@@ -20,7 +20,7 @@
                 </div>
             </li>
         </a>
-        <a href="/documents/styleguide" target="_blank">
+        <a href="/documents/styleguide/" target="_blank">
             <li class="list__item">
                 <div class="list__item__center">
                     StyleGuide CSSとタグの資料
