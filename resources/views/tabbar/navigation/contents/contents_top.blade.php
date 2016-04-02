@@ -11,11 +11,14 @@
 </ons-toolbar>
 <!-- /ヘッダー -->
 <ons-page>
-    <ons-list>
-        <ons-row>
-            <ons-col class="center list__item__center list__item--inset__center">
-                <a href="/contents/?contents=connpass">Connpassイベント検索</a>
-            </ons-col>
-        </ons-row>
-    </ons-list>
+    <ul class="list">
+        <li class="list__header">コンテンツ一覧</li>
+        <a href="/contents/?contents=connpass">
+            <li class="list__item">
+                <div class="list__item__center">
+                    Connpassイベント検索
+                </div>
+            </li>
+        </a>
+    </ul>
 </ons-page>

@@ -36,12 +36,14 @@ class DocsController extends Controller
     /**
      * screenListアクション.
      *
-     * @return markdownをhtmlにパースした内容
+     * @return view docs/docs_topテンプレート
+     *              assign:$parseMarkdown readmeファイルをパースさせた内容
      */
     public function screenListAction()
     {
         $markdownFile = public_path().'/documents/screen/readme.md';
+        $parseMarkdown = (new MarkdownService())->getHtmlFromMarkdown($markdownFile);
 
-        return (new MarkdownService())->getHtmlFromMarkdown($markdownFile);
+        return view('tabbar/navigation/docs/docs_screenlist', compact('parseMarkdown'));
     }
 }
