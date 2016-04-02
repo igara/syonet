@@ -10,6 +10,7 @@ Homestead.json
 nbproject/
 public/css/lib/
 public/js/
+public/documents/styleguide/
 *.js
 *.map
 !e2efirefox.js
