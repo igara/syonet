@@ -7,7 +7,7 @@ Onsen UIを使用
 @現在使用中
 
 使用されているURL
-https://syonet.work/contents/
+https://syonet.work/home/
 
 Sliding Menu詳細は公式を参照
 http://ja.onsen.io/reference/ons-sliding-menu.html
@@ -15,7 +15,7 @@ http://ja.onsen.io/reference/ons-sliding-menu.html
 ```
 <ons-sliding-menu var="menu"
     menu-page="/sidemenu/sidemenu_top"
-    main-page="/tabbar/tabbar/?&tabbarstatus=home"
+    main-page="/tabbar/tabbar/?{{ $requestParams }}&tabbarstatus={{ $tabbarStatus }}"
     side="left" type="push" max-slide-distance="200px">
 </ons-sliding-menu>
 ```

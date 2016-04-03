@@ -1,0 +1,32 @@
+/*
+#styleguide
+SideMenu
+
+Onsen UIのListを使用
+SlidingMenuの中に表示しているlistの箇所になる
+
+@現在使用中
+
+使用されているURL
+https://syonet.work/ 全般
+
+詳細は公式を参照
+http://ja.onsen.io/reference/ons-list.html
+
+```
+<ons-list>
+    <ons-list-item modifier="chevron" onclick="tabbar.setActiveTab(0), menu.closeMenu()">
+        Home
+    </ons-list-item>
+    <ons-list-item modifier="chevron" onclick="tabbar.setActiveTab(1), menu.closeMenu()">
+        Contents
+    </ons-list-item>
+    <ons-list-item modifier="chevron" onclick="tabbar.setActiveTab(2), menu.closeMenu()">
+        Docs
+    </ons-list-item>
+    <ons-list-item modifier="chevron" onclick="tabbar.setActiveTab(3), menu.closeMenu()">
+        Dev
+    </ons-list-item>
+</ons-list>
+```
+*/

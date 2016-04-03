@@ -7,4 +7,4 @@ home-top.css、contents-top.css、docs-top.css、dev-top.cssというようなcs
 
 ## CSSファイル名について
 
-形式：{タブ名}-{画面名}.css
+形式例：{タブ名}-{画面名}-{部品名}.css

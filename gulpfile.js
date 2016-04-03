@@ -146,6 +146,7 @@ gulp.task('styleguide', function() {
         title: 'SyoNetのCSS StyleGuide',
         includePath: './public/documents/styleguide/assets/**/*',
         out: './public/documents/styleguide',
+        script: ['/js/lib/angular/angular.min.js', '/js/lib/onsenui/onsenui.min.js', '/js/lib/onsenui/angular-onsenui.min.js'],
         css: ['/css/lib/onsenui/onsenui.css', '/css/lib/onsenui/onsen-css-components-blue-basic-theme.css'],
         overview: './resources/assets/styleguide/styleguide.md'
     }));
