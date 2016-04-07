@@ -12,7 +12,7 @@
 <!-- /ヘッダー -->
 <ons-page>
     <link href="/css/symbol/myicon/icon-garasyo.css" rel="stylesheet" type="text/css">
-    <div class="myIconImage">
+    <div class="myIconImage" style="margin: 0 auto; top: 20px;">
         <div class="myIconImage-background-topTriangle"></div>
         <div class="myIconImage-background-midddleTriangle"></div>
         <div class="myIconImage-background-rightTriangle"></div>

@@ -31,9 +31,12 @@ https://syonet.work/?home=top
 ```
 */
 
+/* 100px * 100pxのアイコンを表示する為の比率 */
 $ratio: 3;
+/* ルート2の数値 */
 $route2: 1.41421356237;
 
+/* アイコンを表示する領域 */
 .myIconImage {
   width: calc(100px * $ratio);
   height: calc(100px * $ratio);
@@ -41,12 +44,14 @@ $route2: 1.41421356237;
   position: relative;
   overflow: hidden;
 }
+/* 上部に表示している赤い三角形 */
 .myIconImage-background-topTriangle {
   border-right: calc(100px * $ratio) solid transparent;
   border-bottom: calc(25px * $ratio) solid transparent;
   border-left: calc(100px * $ratio) solid red;
   position: absolute;
 }
+/* 真ん中に表示している赤い三角形 */
 .myIconImage-background-midddleTriangle {
   margin-top: calc(-25px * $ratio);
   margin-left: calc(-100px * $route2 * $ratio + 100px * $ratio);
@@ -57,6 +62,7 @@ $route2: 1.41421356237;
   transform: rotate(-45deg);
   position: absolute;
 }
+/* 右端に表示している赤い三角形 */
 .myIconImage-background-rightTriangle {
   margin-top: calc(-25px / 2 * $ratio);
   margin-left: calc(-25px / 2 * $ratio);
@@ -66,15 +72,7 @@ $route2: 1.41421356237;
   transform: rotate(-90deg);
   position: absolute;
 }
-.myIconImage-background-rightTriangle {
-  margin-top: calc(-25px / 2 * $ratio);
-  margin-left: calc(-25px / 2 * $ratio);
-  border-top: calc(25px * $ratio) solid transparent;
-  border-right: calc(100px * $ratio) solid transparent;
-  border-left: calc(100px * $ratio) solid red;
-  transform: rotate(-90deg);
-  position: absolute;
-}
+/* カエルの頭部分 */
 .myIconImage-character-head {
     margin-top: calc(25px * $ratio);
     margin-left: calc(-25px * $ratio);
@@ -87,6 +85,7 @@ $route2: 1.41421356237;
     background: lime;
     position: absolute;
 }
+/* アイコンの左側に表示している目 */
 .myIconImage-character-lefteye {
     margin-top: calc(18px * $ratio);
     margin-left: calc(15px * $ratio);
@@ -101,6 +100,7 @@ $route2: 1.41421356237;
     transform: rotate(5deg);
     overflow: hidden;
 }
+/* アイコンの左側に表示している目の線 */
 .myIconImage-character-lefteye-line {
     margin-top: calc(6px * $ratio);
     height: calc(2px * $ratio);
@@ -109,6 +109,7 @@ $route2: 1.41421356237;
     position: absolute;
     transform: rotate(-4deg);
 }
+/* アイコンの右側に表示している目 */
 .myIconImage-character-righteye {
     margin-top: calc(50px * $ratio);
     margin-left: calc(60px * $ratio);
@@ -123,6 +124,7 @@ $route2: 1.41421356237;
     transform: rotate(65deg);
     overflow: hidden;
 }
+/* アイコンの右側に表示している目の線 */
 .myIconImage-character-righteye-line {
     margin-top: calc(7px * $ratio);
     height: calc(2px * $ratio);
@@ -131,6 +133,7 @@ $route2: 1.41421356237;
     position: absolute;
     transform: rotate(4deg);
 }
+/* アイコンの左側に表示している鼻 */
 .myIconImage-character-leftnose {
     margin-top: calc(50px * $ratio);
     margin-left: calc(35px * $ratio);
@@ -142,6 +145,7 @@ $route2: 1.41421356237;
     background: black;
     position: absolute;
 }
+/* アイコンの右側に表示している鼻 */
 .myIconImage-character-rightnose {
     margin-top: calc(60px * $ratio);
     margin-left: calc(45px * $ratio);
@@ -153,6 +157,7 @@ $route2: 1.41421356237;
     background: black;
     position: absolute;
 }
+/* カエルの胴体 */
 .myIconImage-character-body {
     margin-top: calc(50px * $ratio);
     margin-left: calc(-40px * $ratio);
@@ -166,6 +171,7 @@ $route2: 1.41421356237;
     position: absolute;
     overflow: hidden;
 }
+/* カエルの口 */
 .myIconImage-character-body-mouth {
     height: calc(50px * $ratio);
     width: calc(50px * $ratio);
@@ -181,6 +187,7 @@ $route2: 1.41421356237;
     animation-timing-function: ease;
     animation-iteration-count: infinite;
 }
+/* 口のアニメーション */
 @keyframes mouth-animation {
   0% {
     margin-top: calc(-20px * $ratio);
