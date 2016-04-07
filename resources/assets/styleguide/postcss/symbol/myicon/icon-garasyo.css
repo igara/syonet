@@ -1,0 +1,197 @@
+/*
+#styleguide
+icon
+
+独自で作成したアイコン画像をCSSで描いたもの
+
+@現在使用中
+
+使用されているURL
+https://syonet.work/?home=top
+
+```
+<link href="/css/symbol/myicon/icon-garasyo.css" rel="stylesheet" type="text/css">
+<div class="myIconImage">
+  <div class="myIconImage-background-topTriangle"></div>
+  <div class="myIconImage-background-midddleTriangle"></div>
+  <div class="myIconImage-background-rightTriangle"></div>
+  <div class="myIconImage-character-head"></div>
+  <div class="myIconImage-character-lefteye">
+    <div class="myIconImage-character-lefteye-line"></div>
+  </div>
+  <div class="myIconImage-character-righteye">
+    <div class="myIconImage-character-righteye-line"></div>
+  </div>
+  <div class="myIconImage-character-leftnose"></div>
+  <div class="myIconImage-character-rightnose"></div>
+  <div class="myIconImage-character-body">
+    <div class="myIconImage-character-body-mouth"></div>
+  </div>
+</div>
+```
+*/
+
+$ratio: 3;
+$route2: 1.41421356237;
+
+.myIconImage {
+  width: calc(100px * $ratio);
+  height: calc(100px * $ratio);
+  background-color: yellow;
+  position: relative;
+  overflow: hidden;
+}
+.myIconImage-background-topTriangle {
+  border-right: calc(100px * $ratio) solid transparent;
+  border-bottom: calc(25px * $ratio) solid transparent;
+  border-left: calc(100px * $ratio) solid red;
+  position: absolute;
+}
+.myIconImage-background-midddleTriangle {
+  margin-top: calc(-25px * $ratio);
+  margin-left: calc(-100px * $route2 * $ratio + 100px * $ratio);
+  border-top: calc(25px * $ratio) solid transparent;
+  border-bottom: calc(25px * $ratio) solid transparent;
+  border-right: calc(100px * $route2 * $ratio) solid transparent;
+  border-left: calc(100px * $route2 * $ratio) solid red;
+  transform: rotate(-45deg);
+  position: absolute;
+}
+.myIconImage-background-rightTriangle {
+  margin-top: calc(-25px / 2 * $ratio);
+  margin-left: calc(-25px / 2 * $ratio);
+  border-top: calc(25px * $ratio) solid transparent;
+  border-right: calc(100px * $ratio) solid transparent;
+  border-left: calc(100px * $ratio) solid red;
+  transform: rotate(-90deg);
+  position: absolute;
+}
+.myIconImage-background-rightTriangle {
+  margin-top: calc(-25px / 2 * $ratio);
+  margin-left: calc(-25px / 2 * $ratio);
+  border-top: calc(25px * $ratio) solid transparent;
+  border-right: calc(100px * $ratio) solid transparent;
+  border-left: calc(100px * $ratio) solid red;
+  transform: rotate(-90deg);
+  position: absolute;
+}
+.myIconImage-character-head {
+    margin-top: calc(25px * $ratio);
+    margin-left: calc(-25px * $ratio);
+    height: calc(100px * $ratio);
+    width: calc(100px * $ratio);
+    border-radius: 100%;
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    border: calc(2px * $ratio) solid black;
+    background: lime;
+    position: absolute;
+}
+.myIconImage-character-lefteye {
+    margin-top: calc(18px * $ratio);
+    margin-left: calc(15px * $ratio);
+    height: calc(15px * $ratio);
+    width: calc(23px * $ratio);
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border: calc(2px * $ratio) solid black;
+    background: white;
+    position: absolute;
+    transform: rotate(5deg);
+    overflow: hidden;
+}
+.myIconImage-character-lefteye-line {
+    margin-top: calc(6px * $ratio);
+    height: calc(2px * $ratio);
+    width: calc(25px * $ratio);
+    background: black;
+    position: absolute;
+    transform: rotate(-4deg);
+}
+.myIconImage-character-righteye {
+    margin-top: calc(50px * $ratio);
+    margin-left: calc(60px * $ratio);
+    height: calc(15px * $ratio);
+    width: calc(23px * $ratio);
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border: calc(2px * $ratio) solid black;
+    background: white;
+    position: absolute;
+    transform: rotate(65deg);
+    overflow: hidden;
+}
+.myIconImage-character-righteye-line {
+    margin-top: calc(7px * $ratio);
+    height: calc(2px * $ratio);
+    width: calc(25px * $ratio);
+    background: black;
+    position: absolute;
+    transform: rotate(4deg);
+}
+.myIconImage-character-leftnose {
+    margin-top: calc(50px * $ratio);
+    margin-left: calc(35px * $ratio);
+    height: calc(2px * $ratio);
+    width: calc(2px * $ratio);
+    border-radius: 100%;
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    background: black;
+    position: absolute;
+}
+.myIconImage-character-rightnose {
+    margin-top: calc(60px * $ratio);
+    margin-left: calc(45px * $ratio);
+    height: calc(2px * $ratio);
+    width: calc(2px * $ratio);
+    border-radius: 100%;
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    background: black;
+    position: absolute;
+}
+.myIconImage-character-body {
+    margin-top: calc(50px * $ratio);
+    margin-left: calc(-40px * $ratio);
+    height: calc(90px * $ratio);
+    width: calc(90px * $ratio);
+    border-radius: 100%;
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    border: calc(2px * $ratio) solid black;
+    background: white;
+    position: absolute;
+    overflow: hidden;
+}
+.myIconImage-character-body-mouth {
+    height: calc(50px * $ratio);
+    width: calc(50px * $ratio);
+    border-radius: 100%;
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    border: calc(2px * $ratio) solid black;
+    background: red;
+    position: absolute;
+    transform: rotate(180deg);
+    animation-name: mouth-animation;
+    animation-duration: 7s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+}
+@keyframes mouth-animation {
+  0% {
+    margin-top: calc(-20px * $ratio);
+    margin-left: calc(50px * $ratio);
+  }
+  50% {
+    margin-top: calc(-100px * $ratio);
+    margin-left: calc(100px * $ratio);
+  }
+  100% {
+    margin-top: calc(-20px * $ratio);
+    margin-left: calc(50px * $ratio);
+  }
+}

@@ -8,7 +8,7 @@ Homestead.json
 /.setting
 .settings/
 nbproject/
-public/css/lib/
+public/css/
 public/js/
 public/documents/styleguide/
 *.js

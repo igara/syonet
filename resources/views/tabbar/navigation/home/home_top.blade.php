@@ -11,7 +11,22 @@
 </ons-toolbar>
 <!-- /ヘッダー -->
 <ons-page>
-    <div ng-bind-html="homeContent">
-        {{@homeContent}}
+    <link href="/css/symbol/myicon/icon-garasyo.css" rel="stylesheet" type="text/css">
+    <div class="myIconImage">
+        <div class="myIconImage-background-topTriangle"></div>
+        <div class="myIconImage-background-midddleTriangle"></div>
+        <div class="myIconImage-background-rightTriangle"></div>
+        <div class="myIconImage-character-head"></div>
+        <div class="myIconImage-character-lefteye">
+            <div class="myIconImage-character-lefteye-line"></div>
+        </div>
+        <div class="myIconImage-character-righteye">
+            <div class="myIconImage-character-righteye-line"></div>
+        </div>
+        <div class="myIconImage-character-leftnose"></div>
+        <div class="myIconImage-character-rightnose"></div>
+        <div class="myIconImage-character-body">
+            <div class="myIconImage-character-body-mouth"></div>
+        </div>
     </div>
 </ons-page>

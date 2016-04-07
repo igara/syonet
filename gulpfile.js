@@ -139,7 +139,27 @@ gulp.task('tsdcreate', function() {
     gulp.src('').pipe(shell('./node_modules/.bin/tsc -d typings/syonet/BrowserSetting.ts'));
 });
 
-gulp.task('styleguide', function() {
+/**
+ * resource/assets/styleguide/css下にあるcssのビルドを行う
+ * 
+ * command:./node_modules/.bin/gulp cssbuild
+ */
+gulp.task('cssbuild', function() {
+    var postcss = require('gulp-postcss');
+    gulp.src('resources/assets/styleguide/postcss/**/*.css')
+        .pipe(postcss([require('autoprefixer'), require('precss')]))
+        .pipe(gulp.dest('resources/assets/styleguide/css/'));
+    return gulp.src('resources/assets/styleguide/postcss/**/*.css')
+        .pipe(postcss([require('autoprefixer'), require('precss'), require('cssnano')]))
+        .pipe(gulp.dest('public/css/'));
+});
+
+/**
+ * styleguideを生成する
+ * 
+ * command:./node_modules/.bin/gulp styleguide
+ */
+gulp.task('styleguide', ['cssbuild'], function() {
     var frontNote = require('gulp-frontnote');
     gulp.src('./resources/assets/styleguide/css/**/*.css')
     .pipe(frontNote({
