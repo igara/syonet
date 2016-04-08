@@ -123,7 +123,7 @@ gulp.task('tsconfig', function() {
     var tsConfig = require('gulp-tsconfig-update');
     
     // ビルド対象のファイルを指定する
-    return gulp.src(['resources/assets/ts/**/*.ts','tests/e2e/**/*.ts', 'typings/syonet/*.ts'])
+    return gulp.src(['resources/assets/ts/**/*.ts','tests/e2e/**/*.ts'])
         .pipe(tsConfig());
 });
 

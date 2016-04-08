@@ -14,11 +14,12 @@
         "target": "es5"
     },
     "files": [
+        "resources/assets/ts/serviceworker/cache.ts",
+        "resources/assets/ts/common/controller/common_controller.ts",
         "resources/assets/ts/contents/components/connpass.ts",
         "resources/assets/ts/contents/controllers/connpass.ts",
-        "resources/assets/ts/contents/services/connpass.ts",
         "resources/assets/ts/contents/interfaces/connpass.ts",
-        "resources/assets/ts/common/controller/common_controller.ts",
+        "resources/assets/ts/contents/services/connpass.ts",
         "resources/assets/ts/docs/screen/common/controller/docklist_controller.ts",
         "tests/e2e/syonetwork/SideMenuTest.ts",
         "tests/e2e/syonetwork/TabbarTest.ts",
@@ -29,10 +30,6 @@
         "tests/e2e/syonetwork_docs/SideMenuTest.ts",
         "tests/e2e/syonetwork_docs/TabbarTest.ts",
         "tests/e2e/syonetwork_home/SideMenuTest.ts",
-        "tests/e2e/syonetwork_home/TabbarTest.ts",
-        "typings/syonet/BrowserSetting.d.ts",
-        "typings/syonet/BrowserSetting.ts",
-        "typings/syonet/SyonetWork.d.ts",
-        "typings/syonet/SyonetWork.ts"
+        "tests/e2e/syonetwork_home/TabbarTest.ts"
     ]
 }
