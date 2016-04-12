@@ -12,5 +12,8 @@
     <ons-list-item modifier="chevron" onclick="tabbar.setActiveTab(3), menu.closeMenu()">
         Dev
     </ons-list-item>
+    <ons-list-item modifier="chevron" onclick="cleanReload(), menu.closeMenu()">
+        Clean　&　Reload
+    </ons-list-item>
 </ons-list>
 <!-- /サイドメニュー -->

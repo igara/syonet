@@ -29,4 +29,10 @@
             <div class="myIconImage-character-body-mouth"></div>
         </div>
     </div>
+    <div>
+        <h2>告知</h2>
+        https://syonet.work/　のURLだけオフラインによるWeb閲覧できるようにしました。<br>
+        キャッシュが残って古いデザインが出る場合は<br>
+        右に画面をスワイプして「Clean　&　Reload」を押すことで最新のデザインが出るかもしれません。
+    </div>
 </ons-page>
