@@ -1,7 +1,6 @@
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/swtop.js', { scope: '/' }).catch(function(error) {
         // 登録失敗した時
-        cleanReload();
     });
 }
 
