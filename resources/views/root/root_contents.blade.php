@@ -12,7 +12,7 @@
     <script>
         var app = angular.module('app', ['onsen']);
     </script>
-    <script type="text/javascript" src="/js/contents/components/connpass.js"></script>
+    {!! $contentsImportJS !!}
 </head>
 <body>
     <ons-sliding-menu var="menu"

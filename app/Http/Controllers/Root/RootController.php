@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Root;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Services\Root\ImportJSService;
 
 /**
  * RootController.
@@ -63,8 +64,9 @@ class RootController extends Controller
         // リクエストパラメータを取得する
         $requestParams = $request->getQueryString();
         $tabbarStatus = 'contents';
-
-        return view('root/root_contents', compact('requestParams', 'tabbarStatus'));
+        $importJSService = new ImportJSService();
+        $contentsImportJS = $importJSService->getConttentsJS($requestParams);
+        return view('root/root_contents', compact('requestParams', 'tabbarStatus', 'contentsImportJS'));
     }
 
     /**
