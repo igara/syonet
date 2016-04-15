@@ -1,0 +1,227 @@
+/*
+#styleguide
+icon
+
+独自で作成したアイコン画像をCSSで描いたもの
+
+@現在使用中
+
+使用されているURL
+https://syonet.work/?home=top
+
+```
+<link href="/css/symbol/myicon/icon-garasyo.css" rel="stylesheet" type="text/css">
+<div class="myIconImage">
+  <div class="myIconImage-background-topTriangle"></div>
+  <div class="myIconImage-background-midddleTriangle"></div>
+  <div class="myIconImage-background-rightTriangle"></div>
+  <div class="myIconImage-character-head"></div>
+  <div class="myIconImage-character-lefteye">
+    <div class="myIconImage-character-lefteye-line"></div>
+  </div>
+  <div class="myIconImage-character-righteye">
+    <div class="myIconImage-character-righteye-line"></div>
+  </div>
+  <div class="myIconImage-character-leftnose"></div>
+  <div class="myIconImage-character-rightnose"></div>
+  <div class="myIconImage-character-body">
+    <div class="myIconImage-character-body-mouth"></div>
+  </div>
+</div>
+```
+*/
+
+/* 100px * 100pxのアイコンを表示する為の比率 */
+/* ルート2の数値 */
+
+/* アイコンを表示する領域 */
+.myIconImage {
+  width: calc(100px * 3);
+  height: calc(100px * 3);
+  background-color: yellow;
+  position: relative;
+  overflow: hidden;
+}
+/* 上部に表示している赤い三角形 */
+.myIconImage-background-topTriangle {
+  border-right: calc(100px * 3) solid transparent;
+  border-bottom: calc(25px * 3) solid transparent;
+  border-left: calc(100px * 3) solid red;
+  position: absolute;
+}
+/* 真ん中に表示している赤い三角形 */
+.myIconImage-background-midddleTriangle {
+  margin-top: calc(-25px * 3);
+  margin-left: calc(-100px * 1.41421356237 * 3 + 100px * 3);
+  border-top: calc(25px * 3) solid transparent;
+  border-bottom: calc(25px * 3) solid transparent;
+  border-right: calc(100px * 1.41421356237 * 3) solid transparent;
+  border-left: calc(100px * 1.41421356237 * 3) solid red;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  position: absolute;
+}
+/* 右端に表示している赤い三角形 */
+.myIconImage-background-rightTriangle {
+  margin-top: calc(-25px / 2 * 3);
+  margin-left: calc(-25px / 2 * 3);
+  border-top: calc(25px * 3) solid transparent;
+  border-right: calc(100px * 3) solid transparent;
+  border-left: calc(100px * 3) solid red;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  position: absolute;
+}
+/* カエルの頭部分 */
+.myIconImage-character-head {
+    margin-top: calc(25px * 3);
+    margin-left: calc(-25px * 3);
+    height: calc(100px * 3);
+    width: calc(100px * 3);
+    border-radius: 100%;
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    border: calc(2px * 3) solid black;
+    background: lime;
+    position: absolute;
+}
+/* アイコンの左側に表示している目 */
+.myIconImage-character-lefteye {
+    margin-top: calc(18px * 3);
+    margin-left: calc(15px * 3);
+    height: calc(15px * 3);
+    width: calc(23px * 3);
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border: calc(2px * 3) solid black;
+    background: white;
+    position: absolute;
+    -webkit-transform: rotate(5deg);
+            transform: rotate(5deg);
+    overflow: hidden;
+}
+/* アイコンの左側に表示している目の線 */
+.myIconImage-character-lefteye-line {
+    margin-top: calc(6px * 3);
+    height: calc(2px * 3);
+    width: calc(25px * 3);
+    background: black;
+    position: absolute;
+    -webkit-transform: rotate(-4deg);
+            transform: rotate(-4deg);
+}
+/* アイコンの右側に表示している目 */
+.myIconImage-character-righteye {
+    margin-top: calc(50px * 3);
+    margin-left: calc(60px * 3);
+    height: calc(15px * 3);
+    width: calc(23px * 3);
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border: calc(2px * 3) solid black;
+    background: white;
+    position: absolute;
+    -webkit-transform: rotate(65deg);
+            transform: rotate(65deg);
+    overflow: hidden;
+}
+/* アイコンの右側に表示している目の線 */
+.myIconImage-character-righteye-line {
+    margin-top: calc(7px * 3);
+    height: calc(2px * 3);
+    width: calc(25px * 3);
+    background: black;
+    position: absolute;
+    -webkit-transform: rotate(4deg);
+            transform: rotate(4deg);
+}
+/* アイコンの左側に表示している鼻 */
+.myIconImage-character-leftnose {
+    margin-top: calc(50px * 3);
+    margin-left: calc(35px * 3);
+    height: calc(2px * 3);
+    width: calc(2px * 3);
+    border-radius: 100%;
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    background: black;
+    position: absolute;
+}
+/* アイコンの右側に表示している鼻 */
+.myIconImage-character-rightnose {
+    margin-top: calc(60px * 3);
+    margin-left: calc(45px * 3);
+    height: calc(2px * 3);
+    width: calc(2px * 3);
+    border-radius: 100%;
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    background: black;
+    position: absolute;
+}
+/* カエルの胴体 */
+.myIconImage-character-body {
+    margin-top: calc(50px * 3);
+    margin-left: calc(-40px * 3);
+    height: calc(90px * 3);
+    width: calc(90px * 3);
+    border-radius: 100%;
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    border: calc(2px * 3) solid black;
+    background: white;
+    position: absolute;
+    overflow: hidden;
+}
+/* カエルの口 */
+.myIconImage-character-body-mouth {
+    height: calc(50px * 3);
+    width: calc(50px * 3);
+    border-radius: 100%;
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    border: calc(2px * 3) solid black;
+    background: red;
+    position: absolute;
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+    -webkit-animation-name: mouth-animation;
+            animation-name: mouth-animation;
+    -webkit-animation-duration: 7s;
+            animation-duration: 7s;
+    -webkit-animation-timing-function: ease;
+            animation-timing-function: ease;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+}
+/* 口のアニメーション */
+@-webkit-keyframes mouth-animation {
+  0% {
+    margin-top: calc(-20px * 3);
+    margin-left: calc(50px * 3);
+  }
+  50% {
+    margin-top: calc(-100px * 3);
+    margin-left: calc(100px * 3);
+  }
+  100% {
+    margin-top: calc(-20px * 3);
+    margin-left: calc(50px * 3);
+  }
+}
+@keyframes mouth-animation {
+  0% {
+    margin-top: calc(-20px * 3);
+    margin-left: calc(50px * 3);
+  }
+  50% {
+    margin-top: calc(-100px * 3);
+    margin-left: calc(100px * 3);
+  }
+  100% {
+    margin-top: calc(-20px * 3);
+    margin-left: calc(50px * 3);
+  }
+}
