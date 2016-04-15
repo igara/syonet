@@ -1,4 +1,4 @@
-/// <reference path="../../../../../typings/main.d.ts" />
+/// <reference path="../../../../../../typings/main.d.ts" />
 /// <reference path="../interfaces/connpass.ts" />
 
 import connpassApiParams = require('../interfaces/connpass');

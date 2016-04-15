@@ -52,7 +52,7 @@ gulp.task('buildcopy', function() {
 gulp.task('concat', ['tsbuild'], function() {
     var shell = require('gulp-shell');
     // JSファイルの結合
-    gulp.src('').pipe(shell('./node_modules/.bin/webpack resources/assets/ts/contents/components/connpass.js public/js/contents/components/connpass.js'));
+    gulp.src('').pipe(shell('./node_modules/.bin/webpack resources/assets/ts/contents/connpass/components/connpass.js public/js/contents/connpass/components/connpass.js'));
     gulp.src('').pipe(shell('./node_modules/.bin/webpack resources/assets/js/serviceworker/swtop.js public/swtop.js'));
 });
 

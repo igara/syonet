@@ -28,7 +28,7 @@ class ImportJSService
         $importJS = '';
         // $requestParamsにcontent=connpassが含まれる時
         if(strpos($requestParams, 'contents=connpass') === 0){
-            $importJS .= '<script type="text/javascript" src="/js/contents/components/connpass.js"></script>';
+            $importJS .= '<script type="text/javascript" src="/js/contents/connpass/components/connpass.js"></script>';
         }
         return $importJS;
     }

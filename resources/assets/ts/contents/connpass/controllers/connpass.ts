@@ -1,4 +1,4 @@
-/// <reference path="../../../../../typings/main.d.ts" />
+/// <reference path="../../../../../../typings/main.d.ts" />
 /// <reference path="../interfaces/connpass.ts" />
 /// <reference path="../services/connpass.ts" />
 
