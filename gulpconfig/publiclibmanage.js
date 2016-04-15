@@ -47,6 +47,16 @@ var publicLibManage = {
         var rxjsPath = 'node_modules/rxjs';
         gulp.src(rxjsPath + '/bundles/*.js')
         .pipe(gulp.dest('public/js/lib/rxjs/bundles'));
+
+        // es6-shimをpublic下に設置する。
+        var es6shimPath = 'node_modules/es6-shim';
+        gulp.src(es6shimPath + '/*.js')
+        .pipe(gulp.dest('public/js/lib/es6-shim/'));
+
+        // reflect-metadata
+        var reflectmetadataPath = 'node_modules/reflect-metadata';
+        gulp.src(reflectmetadataPath + '/*.js')
+        .pipe(gulp.dest('public/js/lib/reflect-metadata/'));
     },
     /**
      * public下の静的ファイルをgzipにする

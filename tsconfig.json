@@ -14,9 +14,9 @@
         "target": "es5"
     },
     "files": [
-        "resources/assets/ts/serviceworker/cache.ts",
         "resources/assets/ts/common/controller/common_controller.ts",
         "resources/assets/ts/contents/components/connpass.ts",
+        "resources/assets/ts/contents/components/suggester.usingAngular2.ts",
         "resources/assets/ts/contents/controllers/connpass.ts",
         "resources/assets/ts/contents/interfaces/connpass.ts",
         "resources/assets/ts/contents/services/connpass.ts",
