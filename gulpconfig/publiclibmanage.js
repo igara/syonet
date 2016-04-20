@@ -57,6 +57,11 @@ var publicLibManage = {
         var reflectmetadataPath = 'node_modules/reflect-metadata';
         gulp.src(reflectmetadataPath + '/*.js')
         .pipe(gulp.dest('public/js/lib/reflect-metadata/'));
+
+        // snapsvgをpublic下に設置する
+        var snapsvgPath = 'node_modules/snapsvg';
+        gulp.src(snapsvgPath + '/dist/*.js')
+        .pipe(gulp.dest('public/js/lib/snapsvg/'))
     },
     /**
      * public下の静的ファイルをgzipにする

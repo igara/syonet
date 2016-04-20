@@ -40,6 +40,7 @@
   "scripts": {
     "e2etest": "node_modules/protractor/bin/webdriver-manager start && node_modules/.bin/protractor e2echrome.js",
     "startup": "node_modules/.bin/gulp",
-    "watch": "node_modules/.bin/gulp watch"
+    "watch": "node_modules/.bin/gulp watch",
+    "typings": "node_modules/.bin/typings install"
   }
 }
