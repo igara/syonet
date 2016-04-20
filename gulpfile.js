@@ -175,6 +175,7 @@ gulp.task('styleguide', ['cssbuild'], function() {
 });
 
 gulp.task('watch', function () {
+    gulp.watch('./resources/assets/img/svg/**/*.svg', ['gzip']);
     gulp.watch('./resources/assets/styleguide/css/**/*.css', ['styleguide']);
     gulp.watch('./resources/assets/ts/**/*.ts' ,['gzip']);
 });

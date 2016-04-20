@@ -4,6 +4,9 @@ module.exports = {
         new webpack.optimize.UglifyJsPlugin({
             mangle:false
         })
-    ]
+    ],
+    loaders: [
+        { test: /\.svg$/, loader: 'url-loader?mimetype=image/svg+xml' }
+	]
 };
 
