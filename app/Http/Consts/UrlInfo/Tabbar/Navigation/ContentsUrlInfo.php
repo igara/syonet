@@ -25,6 +25,9 @@ class ContentsUrlInfo
                 'URL' => '/tabbar/navigation/contents/it_connpass',
                 'LIST_TEMPLATE_URL' => '/tabbar/navigation/contents/it_connpass/list',
             ],
+            'SUGGESTER' => [
+                'URL' => '/tabbar/navigation/contents/suggester',
+            ],
         ];
     }
 }

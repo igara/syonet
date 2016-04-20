@@ -22,6 +22,8 @@ Route::get('/tabbar/navigation/contents/contents_chat', 'Tabbar\Navigation\Conte
 // connpass
 Route::get('/tabbar/navigation/contents/it_connpass', 'Tabbar\Navigation\Contents\It\EventController@connpassAction');
 Route::get('/tabbar/navigation/contents/it_connpass/list', 'Tabbar\Navigation\Contents\It\EventController@connpassListAction');
+// suggester
+Route::get('/tabbar/navigation/contents/suggester', 'Tabbar\Navigation\Contents\SuggesterController@suggesterAction');
 
 // docsタブ
 Route::get('/tabbar/navigation/docs/docs_top', 'Tabbar\Navigation\Docs\DocsController@topAction');
