@@ -36,5 +36,10 @@
     "url-loader": "^0.5.7",
     "vorlon": "^0.2.1",
     "webpack": "^1.12.14"
+  },
+  "scripts": {
+    "e2etest": "node_modules/protractor/bin/webdriver-manager start && node_modules/.bin/protractor e2echrome.js",
+    "startup": "node_modules/.bin/gulp",
+    "watch": "node_modules/.bin/gulp watch"
   }
 }
