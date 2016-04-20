@@ -3,7 +3,10 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "watch": "./node_modules/.bin/gulp watch"
+    "e2etest": "node_modules/protractor/bin/webdriver-manager start && node_modules/.bin/protractor e2echrome.js",
+    "startup": "node_modules/.bin/gulp",
+    "watch": "node_modules/.bin/gulp watch",
+    "typings": "node_modules/.bin/typings install"
   },
   "devDependencies": {
     "angular": "^1.5.0",
@@ -12,12 +15,14 @@
     "cssnano": "^3.5.2",
     "del": "^2.2.0",
     "es6-shim": "^0.35.0",
+    "file-loader": "^0.8.5",
     "gulp": "^3.9.1",
     "gulp-frontnote": "^1.0.3",
     "gulp-gzip": "^1.2.0",
     "gulp-postcss": "^6.1.0",
     "gulp-shell": "^0.5.2",
     "gulp-tsconfig-update": "^1.1.1",
+    "html-loader": "^0.4.3",
     "marked": "^0.3.5",
     "mermaid": "^0.5.8",
     "mocha": "^2.4.5",
@@ -36,11 +41,5 @@
     "url-loader": "^0.5.7",
     "vorlon": "^0.2.1",
     "webpack": "^1.12.14"
-  },
-  "scripts": {
-    "e2etest": "node_modules/protractor/bin/webdriver-manager start && node_modules/.bin/protractor e2echrome.js",
-    "startup": "node_modules/.bin/gulp",
-    "watch": "node_modules/.bin/gulp watch",
-    "typings": "node_modules/.bin/typings install"
   }
 }

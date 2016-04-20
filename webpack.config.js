@@ -6,6 +6,9 @@ module.exports = {
         })
     ],
     loaders: [
+        { test: /\.svg$/, loader: 'url-loader?mimetype=image/svg+xml' },
+        { test: /\.jpg$/, loader: "file-loader" },
+        { test: /\.png$/, loader: "url-loader?mimetype=image/png" },
         { test: /\.svg$/, loader: 'url-loader?mimetype=image/svg+xml' }
 	]
 };
