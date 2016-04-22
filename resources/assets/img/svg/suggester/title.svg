@@ -1,6 +1,3 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
-
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
@@ -12,7 +9,7 @@
    width="250"
    height="100"
    viewBox="0 0 744.09449 1052.3622"
-   id="svg2"
+   id="titleSvg"
    version="1.1"
    inkscape:version="0.91 r13725"
    sodipodi:docname="title.svg">
@@ -49,7 +46,7 @@
     </rdf:RDF>
   </metadata>
   <g
-     inkscape:label="レイヤー 1"
+     inkscape:label="layer1"
      inkscape:groupmode="layer"
      id="layer1" />
   <text
@@ -57,7 +54,7 @@
      style="font-style:normal;font-weight:normal;font-size:500px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
      x="-936.30005"
      y="963.95038"
-     id="text3452"
+     id="title-S"
      sodipodi:linespacing="125%"><tspan
        sodipodi:role="line"
        id="tspan3454"
@@ -68,7 +65,7 @@
      style="font-style:normal;font-weight:normal;font-size:500px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
      x="-650.77765"
      y="747.83276"
-     id="text3456"
+     id="title-u"
      sodipodi:linespacing="125%"><tspan
        sodipodi:role="line"
        x="-650.77765"
@@ -79,7 +76,7 @@
      style="font-style:normal;font-weight:normal;font-size:500px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffa500;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
      x="-363.08743"
      y="568.19397"
-     id="text3464"
+     id="title-g1"
      sodipodi:linespacing="125%"><tspan
        sodipodi:role="line"
        id="tspan3466"
@@ -90,7 +87,7 @@
      style="font-style:normal;font-weight:normal;font-size:500px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
      x="-61.328686"
      y="552.91223"
-     id="text3468"
+     id="title-g2"
      sodipodi:linespacing="125%"><tspan
        sodipodi:role="line"
        id="tspan3470"
@@ -101,7 +98,7 @@
      style="font-style:normal;font-weight:normal;font-size:500px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#008000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
      x="231.79044"
      y="565.8183"
-     id="text3472"
+     id="title-e1"
      sodipodi:linespacing="125%"><tspan
        sodipodi:role="line"
        id="tspan3474"
@@ -112,7 +109,7 @@
      style="font-style:normal;font-weight:normal;font-size:500px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
      x="515.28766"
      y="736.81042"
-     id="text3476"
+     id="title-s"
      sodipodi:linespacing="125%"><tspan
        sodipodi:role="line"
        id="tspan3478"
@@ -123,7 +120,7 @@
      style="font-style:normal;font-weight:normal;font-size:500px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
      x="775.05432"
      y="643.73682"
-     id="text3480"
+     id="title-t"
      sodipodi:linespacing="125%"><tspan
        sodipodi:role="line"
        id="tspan3482"
@@ -134,7 +131,7 @@
      style="font-style:normal;font-weight:normal;font-size:500px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
      x="1025.7969"
      y="782.95563"
-     id="text3484"
+     id="title-e2"
      sodipodi:linespacing="125%"><tspan
        sodipodi:role="line"
        id="tspan3486"
@@ -145,48 +142,11 @@
      style="font-style:normal;font-weight:normal;font-size:500px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffa500;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
      x="1396.7543"
      y="980.79718"
-     id="text3488"
+     id="title-r"
      sodipodi:linespacing="125%"><tspan
        sodipodi:role="line"
        id="tspan3490"
        x="1396.7543"
        y="980.79718"
        transform="matrix(1,0,0,-1,0,1681.5651)">r</tspan></text>
-  <script type="text/javascript">
-    <![CDATA[
-            var ball = document.getElementById("text3452");
-            console.log(ball);
-
-    ]]>
-  </script>
-  <style type="text/css">
-    <![CDATA[
-      #text3452 {
-      -moz-animation: anime1 5s ease -2s infinite alternate;
--webkit-animation: anime1 5s ease -2s infinite alternate;
--o-animation: anime1 5s ease -2s infinite alternate;
--ms-animation: anime1 5s ease -2s infinite alternate;
-      }
-      @-moz-keyframes anime1 {
-0% {width: 50px; height: 50px; background-color: aqua;}
-100% {width: 200px; height: 50px; background-color: blue;}
-}
-
-@-webkit-keyframes anime1 {
-0% {width: 50px; height: 50px; background-color: aqua;}
-100% {width: 200px; height: 50px; background-color: blue;}
-}
-
-@-o-keyframes anime1 {
-0% {width: 50px; height: 50px; background-color: aqua;}
-100% {width: 200px; height: 50px; background-color: blue;}
-}
-
-@-ms-keyframes anime1 {
-0% {width: 50px; height: 50px; background-color: aqua;}
-100% {width: 200px; height: 50px; background-color: blue;}
-}
-
-    ]]>
-  </style>
 </svg>

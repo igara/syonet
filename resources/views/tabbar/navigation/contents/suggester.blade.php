@@ -11,5 +11,5 @@
 </ons-toolbar>
 <!-- /ヘッダー -->
 <ons-page>
-<sugggester-title></sugggester-title>
+	<sugggester-title></sugggester-title>
 </ons-page>
