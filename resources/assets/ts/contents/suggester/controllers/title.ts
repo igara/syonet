@@ -14,6 +14,5 @@ export class SuggesterTitleCtrl {
      */
     constructor($sce:ng.ISCEService) {
         this.titleSvg = $sce.trustAsHtml(require("html!../../../../img/svg/suggester/title.svg"));
-        
     }
 }
