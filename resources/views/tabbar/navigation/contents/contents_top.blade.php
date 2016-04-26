@@ -20,5 +20,12 @@
                 </div>
             </li>
         </a>
+        <a href="/contents/?contents=suggester">
+            <li class="list__item">
+                <div class="list__item__center">
+                    Suggester 〜 バトルしりとりゲーム
+                </div>
+            </li>
+        </a>
     </ul>
 </ons-page>
