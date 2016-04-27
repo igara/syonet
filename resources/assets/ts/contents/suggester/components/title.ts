@@ -4,7 +4,6 @@
 // webpackのloaderの機能でtitle.svgを呼び込む
 
 import SuggesterTitleCtrl = require('../controllers/title');
-require("!style!css!../../../../styleguide/postcss/tabbar/navigation/contents/suggester/title.css");
 
 /**
  * sugggester-titleというCustomElement

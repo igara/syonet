@@ -14,23 +14,24 @@
         "target": "es5"
     },
     "files": [
+        "resources/assets/ts/contents/suggester/suggester.ts",
         "resources/assets/ts/contents/connpass/components/connpass.ts",
-        "resources/assets/ts/contents/connpass/services/connpass.ts",
         "resources/assets/ts/contents/connpass/controllers/connpass.ts",
+        "resources/assets/ts/contents/connpass/interfaces/connpass.ts",
+        "resources/assets/ts/contents/connpass/services/connpass.ts",
         "resources/assets/ts/contents/suggester/components/suggester.usingAngular2.ts",
         "resources/assets/ts/contents/suggester/components/title.ts",
         "resources/assets/ts/contents/suggester/controllers/title.ts",
-        "resources/assets/ts/contents/connpass/interfaces/connpass.ts",
         "resources/assets/ts/docs/screen/common/controller/docklist_controller.ts",
-        "tests/e2e/syonetwork/SideMenuTest.ts",
-        "tests/e2e/syonetwork/TabbarTest.ts",
         "tests/e2e/syonetwork_contents/SideMenuTest.ts",
         "tests/e2e/syonetwork_contents/TabbarTest.ts",
+        "tests/e2e/syonetwork/SideMenuTest.ts",
+        "tests/e2e/syonetwork/TabbarTest.ts",
         "tests/e2e/syonetwork_dev/SideMenuTest.ts",
         "tests/e2e/syonetwork_dev/TabbarTest.ts",
-        "tests/e2e/syonetwork_home/SideMenuTest.ts",
-        "tests/e2e/syonetwork_home/TabbarTest.ts",
         "tests/e2e/syonetwork_docs/SideMenuTest.ts",
-        "tests/e2e/syonetwork_docs/TabbarTest.ts"
+        "tests/e2e/syonetwork_docs/TabbarTest.ts",
+        "tests/e2e/syonetwork_home/SideMenuTest.ts",
+        "tests/e2e/syonetwork_home/TabbarTest.ts"
     ]
 }

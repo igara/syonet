@@ -30,7 +30,7 @@ class ImportJSService
         if(strpos($requestParams, 'contents=connpass') === 0) {
             $importJS .= '<script type="text/javascript" src="/js/contents/connpass/components/connpass.js"></script>';
         } elseif (strpos($requestParams, 'contents=suggester') === 0) {
-            $importJS .= '<script type="text/javascript" src="/js/contents/suggester/components/title.js"></script>';
+            $importJS .= '<script type="text/javascript" src="/js/contents/suggester/suggester.js"></script>';
         }
         return $importJS;
     }
