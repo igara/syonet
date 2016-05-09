@@ -16,3 +16,8 @@ declare var tabbar: TabbarView;
  * @var app:ng.IModule
  */
 declare var app: ng.IModule;
+/**
+ * SyoNetで使われるAngularモジュールの型定義
+ * @var app:ng.IModule
+ */
+declare var suggesterNavigator:NavigatorView;

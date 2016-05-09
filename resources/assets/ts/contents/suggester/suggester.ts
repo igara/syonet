@@ -3,4 +3,6 @@
 
 require("./components/title");
 require("./components/tutorial");
+require("./components/alonegamedialog");
+require("./components/alonegamepage");
 require("!style!css!../../../styleguide/postcss/tabbar/navigation/contents/suggester/title.css");
