@@ -16,7 +16,6 @@ export class SuggesterAlonegamePageCtrl {
      */
     constructor($scope:ng.IScope) {
         this.suggesterAlonegamePageService = new suggesterAlonegamePageService.SuggesterAlonegamePageService();
-        // 1人用ゲームの非表示を行うイベントの登録
-        this.suggesterAlonegamePageService.hideAlonegamePage();
+
     }
 }

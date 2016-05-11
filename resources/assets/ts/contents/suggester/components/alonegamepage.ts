@@ -10,7 +10,7 @@ app.component("sugggesterAlonegamePage", {
     template: `
 <ons-page>
     <p style="text-align: center">
-        <ons-button modifier="light" id="alonegame-closebutton">
+        <ons-button modifier="light" id="alonegame-closebutton" onclick="suggesterNavigator.popPage();">
             ゲームを中断する
         </ons-button>
     </p>
