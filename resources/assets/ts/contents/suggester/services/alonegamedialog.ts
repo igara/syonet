@@ -15,9 +15,14 @@ export class SuggesterAlonegameDialogService {
             alonegameDialogElement = document.getElementById('alone-game-dialog');
             var alonegameDialog:AlertDialogView;
             alonegameDialog = alonegameDialogElement;
-            if (event.srcElement.id === "alonegameButton") {
+            // eventのsrcElementを取得する
+            var eventTarget:any;
+            eventTarget = event.target;
+            var eventSrcElement:Element;
+            eventSrcElement = eventTarget;
+            if (eventSrcElement.id === "alonegameButton") {
                 alonegameDialog.show();
-            } else if (event.srcElement.id === "alone-game-dialog-closebutton") {
+            } else if (eventSrcElement.id === "alone-game-dialog-closebutton") {
                 alonegameDialog.hide();
             }
         });
@@ -27,7 +32,12 @@ export class SuggesterAlonegameDialogService {
      */
     gameStart() {
         window.addEventListener ("click", function (event) {
-            if (event.srcElement.id === "alone-game-dialog-startbutton") {
+            // eventのsrcElementを取得する
+            var eventTarget:any;
+            eventTarget = event.target;
+            var eventSrcElement:Element;
+            eventSrcElement = eventTarget;
+            if (eventSrcElement.id === "alone-game-dialog-startbutton") {
                 suggesterNavigator.pushPage('alonegame.html');
             }
         });

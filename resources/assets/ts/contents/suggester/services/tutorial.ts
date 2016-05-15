@@ -12,11 +12,16 @@ export class SuggesterTutorialService {
      */
     getTutorialDialogContentChange($scope:ng.IScope) {
         window.addEventListener ("click", function (event) {
-            if (event.srcElement.id === "tutorialButton") {
+            // eventのsrcElementを取得する
+            var eventTarget:any;
+            eventTarget = event.target;
+            var eventSrcElement:Element;
+            eventSrcElement = eventTarget;
+            if (eventSrcElement.id === "tutorialButton") {
                 $scope.$apply('$ctrl.getTutorialDialogContent = "このゲームの説明1"');
-            } else if (event.srcElement.id === "tutorial-dialog-nextbutton") { 
+            } else if (eventSrcElement.id === "tutorial-dialog-nextbutton") { 
                 $scope.$apply('$ctrl.getTutorialDialogContent = "このゲームの説明1"');
-            } else if (event.srcElement.id === "tutorial-dialog-backbutton") {
+            } else if (eventSrcElement.id === "tutorial-dialog-backbutton") {
                 $scope.$apply('$ctrl.getTutorialDialogContent = "このゲームの説明2"');
             }
         });
@@ -32,9 +37,14 @@ export class SuggesterTutorialService {
             tutorialDialogElement = document.getElementById('tutorial-dialog');
             var tutorialDialog:AlertDialogView;
             tutorialDialog = tutorialDialogElement;
-            if (event.srcElement.id === "tutorialButton") {
+            // eventのsrcElementを取得する
+            var eventTarget:any;
+            eventTarget = event.target;
+            var eventSrcElement:Element;
+            eventSrcElement = eventTarget;
+            if (eventSrcElement.id === "tutorialButton") {
                 tutorialDialog.show();
-            } else if (event.srcElement.id === "tutorial-dialog-closebutton") {
+            } else if (eventSrcElement.id === "tutorial-dialog-closebutton") {
                 tutorialDialog.hide();
             }
         });
@@ -46,15 +56,20 @@ export class SuggesterTutorialService {
      */
     nextButtonOrBackButton4TutorialDialog($scope:ng.IScope) {
         window.addEventListener ("click", function (event) {
-            if (event.srcElement.id === "tutorialButton") {
+            // eventのsrcElementを取得する
+            var eventTarget:any;
+            eventTarget = event.target;
+            var eventSrcElement:Element;
+            eventSrcElement = eventTarget;
+            if (eventSrcElement.id === "tutorialButton") {
                 // 戻るのボタンを次へボタンに変更する
                 $scope.$apply('$ctrl.getTutorialDialogSwitchButtonId = "tutorial-dialog-backbutton"');
                 $scope.$apply('$ctrl.getTutorialDialogSwitchButtonText = "次へ"');
-            } else if (event.srcElement.id === "tutorial-dialog-nextbutton") {
+            } else if (eventSrcElement.id === "tutorial-dialog-nextbutton") {
                 // 戻るのボタンを次へボタンに変更する
                 $scope.$apply('$ctrl.getTutorialDialogSwitchButtonId = "tutorial-dialog-backbutton"');
                 $scope.$apply('$ctrl.getTutorialDialogSwitchButtonText = "次へ"');
-            } else if (event.srcElement.id === "tutorial-dialog-backbutton") {
+            } else if (eventSrcElement.id === "tutorial-dialog-backbutton") {
                 // 次へボタンを戻るボタンに変更する
                 $scope.$apply('$ctrl.getTutorialDialogSwitchButtonId = "tutorial-dialog-nextbutton"');
                 $scope.$apply('$ctrl.getTutorialDialogSwitchButtonText = "戻る"');
