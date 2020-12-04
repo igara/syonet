@@ -9,7 +9,7 @@
     "typings": "node_modules/.bin/typings install"
   },
   "devDependencies": {
-    "angular": "1.5.0",
+    "angular": "1.8.0",
     "angular2": "2.0.0-beta.15",
     "autoprefixer": "6.3.6",
     "css-loader": "0.23.1",
